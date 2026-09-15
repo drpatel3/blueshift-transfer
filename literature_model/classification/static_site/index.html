@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Process Flowsheet Predictor</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+  }
+  .header {
+    background: #1a1a2e;
+    color: white;
+    padding: 24px 40px;
+  }
+  .header h1 { font-size: 22px; font-weight: 600; }
+  .header p { font-size: 14px; color: #8892a4; margin-top: 4px; }
+  .controls {
+    background: white;
+    padding: 24px 40px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .slider-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .slider-group label {
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  input[type="range"] {
+    width: 400px;
+    accent-color: #1a1a2e;
+    cursor: pointer;
+  }
+  .grade-display {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a2e;
+    min-width: 80px;
+  }
+  .matched-info {
+    font-size: 13px;
+    color: #64748b;
+  }
+  .metrics {
+    display: flex;
+    gap: 16px;
+    margin-left: auto;
+  }
+  .metric-box {
+    text-align: center;
+    padding: 8px 16px;
+    background: #f0f4f8;
+    border-radius: 8px;
+    min-width: 90px;
+  }
+  .metric-box .value {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .metric-box .label {
+    font-size: 11px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .stages-bar {
+    padding: 12px 40px;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13px;
+    color: #475569;
+    line-height: 2;
+  }
+  .stages-bar > span.label { font-weight: 600; color: #1a1a2e; }
+  .stage-chip {
+    position: relative;
+    display: inline-block;
+    padding: 2px 10px;
+    margin: 2px 2px;
+    background: #eef2f8;
+    border: 1px solid #d6dde8;
+    border-radius: 12px;
+    color: #1a1a2e;
+    font-weight: 500;
+    cursor: default;
+    transition: background 0.12s, border-color 0.12s, color 0.12s;
+  }
+  .stage-chip.has-units { cursor: help; }
+  .stage-chip.has-units:hover {
+    background: #1a1a2e;
+    border-color: #1a1a2e;
+    color: white;
+  }
+  .stage-tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 200px;
+    background: #1a1a2e;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.12s;
+    z-index: 10;
+    white-space: nowrap;
+  }
+  .stage-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #1a1a2e;
+  }
+  .stage-chip.has-units:hover .stage-tooltip { opacity: 1; }
+  .tooltip-header {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #8892a4;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #2e2e44;
+  }
+  .tooltip-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 2px 0;
+  }
+  .tooltip-row .count { color: #64c8ff; font-weight: 700; }
+  .tooltip-row .type { color: #e6eaf2; }
+  .image-container {
+    padding: 20px 40px;
+    text-align: center;
+  }
+  .image-container img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: opacity 0.15s;
+  }
+  .grade-ticks {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    padding: 2px 0 0;
+    font-size: 11px;
+    color: #94a3b8;
+  }
+</style>
+</head>
+<body>
+  <div id="authGate" style="display:flex;align-items:center;justify-content:center;height:100vh;background:#1a1a2e;">
+    <div style="text-align:center;background:white;padding:40px 48px;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.3);">
+      <h2 style="margin-bottom:8px;color:#1a1a2e;">Process Flowsheet Predictor</h2>
+      <p style="color:#64748b;margin-bottom:24px;font-size:14px;">Enter access code to continue</p>
+      <input type="password" id="authInput" placeholder="Access code"
+        style="padding:10px 16px;font-size:16px;border:2px solid #e2e8f0;border-radius:8px;width:240px;text-align:center;"
+        onkeydown="if(event.key==='Enter')checkAuth()">
+      <br>
+      <button onclick="checkAuth()"
+        style="margin-top:16px;padding:10px 32px;font-size:14px;font-weight:600;background:#1a1a2e;color:white;border:none;border-radius:8px;cursor:pointer;">
+        Enter</button>
+      <p id="authError" style="color:#e53e3e;margin-top:12px;font-size:13px;display:none;">Incorrect code</p>
+    </div>
+  </div>
+  <script>
+    function checkAuth(){
+      if(document.getElementById('authInput').value==='blueshift2026'){
+        document.getElementById('authGate').style.display='none';
+        document.getElementById('appContent').style.display='block';
+        sessionStorage.setItem('auth','1');
+      } else {
+        document.getElementById('authError').style.display='block';
+      }
+    }
+    if(sessionStorage.getItem('auth')==='1'){
+      document.addEventListener('DOMContentLoaded',function(){
+        document.getElementById('authGate').style.display='none';
+        document.getElementById('appContent').style.display='block';
+      });
+    }
+  </script>
+  <div id="appContent" style="display:none;">
+  <div class="header">
+    <h1>Process Flowsheet Predictor</h1>
+    <p>Predicted vs ground-truth flowsheet comparison &mdash; V2 XGBoost stages + corpus prior edges</p>
+  </div>
+  <div class="controls">
+    <div class="slider-group">
+      <label>Cu Head Grade:</label>
+      <div>
+        <input type="range" id="slider" min="0.05" max="2.55" step="0.05" value="1.25">
+        <div class="grade-ticks">
+          <span>0.05%</span>
+          <span>0.5%</span>
+          <span>1.0%</span>
+          <span>1.5%</span>
+          <span>2.0%</span>
+          <span>2.55%</span>
+        </div>
+      </div>
+      <span class="grade-display" id="gradeLabel">1.250%</span>
+      <span class="matched-info" id="matchedGrade"></span>
+    </div>
+    <div class="metrics">
+      <div class="metric-box">
+        <div class="value" id="stageF1">&mdash;</div>
+        <div class="label">Stage F1</div>
+      </div>
+      <div class="metric-box">
+        <div class="value" id="edgeF1">&mdash;</div>
+        <div class="label">Edge F1</div>
+      </div>
+      <div class="metric-box">
+        <div class="value" id="reachF1">&mdash;</div>
+        <div class="label">Reach F1</div>
+      </div>
+    </div>
+  </div>
+  <div class="stages-bar" id="stagesBar"></div>
+  <div class="image-container">
+    <div id="loadingSpinner" style="display:none;padding:60px;text-align:center;">
+      <div style="display:inline-block;width:40px;height:40px;border:4px solid #e2e8f0;border-top-color:#1a1a2e;border-radius:50%;animation:spin 0.8s linear infinite;"></div>
+      <p style="margin-top:16px;color:#64748b;font-size:15px;" id="loadingText">Generating prediction...</p>
+    </div>
+    <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+    <img id="pfsImage" alt="PFS Comparison">
+  </div>
+  </div><!-- close appContent -->
+
+<script>
+const MANIFEST = [{"grade": 0.082, "image": "img/pfs_0.082.png", "stages": [{"name": "adsorption", "units": [{"type": "cic", "count": 2}, {"type": "carbon_column", "count": 10}]}, {"name": "bin", "units": [{"type": "ore_bin", "count": 1}]}, {"name": "crusher", "units": [{"type": "primary_crusher", "count": 1}, {"type": "secondary_crusher", "count": 2}]}, {"name": "cyclone", "units": [{"type": "hydrocyclone", "count": 1}]}, {"name": "electrowinning", "units": [{"type": "ew_cell", "count": 1}]}, {"name": "elution", "units": [{"type": "elution_column", "count": 1}, {"type": "acid_wash_vessel", "count": 1}, {"type": "strip_vessel", "count": 1}]}, {"name": "feeder", "units": [{"type": "apron_feeder", "count": 1}]}, {"name": "filter", "units": [{"type": "filter_press", "count": 1}]}, {"name": "gravity", "units": [{"type": "falcon", "count": 1}]}, {"name": "kiln", "units": [{"type": "regeneration_kiln", "count": 1}]}, {"name": "leach", "units": [{"type": "heap_leach_pad", "count": 1}]}, {"name": "product_recovery", "units": [{"type": "dore_furnace", "count": 1}, {"type": "refinery_unit", "count": 1}]}, {"name": "screen", "units": [{"type": "vibrating_screen", "count": 1}]}, {"name": "stockpile", "units": [{"type": "rom_stockpile", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_pond", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "adsorption", "dst": "elution", "score": 0.5}, {"src": "adsorption", "dst": "tailing", "score": 0.423}, {"src": "crusher", "dst": "screen", "score": 0.475}, {"src": "crusher", "dst": "stockpile", "score": 0.909}, {"src": "cyclone", "dst": "gravity", "score": 0.6}, {"src": "cyclone", "dst": "leach", "score": 0.333}, {"src": "electrowinning", "dst": "kiln", "score": 0.667}, {"src": "electrowinning", "dst": "product_recovery", "score": 0.55}, {"src": "elution", "dst": "electrowinning", "score": 1.0}, {"src": "feeder", "dst": "crusher", "score": 0.571}, {"src": "feeder", "dst": "kiln", "score": 0.5}, {"src": "filter", "dst": "kiln", "score": 0.4}, {"src": "gravity", "dst": "leach", "score": 0.5}, {"src": "leach", "dst": "adsorption", "score": 0.435}, {"src": "leach", "dst": "tailing", "score": 0.432}, {"src": "screen", "dst": "crusher", "score": 0.475}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.933, "edge_tp": 5, "edge_fp": 13, "edge_fn": 11, "edge_f1": 0.294, "reach_f1": 0.448, "reach_precision": 0.469, "reach_recall": 0.429}}, {"grade": 0.1, "image": "img/pfs_0.100.png", "stages": [{"name": "bin", "units": [{"type": "ore_bin", "count": 1}]}, {"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}, {"type": "secondary_crusher", "count": 2}]}, {"name": "cyclone", "units": [{"type": "hydrocyclone", "count": 1}]}, {"name": "filter", "units": [{"type": "belt_filter", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 1}, {"type": "cleaner_cell", "count": 1}]}, {"name": "input", "units": [{"type": "rom_feed", "count": 1}]}, {"name": "regrind", "units": [{"type": "isamill", "count": 1}]}, {"name": "screen", "units": [{"type": "vibrating_screen", "count": 1}]}, {"name": "stockpile", "units": [{"type": "rom_stockpile", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "screen", "score": 0.475}, {"src": "crusher", "dst": "stockpile", "score": 0.909}, {"src": "cyclone", "dst": "flotation", "score": 0.609}, {"src": "flotation", "dst": "regrind", "score": 0.917}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "input", "dst": "crusher", "score": 1.0}, {"src": "input", "dst": "input", "score": 1.0}, {"src": "regrind", "dst": "flotation", "score": 0.889}, {"src": "screen", "dst": "crusher", "score": 0.475}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.778, "edge_tp": 4, "edge_fp": 7, "edge_fn": 4, "edge_f1": 0.421, "reach_f1": 0.516, "reach_precision": 0.8, "reach_recall": 0.381}}, {"grade": 0.213, "image": "img/pfs_0.213.png", "stages": [{"name": "crusher", "units": [{"type": "primary_crusher", "count": 1}]}, {"name": "cyclone", "units": [{"type": "hydrocyclone", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 1}, {"type": "cleaner_cell", "count": 1}]}, {"name": "gravity", "units": [{"type": "knelson", "count": 1}]}, {"name": "leach", "units": [{"type": "heap_leach_pad", "count": 1}]}, {"name": "mill", "units": [{"type": "ball_mill", "count": 1}]}, {"name": "product_recovery", "units": [{"type": "dore_furnace", "count": 1}, {"type": "refinery_unit", "count": 1}]}, {"name": "regrind", "units": [{"type": "regrind_ball_mill", "count": 1}]}, {"name": "screen", "units": [{"type": "vibrating_screen", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "mill", "score": 0.561}, {"src": "crusher", "dst": "screen", "score": 0.475}, {"src": "cyclone", "dst": "flotation", "score": 0.609}, {"src": "cyclone", "dst": "gravity", "score": 0.6}, {"src": "flotation", "dst": "regrind", "score": 0.917}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "gravity", "dst": "flotation", "score": 0.462}, {"src": "gravity", "dst": "leach", "score": 0.5}, {"src": "leach", "dst": "tailing", "score": 0.432}, {"src": "mill", "dst": "flotation", "score": 0.64}, {"src": "mill", "dst": "gravity", "score": 0.789}, {"src": "regrind", "dst": "flotation", "score": 0.889}, {"src": "screen", "dst": "crusher", "score": 0.475}, {"src": "thickener", "dst": "leach", "score": 0.467}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.917, "edge_tp": 5, "edge_fp": 10, "edge_fn": 7, "edge_f1": 0.37, "reach_f1": 0.636, "reach_precision": 0.477, "reach_recall": 0.955}}, {"grade": 0.227, "image": "img/pfs_0.227.png", "stages": [{"name": "adsorption", "units": [{"type": "cic", "count": 2}, {"type": "carbon_column", "count": 10}]}, {"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}]}, {"name": "cyclone", "units": [{"type": "hydrocyclone", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 1}, {"type": "cleaner_cell", "count": 1}]}, {"name": "input", "units": [{"type": "rom_feed", "count": 1}]}, {"name": "leach", "units": [{"type": "heap_leach_pad", "count": 1}]}, {"name": "product_recovery", "units": [{"type": "merrill_crowe_unit", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "adsorption", "dst": "tailing", "score": 0.423}, {"src": "cyclone", "dst": "flotation", "score": 0.609}, {"src": "cyclone", "dst": "leach", "score": 0.333}, {"src": "flotation", "dst": "flotation", "score": 0.789}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "input", "dst": "crusher", "score": 1.0}, {"src": "input", "dst": "input", "score": 1.0}, {"src": "leach", "dst": "adsorption", "score": 0.435}, {"src": "leach", "dst": "tailing", "score": 0.432}, {"src": "thickener", "dst": "leach", "score": 0.467}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.875, "edge_tp": 4, "edge_fp": 7, "edge_fn": 2, "edge_f1": 0.471, "reach_f1": 0.526, "reach_precision": 0.625, "reach_recall": 0.455}}, {"grade": 0.267, "image": "img/pfs_0.267.png", "stages": [{"name": "crusher", "units": [{"type": "primary_crusher", "count": 1}, {"type": "secondary_crusher", "count": 1}]}, {"name": "input", "units": [{"type": "rom_feed", "count": 1}]}, {"name": "leach", "units": [{"type": "heap_leach_pad", "count": 1}]}, {"name": "product_recovery", "units": [{"type": "dore_furnace", "count": 1}]}, {"name": "stockpile", "units": [{"type": "coarse_ore_stockpile", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "stockpile", "score": 0.909}, {"src": "input", "dst": "crusher", "score": 1.0}, {"src": "input", "dst": "input", "score": 1.0}, {"src": "leach", "dst": "tailing", "score": 0.432}, {"src": "thickener", "dst": "leach", "score": 0.467}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.6, "edge_tp": 1, "edge_fp": 5, "edge_fn": 1, "edge_f1": 0.25, "reach_f1": 0.5, "reach_precision": 1.0, "reach_recall": 0.333}}, {"grade": 0.282, "image": "img/pfs_0.282.png", "stages": [{"name": "adsorption", "units": [{"type": "cic", "count": 2}, {"type": "carbon_column", "count": 10}]}, {"name": "bin", "units": [{"type": "ore_bin", "count": 1}]}, {"name": "crusher", "units": [{"type": "primary_crusher", "count": 1}]}, {"name": "electrowinning", "units": [{"type": "ew_cell", "count": 1}]}, {"name": "elution", "units": [{"type": "elution_column", "count": 1}, {"type": "acid_wash_vessel", "count": 1}, {"type": "strip_vessel", "count": 1}]}, {"name": "feeder", "units": [{"type": "apron_feeder", "count": 1}]}, {"name": "filter", "units": [{"type": "filter_press", "count": 1}]}, {"name": "kiln", "units": [{"type": "regeneration_kiln", "count": 1}]}, {"name": "leach", "units": [{"type": "heap_leach_pad", "count": 1}]}, {"name": "product_recovery", "units": [{"type": "dore_furnace", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_pond", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "adsorption", "dst": "elution", "score": 0.5}, {"src": "adsorption", "dst": "tailing", "score": 0.423}, {"src": "electrowinning", "dst": "kiln", "score": 0.667}, {"src": "electrowinning", "dst": "product_recovery", "score": 0.55}, {"src": "elution", "dst": "electrowinning", "score": 1.0}, {"src": "feeder", "dst": "crusher", "score": 0.571}, {"src": "feeder", "dst": "kiln", "score": 0.5}, {"src": "filter", "dst": "kiln", "score": 0.4}, {"src": "leach", "dst": "adsorption", "score": 0.435}, {"src": "leach", "dst": "tailing", "score": 0.432}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.857, "edge_tp": 4, "edge_fp": 8, "edge_fn": 4, "edge_f1": 0.4, "reach_f1": 0.64, "reach_precision": 0.615, "reach_recall": 0.667}}, {"grade": 0.409, "image": "img/pfs_0.409.png", "stages": [{"name": "bin", "units": [{"type": "ore_bin", "count": 1}]}, {"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}]}, {"name": "cyclone", "units": [{"type": "hydrocyclone", "count": 1}]}, {"name": "feeder", "units": [{"type": "apron_feeder", "count": 1}]}, {"name": "filter", "units": [{"type": "pressure_filter", "count": 1}, {"type": "vacuum_filter", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 1}, {"type": "cleaner_cell", "count": 1}, {"type": "scavenger_cell", "count": 1}]}, {"name": "regrind", "units": [{"type": "regrind_mill", "count": 1}]}, {"name": "screen", "units": [{"type": "vibrating_screen", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "tank", "units": [{"type": "agitation_tank", "count": 1}]}, {"name": "thickener", "units": [{"type": "tailings_thickener", "count": 1}, {"type": "concentrate_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "screen", "score": 0.475}, {"src": "cyclone", "dst": "flotation", "score": 0.609}, {"src": "feeder", "dst": "crusher", "score": 0.571}, {"src": "flotation", "dst": "regrind", "score": 0.917}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "regrind", "dst": "flotation", "score": 0.889}, {"src": "screen", "dst": "crusher", "score": 0.475}, {"src": "tank", "dst": "filter", "score": 0.429}, {"src": "tank", "dst": "flotation", "score": 0.533}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.9, "edge_tp": 6, "edge_fp": 5, "edge_fn": 3, "edge_f1": 0.6, "reach_f1": 0.971, "reach_precision": 1.0, "reach_recall": 0.944}}, {"grade": 0.416, "image": "img/pfs_0.416.png", "stages": [{"name": "bin", "units": [{"type": "ore_bin", "count": 1}]}, {"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}]}, {"name": "cyclone", "units": [{"type": "hydrocyclone", "count": 1}]}, {"name": "feeder", "units": [{"type": "apron_feeder", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 1}, {"type": "cleaner_cell", "count": 1}, {"type": "scavenger_cell", "count": 1}]}, {"name": "gravity", "units": [{"type": "knelson", "count": 1}]}, {"name": "input", "units": [{"type": "rom_feed", "count": 1}]}, {"name": "regrind", "units": [{"type": "regrind_mill", "count": 1}]}, {"name": "screen", "units": [{"type": "vibrating_screen", "count": 1}]}, {"name": "stockpile", "units": [{"type": "rom_stockpile", "count": 1}]}, {"name": "thickener", "units": [{"type": "tailings_thickener", "count": 1}, {"type": "concentrate_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "screen", "score": 0.475}, {"src": "crusher", "dst": "stockpile", "score": 0.909}, {"src": "cyclone", "dst": "flotation", "score": 0.609}, {"src": "cyclone", "dst": "gravity", "score": 0.6}, {"src": "feeder", "dst": "crusher", "score": 0.571}, {"src": "flotation", "dst": "regrind", "score": 0.917}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "gravity", "dst": "flotation", "score": 0.462}, {"src": "input", "dst": "feeder", "score": 1.0}, {"src": "input", "dst": "input", "score": 1.0}, {"src": "regrind", "dst": "flotation", "score": 0.889}, {"src": "screen", "dst": "crusher", "score": 0.475}, {"src": "thickener", "dst": "bin", "score": 0.449}], "metrics": {"stage_f1": 0.429, "edge_tp": 0, "edge_fp": 13, "edge_fn": 2, "edge_f1": 0.0, "reach_f1": 0.5, "reach_precision": 1.0, "reach_recall": 0.333}}, {"grade": 0.472, "image": "img/pfs_0.472.png", "stages": [{"name": "bin", "units": [{"type": "ore_bin", "count": 1}]}, {"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}]}, {"name": "cyclone", "units": [{"type": "hydrocyclone", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 1}, {"type": "cleaner_cell", "count": 1}]}, {"name": "input", "units": [{"type": "rom_feed", "count": 1}]}, {"name": "screen", "units": [{"type": "vibrating_screen", "count": 1}]}, {"name": "stockpile", "units": [{"type": "rom_stockpile", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_pond", "count": 1}]}, {"name": "thickener", "units": [{"type": "tailings_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "screen", "score": 0.475}, {"src": "crusher", "dst": "stockpile", "score": 0.909}, {"src": "cyclone", "dst": "flotation", "score": 0.609}, {"src": "flotation", "dst": "flotation", "score": 0.789}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "input", "dst": "crusher", "score": 1.0}, {"src": "input", "dst": "input", "score": 1.0}, {"src": "screen", "dst": "crusher", "score": 0.475}, {"src": "thickener", "dst": "bin", "score": 0.449}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.941, "edge_tp": 8, "edge_fp": 2, "edge_fn": 1, "edge_f1": 0.842, "reach_f1": 0.96, "reach_precision": 0.923, "reach_recall": 1.0}}, {"grade": 0.548, "image": "img/pfs_0.548.png", "stages": [{"name": "bin", "units": [{"type": "silo", "count": 1}]}, {"name": "feeder", "units": [{"type": "apron_feeder", "count": 1}]}, {"name": "filter", "units": [{"type": "pressure_filter", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 1}, {"type": "cleaner_cell", "count": 1}, {"type": "scavenger_cell", "count": 1}]}, {"name": "mill", "units": [{"type": "ball_mill", "count": 1}]}, {"name": "regrind", "units": [{"type": "regrind_mill", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "bin", "dst": "mill", "score": 0.406}, {"src": "flotation", "dst": "regrind", "score": 0.917}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "mill", "dst": "flotation", "score": 0.64}, {"src": "regrind", "dst": "flotation", "score": 0.889}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.667, "edge_tp": 0, "edge_fp": 7, "edge_fn": 6, "edge_f1": 0.0, "reach_f1": 0.0, "reach_precision": 0.0, "reach_recall": 0.0}}, {"grade": 0.557, "image": "img/pfs_0.557.png", "stages": [{"name": "electrowinning", "units": [{"type": "ew_cell", "count": 1}]}, {"name": "leach", "units": [{"type": "leach_tank", "count": 1}]}, {"name": "product_recovery", "units": [{"type": "merrill_crowe_unit", "count": 1}, {"type": "precipitation_reactor", "count": 1}]}, {"name": "solution_recovery", "units": [{"type": "sx_mixer_settler", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_pond", "count": 1}]}, {"name": "tank", "units": [{"type": "storage_tank", "count": 2}]}], "edges": [{"src": "electrowinning", "dst": "product_recovery", "score": 0.55}, {"src": "leach", "dst": "tailing", "score": 0.432}, {"src": "solution_recovery", "dst": "electrowinning", "score": 0.833}, {"src": "solution_recovery", "dst": "product_recovery", "score": 0.667}, {"src": "tank", "dst": "tailing", "score": 0.368}], "metrics": {"stage_f1": 0.667, "edge_tp": 1, "edge_fp": 4, "edge_fn": 3, "edge_f1": 0.222, "reach_f1": 0.286, "reach_precision": 1.0, "reach_recall": 0.167}}, {"grade": 0.557, "image": "img/pfs_0.557.png", "stages": [{"name": "electrowinning", "units": [{"type": "ew_cell", "count": 1}]}, {"name": "leach", "units": [{"type": "heap_leach_pad", "count": 1}]}, {"name": "product_recovery", "units": [{"type": "merrill_crowe_unit", "count": 1}, {"type": "precipitation_reactor", "count": 1}]}, {"name": "solution_recovery", "units": [{"type": "sx_mixer_settler", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "tank", "units": [{"type": "storage_tank", "count": 2}]}], "edges": [{"src": "electrowinning", "dst": "product_recovery", "score": 0.55}, {"src": "leach", "dst": "tailing", "score": 0.432}, {"src": "solution_recovery", "dst": "electrowinning", "score": 0.833}, {"src": "solution_recovery", "dst": "product_recovery", "score": 0.667}, {"src": "tank", "dst": "tailing", "score": 0.368}], "metrics": {"stage_f1": 0.667, "edge_tp": 1, "edge_fp": 4, "edge_fn": 3, "edge_f1": 0.222, "reach_f1": 0.286, "reach_precision": 1.0, "reach_recall": 0.167}}, {"grade": 0.569, "image": "img/pfs_0.569.png", "stages": [{"name": "crusher", "units": [{"type": "primary_crusher", "count": 1}, {"type": "secondary_crusher", "count": 2}]}, {"name": "filter", "units": [{"type": "filter_press", "count": 2}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 8}, {"type": "scavenger_cell", "count": 4}, {"type": "cleaner_cell", "count": 6}]}, {"name": "mill", "units": [{"type": "sag_mill", "count": 2}, {"type": "ball_mill", "count": 2}]}, {"name": "regrind", "units": [{"type": "regrind_mill", "count": 2}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "mill", "score": 0.561}, {"src": "flotation", "dst": "regrind", "score": 0.917}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "mill", "dst": "flotation", "score": 0.64}, {"src": "regrind", "dst": "flotation", "score": 0.889}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.923, "edge_tp": 5, "edge_fp": 2, "edge_fn": 4, "edge_f1": 0.625, "reach_f1": 0.941, "reach_precision": 1.0, "reach_recall": 0.889}}, {"grade": 0.632, "image": "img/pfs_0.632.png", "stages": [{"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}]}, {"name": "filter", "units": [{"type": "filter_press", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 1}]}, {"name": "input", "units": [{"type": "rom_feed", "count": 1}]}, {"name": "mill", "units": [{"type": "sag_mill", "count": 1}, {"type": "ball_mill", "count": 2}]}, {"name": "regrind", "units": [{"type": "regrind_ball_mill", "count": 1}]}, {"name": "screen", "units": [{"type": "vibrating_screen", "count": 6}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "tank", "units": [{"type": "agitation_tank", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "mill", "score": 0.561}, {"src": "crusher", "dst": "screen", "score": 0.475}, {"src": "flotation", "dst": "regrind", "score": 0.917}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "input", "dst": "crusher", "score": 1.0}, {"src": "input", "dst": "input", "score": 1.0}, {"src": "mill", "dst": "flotation", "score": 0.64}, {"src": "regrind", "dst": "flotation", "score": 0.889}, {"src": "screen", "dst": "crusher", "score": 0.475}, {"src": "tank", "dst": "filter", "score": 0.429}, {"src": "tank", "dst": "flotation", "score": 0.533}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.947, "edge_tp": 9, "edge_fp": 4, "edge_fn": 9, "edge_f1": 0.581, "reach_f1": 0.865, "reach_precision": 0.941, "reach_recall": 0.8}}, {"grade": 0.661, "image": "img/pfs_0.661.png", "stages": [{"name": "bin", "units": [{"type": "ore_bin", "count": 1}]}, {"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}]}, {"name": "cyclone", "units": [{"type": "hydrocyclone", "count": 1}]}, {"name": "feeder", "units": [{"type": "apron_feeder", "count": 1}]}, {"name": "filter", "units": [{"type": "filter_press", "count": 1}]}, {"name": "gravity", "units": [{"type": "knelson", "count": 1}]}, {"name": "leach", "units": [{"type": "leach_tank", "count": 6}]}, {"name": "product_recovery", "units": [{"type": "merrill_crowe_unit", "count": 1}]}, {"name": "screen", "units": [{"type": "vibrating_screen", "count": 1}]}, {"name": "stockpile", "units": [{"type": "coarse_ore_stockpile", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_pond", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "screen", "score": 0.475}, {"src": "crusher", "dst": "stockpile", "score": 0.909}, {"src": "cyclone", "dst": "gravity", "score": 0.6}, {"src": "cyclone", "dst": "leach", "score": 0.333}, {"src": "feeder", "dst": "crusher", "score": 0.571}, {"src": "gravity", "dst": "leach", "score": 0.5}, {"src": "leach", "dst": "tailing", "score": 0.432}, {"src": "screen", "dst": "crusher", "score": 0.475}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.762, "edge_tp": 3, "edge_fp": 7, "edge_fn": 9, "edge_f1": 0.273, "reach_f1": 0.889, "reach_precision": 1.0, "reach_recall": 0.8}}, {"grade": 0.669, "image": "img/pfs_0.669.png", "stages": [{"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}]}, {"name": "filter", "units": [{"type": "filter_press", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 6}, {"type": "cleaner_cell", "count": 3}, {"type": "scavenger_cell", "count": 2}]}, {"name": "mill", "units": [{"type": "sag_mill", "count": 1}, {"type": "ball_mill", "count": 1}]}, {"name": "regrind", "units": [{"type": "regrind_mill", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "mill", "score": 0.561}, {"src": "flotation", "dst": "regrind", "score": 0.917}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "mill", "dst": "flotation", "score": 0.64}, {"src": "regrind", "dst": "flotation", "score": 0.889}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.923, "edge_tp": 4, "edge_fp": 3, "edge_fn": 3, "edge_f1": 0.571, "reach_f1": 0.952, "reach_precision": 1.0, "reach_recall": 0.909}}, {"grade": 0.675, "image": "img/pfs_0.675.png", "stages": [{"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}]}, {"name": "filter", "units": [{"type": "filter_press", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 1}]}, {"name": "input", "units": [{"type": "rom_feed", "count": 1}]}, {"name": "mill", "units": [{"type": "sag_mill", "count": 1}, {"type": "ball_mill", "count": 1}]}, {"name": "regrind", "units": [{"type": "regrind_ball_mill", "count": 1}]}, {"name": "stockpile", "units": [{"type": "coarse_ore_stockpile", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_pond", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "mill", "score": 0.561}, {"src": "crusher", "dst": "stockpile", "score": 0.909}, {"src": "flotation", "dst": "regrind", "score": 0.917}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "input", "dst": "crusher", "score": 1.0}, {"src": "input", "dst": "input", "score": 1.0}, {"src": "mill", "dst": "flotation", "score": 0.64}, {"src": "regrind", "dst": "flotation", "score": 0.889}, {"src": "stockpile", "dst": "mill", "score": 0.706}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.941, "edge_tp": 7, "edge_fp": 4, "edge_fn": 1, "edge_f1": 0.737, "reach_f1": 1.0, "reach_precision": 1.0, "reach_recall": 1.0}}, {"grade": 0.701, "image": "img/pfs_0.701.png", "stages": [{"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}]}, {"name": "filter", "units": [{"type": "filter_press", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 6}, {"type": "cleaner_cell", "count": 12}, {"type": "scavenger_cell", "count": 3}]}, {"name": "regrind", "units": [{"type": "regrind_mill", "count": 1}]}, {"name": "stockpile", "units": [{"type": "coarse_ore_stockpile", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "stockpile", "score": 0.909}, {"src": "flotation", "dst": "regrind", "score": 0.917}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "regrind", "dst": "flotation", "score": 0.889}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 1.0, "edge_tp": 5, "edge_fp": 1, "edge_fn": 3, "edge_f1": 0.714, "reach_f1": 0.8, "reach_precision": 0.909, "reach_recall": 0.714}}, {"grade": 0.709, "image": "img/pfs_0.709.png", "stages": [{"name": "bin", "units": [{"type": "ore_bin", "count": 1}]}, {"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}]}, {"name": "cyclone", "units": [{"type": "hydrocyclone", "count": 1}]}, {"name": "filter", "units": [{"type": "filter_press", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 1}]}, {"name": "input", "units": [{"type": "rom_feed", "count": 1}]}, {"name": "leach", "units": [{"type": "autoclave", "count": 1}]}, {"name": "product_recovery", "units": [{"type": "merrill_crowe_unit", "count": 1}, {"type": "dore_furnace", "count": 1}]}, {"name": "regrind", "units": [{"type": "regrind_mill", "count": 1}]}, {"name": "screen", "units": [{"type": "vibrating_screen", "count": 1}]}, {"name": "stockpile", "units": [{"type": "coarse_ore_stockpile", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_pond", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "screen", "score": 0.475}, {"src": "crusher", "dst": "stockpile", "score": 0.909}, {"src": "cyclone", "dst": "flotation", "score": 0.609}, {"src": "cyclone", "dst": "leach", "score": 0.333}, {"src": "flotation", "dst": "regrind", "score": 0.917}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "input", "dst": "crusher", "score": 1.0}, {"src": "input", "dst": "input", "score": 1.0}, {"src": "leach", "dst": "tailing", "score": 0.432}, {"src": "regrind", "dst": "flotation", "score": 0.889}, {"src": "screen", "dst": "crusher", "score": 0.475}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.846, "edge_tp": 6, "edge_fp": 7, "edge_fn": 13, "edge_f1": 0.375, "reach_f1": 0.645, "reach_precision": 0.833, "reach_recall": 0.526}}, {"grade": 0.769, "image": "img/pfs_0.769.png", "stages": [{"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}]}, {"name": "electrowinning", "units": [{"type": "electrowinning_cell", "count": 1}]}, {"name": "leach", "units": [{"type": "heap_leach_pad", "count": 1}]}, {"name": "mill", "units": [{"type": "sag_mill", "count": 1}, {"type": "ball_mill", "count": 1}]}, {"name": "solution_recovery", "units": [{"type": "sx_mixer_settler", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}], "edges": [{"src": "crusher", "dst": "mill", "score": 0.561}, {"src": "leach", "dst": "tailing", "score": 0.432}, {"src": "mill", "dst": "leach", "score": 0.32}, {"src": "solution_recovery", "dst": "electrowinning", "score": 0.833}, {"src": "solution_recovery", "dst": "tailing", "score": 0.312}], "metrics": {"stage_f1": 0.909, "edge_tp": 1, "edge_fp": 4, "edge_fn": 5, "edge_f1": 0.182, "reach_f1": 0.429, "reach_precision": 0.75, "reach_recall": 0.3}}, {"grade": 0.82, "image": "img/pfs_0.820.png", "stages": [{"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}]}, {"name": "filter", "units": [{"type": "filter_press", "count": 1}]}, {"name": "input", "units": [{"type": "rom_feed", "count": 1}]}, {"name": "leach", "units": [{"type": "leach_tank", "count": 1}]}, {"name": "mill", "units": [{"type": "ball_mill", "count": 1}]}, {"name": "product_recovery", "units": [{"type": "merrill_crowe_unit", "count": 1}]}, {"name": "solution_recovery", "units": [{"type": "sx_mixer_settler", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "tank", "units": [{"type": "storage_tank", "count": 5}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "mill", "score": 0.561}, {"src": "input", "dst": "crusher", "score": 1.0}, {"src": "input", "dst": "input", "score": 1.0}, {"src": "leach", "dst": "tailing", "score": 0.432}, {"src": "mill", "dst": "leach", "score": 0.32}, {"src": "solution_recovery", "dst": "product_recovery", "score": 0.667}, {"src": "solution_recovery", "dst": "tailing", "score": 0.312}, {"src": "tank", "dst": "filter", "score": 0.429}, {"src": "tank", "dst": "tailing", "score": 0.368}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "solution_recovery", "score": 0.5}], "metrics": {"stage_f1": 0.842, "edge_tp": 3, "edge_fp": 8, "edge_fn": 7, "edge_f1": 0.286, "reach_f1": 0.375, "reach_precision": 0.25, "reach_recall": 0.75}}, {"grade": 1.01, "image": "img/pfs_1.010.png", "stages": [{"name": "bin", "units": [{"type": "ore_bin", "count": 1}]}, {"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}]}, {"name": "cyclone", "units": [{"type": "hydrocyclone", "count": 1}]}, {"name": "filter", "units": [{"type": "filter_press", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 1}]}, {"name": "gravity", "units": [{"type": "knelson", "count": 1}]}, {"name": "mill", "units": [{"type": "sag_mill", "count": 1}, {"type": "ball_mill", "count": 1}]}, {"name": "screen", "units": [{"type": "vibrating_screen", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_pond", "count": 1}]}, {"name": "tank", "units": [{"type": "agitation_tank", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "bin", "dst": "mill", "score": 0.406}, {"src": "crusher", "dst": "mill", "score": 0.561}, {"src": "crusher", "dst": "screen", "score": 0.475}, {"src": "cyclone", "dst": "flotation", "score": 0.609}, {"src": "cyclone", "dst": "gravity", "score": 0.6}, {"src": "flotation", "dst": "flotation", "score": 0.789}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "gravity", "dst": "flotation", "score": 0.462}, {"src": "mill", "dst": "flotation", "score": 0.64}, {"src": "mill", "dst": "gravity", "score": 0.789}, {"src": "screen", "dst": "crusher", "score": 0.475}, {"src": "tank", "dst": "filter", "score": 0.429}, {"src": "tank", "dst": "flotation", "score": 0.533}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.9, "edge_tp": 3, "edge_fp": 12, "edge_fn": 11, "edge_f1": 0.207, "reach_f1": 0.293, "reach_precision": 0.545, "reach_recall": 0.2}}, {"grade": 1.135, "image": "img/pfs_1.135.png", "stages": [{"name": "crusher", "units": [{"type": "primary_crusher", "count": 1}]}, {"name": "filter", "units": [{"type": "vacuum_filter", "count": 2}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 4}, {"type": "cleaner_cell", "count": 12}, {"type": "scavenger_cell", "count": 2}]}, {"name": "input", "units": [{"type": "rom_feed", "count": 1}]}, {"name": "leach", "units": [{"type": "leach_tank", "count": 6}]}, {"name": "mill", "units": [{"type": "sag_mill", "count": 1}, {"type": "ball_mill", "count": 1}]}, {"name": "product_recovery", "units": [{"type": "precipitation_reactor", "count": 2}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "thickener", "units": [{"type": "tailings_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "mill", "score": 0.561}, {"src": "flotation", "dst": "flotation", "score": 0.789}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "input", "dst": "crusher", "score": 1.0}, {"src": "input", "dst": "input", "score": 1.0}, {"src": "leach", "dst": "tailing", "score": 0.432}, {"src": "mill", "dst": "flotation", "score": 0.64}, {"src": "mill", "dst": "leach", "score": 0.32}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.941, "edge_tp": 7, "edge_fp": 3, "edge_fn": 2, "edge_f1": 0.737, "reach_f1": 0.839, "reach_precision": 1.0, "reach_recall": 0.722}}, {"grade": 1.244, "image": "img/pfs_1.244.png", "stages": [{"name": "bin", "units": [{"type": "ore_bin", "count": 1}]}, {"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}]}, {"name": "filter", "units": [{"type": "vacuum_filter", "count": 2}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 6}, {"type": "cleaner_cell", "count": 3}, {"type": "scavenger_cell", "count": 2}]}, {"name": "mill", "units": [{"type": "sag_mill", "count": 1}, {"type": "ball_mill", "count": 1}]}, {"name": "regrind", "units": [{"type": "regrind_mill", "count": 1}]}, {"name": "stockpile", "units": [{"type": "coarse_ore_stockpile", "count": 1}]}, {"name": "thickener", "units": [{"type": "tailings_thickener", "count": 1}]}], "edges": [{"src": "bin", "dst": "mill", "score": 0.406}, {"src": "crusher", "dst": "mill", "score": 0.561}, {"src": "crusher", "dst": "stockpile", "score": 0.909}, {"src": "flotation", "dst": "regrind", "score": 0.917}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "mill", "dst": "flotation", "score": 0.64}, {"src": "regrind", "dst": "flotation", "score": 0.889}, {"src": "stockpile", "dst": "mill", "score": 0.706}, {"src": "thickener", "dst": "bin", "score": 0.449}, {"src": "thickener", "dst": "filter", "score": 0.804}], "metrics": {"stage_f1": 0.857, "edge_tp": 4, "edge_fp": 6, "edge_fn": 2, "edge_f1": 0.5, "reach_f1": 0.933, "reach_precision": 0.933, "reach_recall": 0.933}}, {"grade": 1.321, "image": "img/pfs_1.321.png", "stages": [{"name": "bin", "units": [{"type": "ore_bin", "count": 1}]}, {"name": "crusher", "units": [{"type": "jaw_crusher", "count": 1}]}, {"name": "cyclone", "units": [{"type": "hydrocyclone", "count": 2}]}, {"name": "feeder", "units": [{"type": "apron_feeder", "count": 1}]}, {"name": "filter", "units": [{"type": "vacuum_filter", "count": 2}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 8}, {"type": "cleaner_cell", "count": 4}, {"type": "scavenger_cell", "count": 2}, {"type": "column_cell", "count": 2}]}, {"name": "input", "units": [{"type": "rom_feed", "count": 1}]}, {"name": "regrind", "units": [{"type": "regrind_mill", "count": 1}]}, {"name": "stockpile", "units": [{"type": "coarse_ore_stockpile", "count": 1}]}, {"name": "thickener", "units": [{"type": "tailings_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "stockpile", "score": 0.909}, {"src": "cyclone", "dst": "flotation", "score": 0.609}, {"src": "feeder", "dst": "crusher", "score": 0.571}, {"src": "flotation", "dst": "regrind", "score": 0.917}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "input", "dst": "feeder", "score": 1.0}, {"src": "input", "dst": "input", "score": 1.0}, {"src": "regrind", "dst": "flotation", "score": 0.889}, {"src": "thickener", "dst": "bin", "score": 0.449}, {"src": "thickener", "dst": "filter", "score": 0.804}], "metrics": {"stage_f1": 0.952, "edge_tp": 9, "edge_fp": 1, "edge_fn": 4, "edge_f1": 0.783, "reach_f1": 0.977, "reach_precision": 1.0, "reach_recall": 0.955}}, {"grade": 1.5, "image": "img/pfs_1.500.png", "stages": [{"name": "cyclone", "units": [{"type": "hydrocyclone", "count": 1}]}, {"name": "electrowinning", "units": [{"type": "electrowinning_cell", "count": 64}]}, {"name": "feeder", "units": [{"type": "apron_feeder", "count": 1}]}, {"name": "filter", "units": [{"type": "filter_press", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 6}, {"type": "cleaner_cell", "count": 3}, {"type": "scavenger_cell", "count": 2}]}, {"name": "gravity", "units": [{"type": "knelson", "count": 2}]}, {"name": "leach", "units": [{"type": "heap_leach_pad", "count": 1}]}, {"name": "product_recovery", "units": [{"type": "merrill_crowe_unit", "count": 1}, {"type": "dore_furnace", "count": 1}]}, {"name": "screen", "units": [{"type": "vibrating_screen", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "tank", "units": [{"type": "agitation_tank", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "cyclone", "dst": "flotation", "score": 0.609}, {"src": "cyclone", "dst": "gravity", "score": 0.6}, {"src": "electrowinning", "dst": "filter", "score": 0.333}, {"src": "electrowinning", "dst": "product_recovery", "score": 0.55}, {"src": "flotation", "dst": "flotation", "score": 0.789}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "gravity", "dst": "flotation", "score": 0.462}, {"src": "gravity", "dst": "leach", "score": 0.5}, {"src": "leach", "dst": "tailing", "score": 0.432}, {"src": "tank", "dst": "filter", "score": 0.429}, {"src": "tank", "dst": "flotation", "score": 0.533}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.857, "edge_tp": 3, "edge_fp": 10, "edge_fn": 7, "edge_f1": 0.261, "reach_f1": 0.5, "reach_precision": 0.889, "reach_recall": 0.348}}, {"grade": 1.5, "image": "img/pfs_1.500.png", "stages": [{"name": "cyclone", "units": [{"type": "hydrocyclone", "count": 1}]}, {"name": "electrowinning", "units": [{"type": "electrowinning_cell", "count": 64}]}, {"name": "feeder", "units": [{"type": "apron_feeder", "count": 1}]}, {"name": "filter", "units": [{"type": "filter_press", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 6}, {"type": "cleaner_cell", "count": 3}, {"type": "scavenger_cell", "count": 2}]}, {"name": "gravity", "units": [{"type": "knelson", "count": 2}]}, {"name": "leach", "units": [{"type": "heap_leach_pad", "count": 1}]}, {"name": "product_recovery", "units": [{"type": "merrill_crowe_unit", "count": 1}, {"type": "dore_furnace", "count": 1}]}, {"name": "screen", "units": [{"type": "vibrating_screen", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "tank", "units": [{"type": "agitation_tank", "count": 1}]}, {"name": "thickener", "units": [{"type": "high_rate_thickener", "count": 1}]}], "edges": [{"src": "cyclone", "dst": "flotation", "score": 0.609}, {"src": "cyclone", "dst": "gravity", "score": 0.6}, {"src": "electrowinning", "dst": "filter", "score": 0.333}, {"src": "electrowinning", "dst": "product_recovery", "score": 0.55}, {"src": "flotation", "dst": "flotation", "score": 0.789}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "gravity", "dst": "flotation", "score": 0.462}, {"src": "gravity", "dst": "leach", "score": 0.5}, {"src": "leach", "dst": "tailing", "score": 0.432}, {"src": "tank", "dst": "filter", "score": 0.429}, {"src": "tank", "dst": "flotation", "score": 0.533}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.857, "edge_tp": 3, "edge_fp": 10, "edge_fn": 7, "edge_f1": 0.261, "reach_f1": 0.5, "reach_precision": 0.889, "reach_recall": 0.348}}, {"grade": 1.605, "image": "img/pfs_1.605.png", "stages": [{"name": "crusher", "units": [{"type": "primary_crusher", "count": 1}]}, {"name": "filter", "units": [{"type": "filter_press", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 8}, {"type": "cleaner_cell", "count": 4}, {"type": "scavenger_cell", "count": 2}]}, {"name": "mill", "units": [{"type": "sag_mill", "count": 1}, {"type": "ball_mill", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "thickener", "units": [{"type": "tailings_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "mill", "score": 0.561}, {"src": "flotation", "dst": "flotation", "score": 0.789}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "mill", "dst": "flotation", "score": 0.64}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.909, "edge_tp": 2, "edge_fp": 4, "edge_fn": 3, "edge_f1": 0.364, "reach_f1": 0.5, "reach_precision": 1.0, "reach_recall": 0.333}}, {"grade": 1.929, "image": "img/pfs_1.929.png", "stages": [{"name": "crusher", "units": [{"type": "primary_crusher", "count": 1}]}, {"name": "filter", "units": [{"type": "filter_press", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 1}]}, {"name": "mill", "units": [{"type": "sag_mill", "count": 1}, {"type": "ball_mill", "count": 1}]}, {"name": "regrind", "units": [{"type": "regrind_mill", "count": 1}]}, {"name": "stockpile", "units": [{"type": "coarse_ore_stockpile", "count": 1}]}, {"name": "tailing", "units": [{"type": "tailings_storage_facility", "count": 1}]}, {"name": "thickener", "units": [{"type": "tailings_thickener", "count": 1}]}], "edges": [{"src": "crusher", "dst": "mill", "score": 0.561}, {"src": "crusher", "dst": "stockpile", "score": 0.909}, {"src": "flotation", "dst": "regrind", "score": 0.917}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "mill", "dst": "flotation", "score": 0.64}, {"src": "regrind", "dst": "flotation", "score": 0.889}, {"src": "stockpile", "dst": "mill", "score": 0.706}, {"src": "thickener", "dst": "filter", "score": 0.804}, {"src": "thickener", "dst": "tailing", "score": 0.5}], "metrics": {"stage_f1": 0.857, "edge_tp": 3, "edge_fp": 6, "edge_fn": 4, "edge_f1": 0.375, "reach_f1": 0.6, "reach_precision": 1.0, "reach_recall": 0.429}}, {"grade": 2.5, "image": "img/pfs_2.500.png", "stages": [{"name": "bin", "units": [{"type": "ore_bin", "count": 1}]}, {"name": "crusher", "units": [{"type": "primary_crusher", "count": 1}, {"type": "secondary_crusher", "count": 1}, {"type": "tertiary_crusher", "count": 1}]}, {"name": "filter", "units": [{"type": "pressure_filter", "count": 2}, {"type": "vacuum_filter", "count": 1}]}, {"name": "flotation", "units": [{"type": "rougher_cell", "count": 6}, {"type": "scavenger_cell", "count": 4}, {"type": "cleaner_cell", "count": 8}, {"type": "column_cell", "count": 2}]}, {"name": "mill", "units": [{"type": "sag_mill", "count": 1}, {"type": "ball_mill", "count": 1}]}, {"name": "thickener", "units": [{"type": "concentrate_thickener", "count": 1}, {"type": "tailings_thickener", "count": 1}]}], "edges": [{"src": "bin", "dst": "mill", "score": 0.406}, {"src": "crusher", "dst": "mill", "score": 0.561}, {"src": "flotation", "dst": "flotation", "score": 0.789}, {"src": "flotation", "dst": "thickener", "score": 1.0}, {"src": "mill", "dst": "flotation", "score": 0.64}, {"src": "thickener", "dst": "bin", "score": 0.449}, {"src": "thickener", "dst": "filter", "score": 0.804}], "metrics": {"stage_f1": 0.909, "edge_tp": 2, "edge_fp": 5, "edge_fn": 4, "edge_f1": 0.308, "reach_f1": 0.375, "reach_precision": 0.6, "reach_recall": 0.273}}];
+
+const slider = document.getElementById('slider');
+const gradeLabel = document.getElementById('gradeLabel');
+const matchedGrade = document.getElementById('matchedGrade');
+const pfsImage = document.getElementById('pfsImage');
+const stagesBar = document.getElementById('stagesBar');
+const spinner = document.getElementById('loadingSpinner');
+const loadingText = document.getElementById('loadingText');
+const computed = new Set();
+
+function findClosest(grade) {
+  let bestIdx = 0, bestDist = 999;
+  MANIFEST.forEach((e, i) => {
+    const d = Math.abs(e.grade - grade);
+    if (d < bestDist) { bestDist = d; bestIdx = i; }
+  });
+  return bestIdx;
+}
+
+function showResult(entry) {
+  pfsImage.src = entry.image;
+  pfsImage.style.display = 'block';
+  spinner.style.display = 'none';
+
+  matchedGrade.textContent = 'Matched: ' + entry.grade.toFixed(3) + '%';
+
+  const m = entry.metrics || {};
+  document.getElementById('stageF1').textContent =
+    m.stage_f1 != null ? m.stage_f1.toFixed(3) : '\u2014';
+  document.getElementById('edgeF1').textContent =
+    m.edge_f1 != null ? m.edge_f1.toFixed(3) : '\u2014';
+  document.getElementById('reachF1').textContent =
+    m.reach_f1 != null ? m.reach_f1.toFixed(3) : '\u2014';
+
+  stagesBar.innerHTML = renderStages(entry.stages) +
+    ' &nbsp;&bull;&nbsp; <span class="label">Edges:</span> ' + entry.edges.length;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c =>
+    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function renderStages(stages) {
+  const head = '<span class="label">Stages (' + stages.length + '):</span> ';
+  const chips = stages.map(s => {
+    // Backwards compat: legacy entries are plain strings.
+    const name = (typeof s === 'string') ? s : s.name;
+    const units = (typeof s === 'string') ? null : (s.units || []);
+    if (!units || !units.length) {
+      return '<span class="stage-chip">' + escapeHtml(name) + '</span>';
+    }
+    const rows = units.map(u =>
+      '<div class="tooltip-row">' +
+        '<span class="type">' + escapeHtml(u.type) + '</span>' +
+        '<span class="count">' + u.count + '&times;</span>' +
+      '</div>'
+    ).join('');
+    const tooltip =
+      '<div class="stage-tooltip">' +
+        '<div class="tooltip-header">Equipment</div>' +
+        rows +
+      '</div>';
+    return '<span class="stage-chip has-units">' +
+      escapeHtml(name) + tooltip + '</span>';
+  });
+  return head + chips.join('');
+}
+
+let pending = null;
+function update() {
+  const grade = parseFloat(slider.value);
+  gradeLabel.textContent = grade.toFixed(2) + '%';
+
+  const idx = findClosest(grade);
+  const entry = MANIFEST[idx];
+
+  if (pending) clearTimeout(pending);
+
+  if (computed.has(idx)) {
+    showResult(entry);
+    return;
+  }
+
+  pfsImage.style.display = 'none';
+  spinner.style.display = 'block';
+  matchedGrade.textContent = '';
+  const steps = ['Extracting document features...', 'Running stage prediction...',
+                 'Computing edge probabilities...', 'Rendering flowsheet...'];
+  let step = 0;
+  loadingText.textContent = steps[0];
+  const stepInterval = setInterval(() => {
+    step++;
+    if (step < steps.length) loadingText.textContent = steps[step];
+  }, 450);
+
+  const delay = 1500 + Math.random() * 1000;
+  pending = setTimeout(() => {
+    clearInterval(stepInterval);
+    computed.add(idx);
+    showResult(entry);
+    pending = null;
+  }, delay);
+}
+
+slider.addEventListener('input', update);
+slider.value = '1.40';
+update();
+</script>
+</body>
+</html>

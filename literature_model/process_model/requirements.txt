@@ -1,0 +1,14 @@
+# process_model — dependencies for the Cu-sulfide digital twin + TEA.
+# Scoped to just this subpackage; does not pull in the larger pipeline deps.
+
+# Physics (sx.py uses numpy ODE integration)
+numpy>=1.26
+
+# Optimization (Project 2 — lightweight NPV optimizer)
+scipy>=1.11
+
+# BlueShift TEA Excel ingestion / calibration
+openpyxl>=3.1
+
+# Tests
+pytest>=8.0

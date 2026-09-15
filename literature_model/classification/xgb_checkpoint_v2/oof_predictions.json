@@ -1,0 +1,3555 @@
+[
+  {
+    "doc_id": "74f36e8cabd25962c42936f4e48a5a8eee0001840cfaf10ae4d3f066f86c7785",
+    "ground_truth": [
+      "adsorption",
+      "agglomeration",
+      "bin",
+      "crusher",
+      "input",
+      "leach",
+      "product_recovery",
+      "stockpile",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9858,
+      "agglomeration": 0.9986,
+      "electrowinning": 0.9342,
+      "input": 0.7364,
+      "product_recovery": 0.8761,
+      "solution_recovery": 0.2577
+    },
+    "xgb_stages": [
+      "agglomeration",
+      "adsorption",
+      "electrowinning",
+      "product_recovery",
+      "input",
+      "solution_recovery"
+    ]
+  },
+  {
+    "doc_id": "cb4ae61b0d6f76f9cd1ec40a22476ef28b0a2a2487c6bee66fdb441c3915470d",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "filter",
+      "flotation",
+      "input",
+      "mill",
+      "regrind",
+      "screen",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.9074,
+      "flotation": 0.8965,
+      "input": 0.8511,
+      "regrind": 0.9277,
+      "screen": 0.7904,
+      "thickener": 0.8525
+    },
+    "xgb_stages": [
+      "regrind",
+      "bin",
+      "flotation",
+      "thickener",
+      "input",
+      "screen"
+    ]
+  },
+  {
+    "doc_id": "6ee3ed68fafa5cfd3e162960af438d0af601da40ee701d15537e35a65c489b43",
+    "ground_truth": [
+      "adsorption",
+      "bin",
+      "crusher",
+      "cyclone",
+      "electrowinning",
+      "elution",
+      "filter",
+      "input",
+      "leach",
+      "product_recovery",
+      "screen",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9896,
+      "electrowinning": 0.8037,
+      "elution": 0.9899,
+      "gravity": 0.818,
+      "input": 0.7987,
+      "leach": 0.8995,
+      "product_recovery": 0.8887,
+      "screen": 0.9388
+    },
+    "xgb_stages": [
+      "elution",
+      "adsorption",
+      "screen",
+      "leach",
+      "product_recovery",
+      "gravity",
+      "electrowinning",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "c5c73d448135fb023b6f2db432b70bd3e5a45a0c7a5a54d41e24b03aa59cda46",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "filter",
+      "flotation",
+      "mill",
+      "regrind",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8103,
+      "filter": 0.8756,
+      "flotation": 0.8798,
+      "regrind": 0.9136
+    },
+    "xgb_stages": [
+      "regrind",
+      "flotation",
+      "filter",
+      "bin"
+    ]
+  },
+  {
+    "doc_id": "2030720a15eec690efe0187dd90c88ab69beb2215b662a21c5882edf48c69045",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "electrowinning",
+      "elution",
+      "gravity",
+      "leach",
+      "mill",
+      "screen",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "elution": 0.9265,
+      "gravity": 0.7913,
+      "product_recovery": 0.5465,
+      "screen": 0.8966,
+      "thickener": 0.7546
+    },
+    "xgb_stages": [
+      "elution",
+      "screen",
+      "gravity",
+      "thickener",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "d1ac0366b8665c4275f1163bdebf764c68429346e1be38ddfa3cb0f4a5c5c55f",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "filter",
+      "flotation",
+      "gravity",
+      "input",
+      "mill",
+      "screen",
+      "stockpile",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.7989,
+      "cyclone": 0.9457,
+      "filter": 0.8197,
+      "flotation": 0.8976,
+      "gravity": 0.8824,
+      "input": 0.8667,
+      "regrind": 0.3453,
+      "screen": 0.9448,
+      "stockpile": 0.9218,
+      "thickener": 0.793
+    },
+    "xgb_stages": [
+      "cyclone",
+      "screen",
+      "stockpile",
+      "flotation",
+      "gravity",
+      "input",
+      "filter",
+      "bin",
+      "thickener",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "8b6512fdc51707c23a03725256475092d343853ff8cc6b609df0b4bd8648b7e2",
+    "ground_truth": [
+      "adsorption",
+      "bin",
+      "crusher",
+      "electrowinning",
+      "elution",
+      "gravity",
+      "input",
+      "mill",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9815,
+      "electrowinning": 0.837,
+      "elution": 0.9938,
+      "gravity": 0.9784,
+      "input": 0.7653,
+      "product_recovery": 0.7933,
+      "screen": 0.9095
+    },
+    "xgb_stages": [
+      "elution",
+      "adsorption",
+      "gravity",
+      "screen",
+      "electrowinning",
+      "product_recovery",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "9a729e8bdd6126b701b8eaf8f034df875e53417327f7af6a81ef66afe093f330",
+    "ground_truth": [
+      "bin",
+      "cyclone",
+      "feeder",
+      "filter",
+      "input",
+      "kiln",
+      "mill",
+      "solution_recovery",
+      "stockpile",
+      "tailing",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.7739,
+      "cyclone": 0.8841,
+      "feeder": 0.9729,
+      "input": 0.8089,
+      "solution_recovery": 0.9897,
+      "stockpile": 0.8909,
+      "tank": 0.9765
+    },
+    "xgb_stages": [
+      "solution_recovery",
+      "tank",
+      "feeder",
+      "stockpile",
+      "cyclone",
+      "input",
+      "bin"
+    ]
+  },
+  {
+    "doc_id": "63a95c73bf71121108269f11a73f22f65fe204b1a9a5aaf34aed6a8e1ef52b18",
+    "ground_truth": [
+      "crusher",
+      "electrowinning",
+      "leach",
+      "mill",
+      "solution_recovery",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "electrowinning": 0.8867,
+      "leach": 0.8999,
+      "product_recovery": 0.7341,
+      "solution_recovery": 0.9851
+    },
+    "xgb_stages": [
+      "solution_recovery",
+      "leach",
+      "electrowinning",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "2e3e2fe76166e536c311de39304a49b9db930bcd69f16a43ba2c6491b756da62",
+    "ground_truth": [
+      "crusher",
+      "filter",
+      "flotation",
+      "gravity",
+      "mill",
+      "regrind",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "flotation": 0.8866,
+      "gravity": 0.97,
+      "regrind": 0.9657,
+      "thickener": 0.749
+    },
+    "xgb_stages": [
+      "gravity",
+      "regrind",
+      "flotation",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "e09674e9283afab824fe209da0cb5a0dabf49c4434dab6f212249685f91e26cf",
+    "ground_truth": [
+      "crusher",
+      "filter",
+      "flotation",
+      "gravity",
+      "mill",
+      "regrind",
+      "stockpile",
+      "tailing",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "filter": 0.8694,
+      "flotation": 0.8944,
+      "gravity": 0.8483,
+      "regrind": 0.8877,
+      "stockpile": 0.9354,
+      "tank": 0.8998
+    },
+    "xgb_stages": [
+      "stockpile",
+      "tank",
+      "flotation",
+      "regrind",
+      "filter",
+      "gravity"
+    ]
+  },
+  {
+    "doc_id": "1b573f82ded8422d54257e16e417b620b95ced98d505f1630468eeb85b511a72",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "filter",
+      "flotation",
+      "mill",
+      "stockpile",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8695,
+      "filter": 0.8572,
+      "flotation": 0.8944,
+      "mill": 0.88,
+      "stockpile": 0.9406
+    },
+    "xgb_stages": [
+      "stockpile",
+      "flotation",
+      "mill",
+      "bin",
+      "filter"
+    ]
+  },
+  {
+    "doc_id": "90fc68079f28750aaa81edb2fccae7e7702c7bed8cf0d89fa636b0da04999fc7",
+    "ground_truth": [
+      "adsorption",
+      "bin",
+      "crusher",
+      "electrowinning",
+      "elution",
+      "feeder",
+      "gravity",
+      "product_recovery",
+      "stockpile",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.985,
+      "bin": 0.7349,
+      "electrowinning": 0.9355,
+      "elution": 0.9875,
+      "gravity": 0.9537,
+      "product_recovery": 0.7736,
+      "stockpile": 0.9315
+    },
+    "xgb_stages": [
+      "elution",
+      "adsorption",
+      "gravity",
+      "electrowinning",
+      "stockpile",
+      "product_recovery",
+      "bin"
+    ]
+  },
+  {
+    "doc_id": "62d48542cd38bb707997a99fcc74a548500fe05aa2d38b96879075f0daf7d392",
+    "ground_truth": [
+      "agglomeration",
+      "crusher",
+      "electrowinning",
+      "flotation",
+      "leach",
+      "mill",
+      "solution_recovery",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "agglomeration": 0.9946,
+      "leach": 0.9067,
+      "product_recovery": 0.8718,
+      "solution_recovery": 0.9802
+    },
+    "xgb_stages": [
+      "agglomeration",
+      "solution_recovery",
+      "leach",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "c503c68ea41c18959b671990609bbe395d2df55d2b222246a151617701560c27",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "filter",
+      "flotation",
+      "regrind",
+      "screen",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8692,
+      "cyclone": 0.9061,
+      "flotation": 0.8997,
+      "input": 0.7927,
+      "regrind": 0.8639,
+      "screen": 0.9034,
+      "thickener": 0.7322
+    },
+    "xgb_stages": [
+      "cyclone",
+      "screen",
+      "flotation",
+      "bin",
+      "regrind",
+      "input",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "0b8a9180abd5a42ffcdf6f16543cfcd0814c64c9ef256158ad7e72abd733073a",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "feeder",
+      "filter",
+      "flotation",
+      "input",
+      "mill",
+      "regrind",
+      "screen",
+      "tailing",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8878,
+      "cyclone": 0.9584,
+      "feeder": 0.987,
+      "filter": 0.9399,
+      "flotation": 0.8965,
+      "input": 0.8072,
+      "screen": 0.9611,
+      "tank": 0.9869,
+      "thickener": 0.8524
+    },
+    "xgb_stages": [
+      "feeder",
+      "tank",
+      "screen",
+      "cyclone",
+      "filter",
+      "flotation",
+      "bin",
+      "thickener",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "06bfc0c88c69ec533170ced46b7c03d5aef147f3f729a5b009538110aa160093",
+    "ground_truth": [
+      "crusher",
+      "electrowinning",
+      "input",
+      "kiln",
+      "leach",
+      "product_recovery",
+      "screen",
+      "solution_recovery",
+      "stockpile",
+      "tailing",
+      "tank"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.986,
+      "input": 0.8633,
+      "kiln": 0.9838,
+      "product_recovery": 0.8339,
+      "solution_recovery": 0.9154,
+      "tank": 0.9707
+    },
+    "xgb_stages": [
+      "adsorption",
+      "kiln",
+      "tank",
+      "solution_recovery",
+      "input",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "2095f306bdb984e7f17433c645601f6c8414308ab517ae546dad065b9d4e7f90",
+    "ground_truth": [
+      "crusher",
+      "filter",
+      "flotation",
+      "input",
+      "mill",
+      "product_recovery",
+      "regrind",
+      "tailing",
+      "tank"
+    ],
+    "xgb_predicted": {
+      "flotation": 0.874,
+      "input": 0.7625,
+      "regrind": 0.8828,
+      "tank": 0.9351,
+      "thickener": 0.774
+    },
+    "xgb_stages": [
+      "tank",
+      "regrind",
+      "flotation",
+      "thickener",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "9b6ea5ecf8112816795d2059606d2f274788d89f282779e817bcc0bac77909cc",
+    "ground_truth": [
+      "gravity",
+      "leach",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "gravity": 0.9835,
+      "product_recovery": 0.5936,
+      "screen": 0.8253
+    },
+    "xgb_stages": [
+      "gravity",
+      "screen",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "04769d40c765895a77794dea6a5120ebb57404b9cfd9d5249cae24df4223f7bb",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "filter",
+      "flotation",
+      "regrind",
+      "stockpile",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8791,
+      "filter": 0.8433,
+      "flotation": 0.8788,
+      "regrind": 0.8881,
+      "stockpile": 0.9467,
+      "thickener": 0.8892
+    },
+    "xgb_stages": [
+      "stockpile",
+      "thickener",
+      "regrind",
+      "bin",
+      "flotation",
+      "filter"
+    ]
+  },
+  {
+    "doc_id": "2678f55ff6a551a898ff59146f1c7c4d2ea4b6d2d8618e777923758a24c20a6a",
+    "ground_truth": [
+      "adsorption",
+      "crusher",
+      "electrowinning",
+      "feeder",
+      "flotation",
+      "leach",
+      "mill",
+      "product_recovery",
+      "regrind",
+      "stockpile",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "flotation": 0.749,
+      "product_recovery": 0.821
+    },
+    "xgb_stages": [
+      "product_recovery",
+      "flotation"
+    ]
+  },
+  {
+    "doc_id": "8ef92fb6e95da2dcdfd464fa3bd5d16a0f747ff4adad9df8a64e7d78182d4f59",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "electrowinning",
+      "elution",
+      "gravity",
+      "leach",
+      "mill",
+      "product_recovery",
+      "screen",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.8876,
+      "electrowinning": 0.9553,
+      "elution": 0.9887,
+      "gravity": 0.9557,
+      "product_recovery": 0.9039,
+      "screen": 0.9096
+    },
+    "xgb_stages": [
+      "elution",
+      "gravity",
+      "electrowinning",
+      "screen",
+      "product_recovery",
+      "adsorption"
+    ]
+  },
+  {
+    "doc_id": "afbfdb42fcbb12e6458055c50e9fac0598b05929205f8f2f78aa2322715332a9",
+    "ground_truth": [
+      "adsorption",
+      "agglomeration",
+      "crusher",
+      "electrowinning",
+      "elution",
+      "input",
+      "leach",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.98,
+      "agglomeration": 0.994,
+      "electrowinning": 0.944,
+      "elution": 0.9671,
+      "input": 0.7899,
+      "leach": 0.8929,
+      "product_recovery": 0.8712
+    },
+    "xgb_stages": [
+      "agglomeration",
+      "adsorption",
+      "elution",
+      "electrowinning",
+      "leach",
+      "product_recovery",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "87adb2fc12749d796ba7ab82eac5c55667ccb741db9a1528ed3e221b2e3a506a",
+    "ground_truth": [
+      "crusher",
+      "cyclone",
+      "electrowinning",
+      "gravity",
+      "leach",
+      "product_recovery",
+      "screen",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "cyclone": 0.9349,
+      "electrowinning": 0.9423,
+      "elution": 0.6081,
+      "gravity": 0.9775,
+      "input": 0.8384,
+      "product_recovery": 0.5647,
+      "screen": 0.9159
+    },
+    "xgb_stages": [
+      "gravity",
+      "electrowinning",
+      "cyclone",
+      "screen",
+      "input",
+      "elution",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "0adc79d5abd1208e201d25aa425013c9c40e33731f1c6a78edbddd9f60ddd1ed",
+    "ground_truth": [
+      "adsorption",
+      "crusher",
+      "filter",
+      "flotation",
+      "input",
+      "kiln",
+      "leach",
+      "mill",
+      "product_recovery",
+      "regrind",
+      "stockpile",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "flotation": 0.7405,
+      "input": 0.4917,
+      "product_recovery": 0.6333
+    },
+    "xgb_stages": [
+      "flotation",
+      "product_recovery",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "9d309d021437dcee5c65381c4432f386250ca0abe9573c5aa01b3df03cad6ee3",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "feeder",
+      "filter",
+      "flotation",
+      "input",
+      "regrind",
+      "stockpile",
+      "tailing",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8636,
+      "cyclone": 0.9291,
+      "feeder": 0.9819,
+      "filter": 0.8984,
+      "flotation": 0.8788,
+      "input": 0.6754,
+      "regrind": 0.9633,
+      "stockpile": 0.9097,
+      "tank": 0.9701,
+      "thickener": 0.7881
+    },
+    "xgb_stages": [
+      "feeder",
+      "tank",
+      "regrind",
+      "cyclone",
+      "stockpile",
+      "filter",
+      "flotation",
+      "bin",
+      "thickener",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "b34e982c811d20fd5e7d831afb9fc80fbf971af5117769254de131b942cdbce7",
+    "ground_truth": [
+      "crusher",
+      "cyclone",
+      "filter",
+      "flotation",
+      "mill",
+      "tailing",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "cyclone": 0.9205,
+      "filter": 0.9006,
+      "flotation": 0.872,
+      "tank": 0.9438,
+      "thickener": 0.7821
+    },
+    "xgb_stages": [
+      "tank",
+      "cyclone",
+      "filter",
+      "flotation",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "010701e53c7a8712358debcf08813d5097f38e214672a7fea6a2f74109f8cec9",
+    "ground_truth": [
+      "crusher",
+      "leach",
+      "mill",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "product_recovery": 0.62,
+      "thickener": 0.8318
+    },
+    "xgb_stages": [
+      "thickener",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "b59d7625e8cbaa0c16d99d9e76d41cf6e4e0008ee73a1f83571f69bed2b61e36",
+    "ground_truth": [
+      "crusher",
+      "input",
+      "leach",
+      "product_recovery",
+      "solution_recovery",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "input": 0.806,
+      "leach": 0.9054,
+      "product_recovery": 0.7748,
+      "solution_recovery": 0.9866
+    },
+    "xgb_stages": [
+      "solution_recovery",
+      "leach",
+      "input",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "59742058749141b75b949ed1ada2d8c59b5a7db91ef6d65a9c7931f62f9bda40",
+    "ground_truth": [
+      "adsorption",
+      "crusher",
+      "cyclone",
+      "elution",
+      "gravity",
+      "kiln",
+      "mill",
+      "regrind",
+      "screen",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.8057,
+      "cyclone": 0.909,
+      "elution": 0.7306,
+      "gravity": 0.8798,
+      "input": 0.8195,
+      "kiln": 0.8333,
+      "screen": 0.9454
+    },
+    "xgb_stages": [
+      "screen",
+      "cyclone",
+      "gravity",
+      "kiln",
+      "input",
+      "adsorption",
+      "elution"
+    ]
+  },
+  {
+    "doc_id": "531e4e37d359be673086ba9532ca86ec570896253dba4a804481f30d4d336632",
+    "ground_truth": [
+      "crusher",
+      "filter",
+      "flotation",
+      "mill",
+      "regrind",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "filter": 0.8095,
+      "flotation": 0.8933,
+      "regrind": 0.8229
+    },
+    "xgb_stages": [
+      "flotation",
+      "regrind",
+      "filter"
+    ]
+  },
+  {
+    "doc_id": "37d72b6ea6dd36fce76cc957bbb446b8fa3df36bea361f3779b84cc192d3fd85",
+    "ground_truth": [
+      "adsorption",
+      "bin",
+      "electrowinning",
+      "filter",
+      "kiln",
+      "leach",
+      "product_recovery",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9825,
+      "agglomeration": 0.1889,
+      "electrowinning": 0.9185,
+      "input": 0.8523,
+      "kiln": 0.9775,
+      "product_recovery": 0.9053,
+      "solution_recovery": 0.2776
+    },
+    "xgb_stages": [
+      "adsorption",
+      "kiln",
+      "electrowinning",
+      "product_recovery",
+      "input",
+      "solution_recovery",
+      "agglomeration"
+    ]
+  },
+  {
+    "doc_id": "ab15cc13aee4f7a3381e9d46694dc5849acd0bdbaf051e50fc892efa95f50eb6",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "filter",
+      "flotation",
+      "input",
+      "mill",
+      "regrind",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.9055,
+      "filter": 0.8673,
+      "flotation": 0.8788,
+      "mill": 0.8811,
+      "regrind": 0.8848,
+      "thickener": 0.8279
+    },
+    "xgb_stages": [
+      "bin",
+      "regrind",
+      "mill",
+      "flotation",
+      "filter",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "212d44c440c8e8bbf9f26fce3ab7fb4e416365d64eac2cdc5650c0b3e2ab959d",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "feeder",
+      "filter",
+      "flotation",
+      "input",
+      "mill",
+      "regrind",
+      "screen",
+      "tailing",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8676,
+      "cyclone": 0.9309,
+      "feeder": 0.987,
+      "filter": 0.8885,
+      "flotation": 0.8862,
+      "input": 0.8588,
+      "mill": 0.8815,
+      "screen": 0.9513,
+      "tank": 0.9802,
+      "thickener": 0.7699
+    },
+    "xgb_stages": [
+      "feeder",
+      "tank",
+      "screen",
+      "cyclone",
+      "filter",
+      "flotation",
+      "mill",
+      "bin",
+      "input",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "304cebd3a54345684938132d7f00f3f456647184ac03475c88b3decb8c89222b",
+    "ground_truth": [
+      "agglomeration",
+      "crusher",
+      "electrowinning",
+      "leach",
+      "solution_recovery",
+      "tailing",
+      "tank"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9742,
+      "agglomeration": 0.9978,
+      "electrowinning": 0.8183,
+      "product_recovery": 0.9031,
+      "solution_recovery": 0.9971,
+      "tank": 0.9109
+    },
+    "xgb_stages": [
+      "agglomeration",
+      "solution_recovery",
+      "adsorption",
+      "tank",
+      "product_recovery",
+      "electrowinning"
+    ]
+  },
+  {
+    "doc_id": "b64737a9fed8150b273c921dc7be69bd194c44ca455b7eb0ba60d4d2b0f8abea",
+    "ground_truth": [
+      "crusher",
+      "filter",
+      "flotation",
+      "input",
+      "mill",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "flotation": 0.8908,
+      "input": 0.8463,
+      "mill": 0.9142,
+      "regrind": 0.3442
+    },
+    "xgb_stages": [
+      "mill",
+      "flotation",
+      "input",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "b960a75134aad35c9922403ced8f3d4c7fcf66e4a8dd95c6033015a0cd947008",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "filter",
+      "input",
+      "leach",
+      "mill",
+      "product_recovery",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8598,
+      "input": 0.8777,
+      "mill": 0.8713,
+      "product_recovery": 0.7104,
+      "thickener": 0.7421
+    },
+    "xgb_stages": [
+      "input",
+      "mill",
+      "bin",
+      "thickener",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "1fd5b8a116bd5ae5047004fbbeb365d3ef348db8a3c4a8f5c38ea0fe4da02d81",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "filter",
+      "flotation",
+      "input",
+      "regrind",
+      "screen",
+      "tailing",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.7942,
+      "cyclone": 0.9487,
+      "filter": 0.868,
+      "flotation": 0.893,
+      "input": 0.8222,
+      "regrind": 0.9279,
+      "screen": 0.9218,
+      "tank": 0.9543,
+      "thickener": 0.8198
+    },
+    "xgb_stages": [
+      "tank",
+      "cyclone",
+      "regrind",
+      "screen",
+      "flotation",
+      "filter",
+      "input",
+      "thickener",
+      "bin"
+    ]
+  },
+  {
+    "doc_id": "1f2364042041780a5c27612095fc0389cdacf1f49169e8491d34dc084b28842e",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "feeder",
+      "filter",
+      "flotation",
+      "input",
+      "screen",
+      "stockpile",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8752,
+      "cyclone": 0.9174,
+      "feeder": 0.9777,
+      "flotation": 0.8694,
+      "input": 0.804,
+      "stockpile": 0.936,
+      "thickener": 0.8216
+    },
+    "xgb_stages": [
+      "feeder",
+      "stockpile",
+      "cyclone",
+      "bin",
+      "flotation",
+      "thickener",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "c2ae867fd0cc50399f756717b0f646749dd8996446ae95b5580bf1798f4c1ae0",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "filter",
+      "flotation",
+      "regrind",
+      "stockpile",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8615,
+      "cyclone": 0.9423,
+      "regrind": 0.7219,
+      "stockpile": 0.9452,
+      "thickener": 0.7223
+    },
+    "xgb_stages": [
+      "stockpile",
+      "cyclone",
+      "bin",
+      "thickener",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "6ebe1e948a940bd24c25370f3811aaf8e563be8b258e7e5f01e8148f784fc888",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "feeder",
+      "filter",
+      "flotation",
+      "mill",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8695,
+      "feeder": 0.9788,
+      "flotation": 0.8773,
+      "thickener": 0.8226
+    },
+    "xgb_stages": [
+      "feeder",
+      "flotation",
+      "bin",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "666aae650129e523621169c07de649dcfbea83a25db8b2ec7f28899d15e88457",
+    "ground_truth": [
+      "crusher",
+      "filter",
+      "flotation",
+      "input",
+      "regrind",
+      "stockpile",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "flotation": 0.8866,
+      "input": 0.7872,
+      "regrind": 0.9578,
+      "stockpile": 0.9046,
+      "thickener": 0.7946
+    },
+    "xgb_stages": [
+      "regrind",
+      "stockpile",
+      "flotation",
+      "thickener",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "720e2adfec52f76a6c1b0b2775610edd6b34bd18d91f0b33a0feb99a1383adbf",
+    "ground_truth": [
+      "feeder",
+      "filter",
+      "product_recovery"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8923,
+      "feeder": 0.9905,
+      "product_recovery": 0.851,
+      "stockpile": 0.9423,
+      "thickener": 0.7389
+    },
+    "xgb_stages": [
+      "feeder",
+      "stockpile",
+      "bin",
+      "product_recovery",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "3049a85404a7d746576124229e9bf8ab0a353bd0d850f3ca7a2a113e94221955",
+    "ground_truth": [
+      "crusher",
+      "filter",
+      "flotation",
+      "regrind",
+      "stockpile",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "flotation": 0.8839,
+      "regrind": 0.9718,
+      "stockpile": 0.9449,
+      "thickener": 0.8283
+    },
+    "xgb_stages": [
+      "regrind",
+      "stockpile",
+      "flotation",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "9751b195842c6d556c45a5572e72e283c7b4c395b94b465ccca1e35de04e0393",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "filter",
+      "flotation",
+      "gravity",
+      "input",
+      "regrind",
+      "stockpile",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.7008,
+      "cyclone": 0.9604,
+      "filter": 0.8484,
+      "flotation": 0.8955,
+      "input": 0.8341,
+      "regrind": 0.8752,
+      "stockpile": 0.9516,
+      "thickener": 0.7966
+    },
+    "xgb_stages": [
+      "cyclone",
+      "stockpile",
+      "flotation",
+      "regrind",
+      "filter",
+      "input",
+      "thickener",
+      "bin"
+    ]
+  },
+  {
+    "doc_id": "74fe1340ca62e1d42afea7ead651fe845f6526bd95056ae0f1c48ff44f5a9949",
+    "ground_truth": [
+      "bin",
+      "electrowinning",
+      "filter",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "bin": 0.9148,
+      "product_recovery": 0.6216,
+      "solution_recovery": 0.5331
+    },
+    "xgb_stages": [
+      "bin",
+      "product_recovery",
+      "solution_recovery"
+    ]
+  },
+  {
+    "doc_id": "aec4aa31c5f464b7c861b3869c64e579c4541027665c917603d9e48fd03b5f69",
+    "ground_truth": [
+      "adsorption",
+      "crusher",
+      "leach",
+      "solution_recovery",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9727,
+      "electrowinning": 0.8726,
+      "product_recovery": 0.8046,
+      "solution_recovery": 0.9795
+    },
+    "xgb_stages": [
+      "solution_recovery",
+      "adsorption",
+      "electrowinning",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "ec407b92fa48bbc88753133e35403a2e0ee92208deb7a3eda470376080b50af5",
+    "ground_truth": [
+      "adsorption",
+      "crusher",
+      "electrowinning",
+      "leach",
+      "mill",
+      "product_recovery",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9797,
+      "electrowinning": 0.8308,
+      "product_recovery": 0.9339
+    },
+    "xgb_stages": [
+      "adsorption",
+      "product_recovery",
+      "electrowinning"
+    ]
+  },
+  {
+    "doc_id": "e252f2825cc04a64a8eedf33f22b2410913ba1ba94a1e5e0297fc63d48482b28",
+    "ground_truth": [
+      "crusher",
+      "input",
+      "mill",
+      "regrind",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "flotation": 0.893,
+      "input": 0.8397,
+      "regrind": 0.8742
+    },
+    "xgb_stages": [
+      "flotation",
+      "regrind",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "3f1199b98367f7c44c8f6525732d1599924722021d072526bb251e4bc54b6715",
+    "ground_truth": [
+      "crusher",
+      "flotation",
+      "input",
+      "mill",
+      "stockpile",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "flotation": 0.8733,
+      "input": 0.772,
+      "stockpile": 0.9488,
+      "thickener": 0.8529
+    },
+    "xgb_stages": [
+      "stockpile",
+      "flotation",
+      "thickener",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "86610ef88f47f547cb29a9bdb22819813ed4df586351d6d784135951b36ab532",
+    "ground_truth": [
+      "adsorption",
+      "agglomeration",
+      "bin",
+      "crusher",
+      "electrowinning",
+      "filter",
+      "input",
+      "kiln",
+      "leach",
+      "mill",
+      "product_recovery",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9837,
+      "electrowinning": 0.9594,
+      "kiln": 0.876,
+      "leach": 0.9178,
+      "product_recovery": 0.8955
+    },
+    "xgb_stages": [
+      "adsorption",
+      "electrowinning",
+      "leach",
+      "product_recovery",
+      "kiln"
+    ]
+  },
+  {
+    "doc_id": "b60b83e38bf9c9515da5bdb92184ec2eeaf7c0c04ca86ae7923b8c0b46079dab",
+    "ground_truth": [
+      "crusher",
+      "elution",
+      "filter",
+      "gravity",
+      "input",
+      "leach",
+      "mill",
+      "product_recovery",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "elution": 0.8312,
+      "gravity": 0.9742,
+      "input": 0.8674,
+      "product_recovery": 0.5823
+    },
+    "xgb_stages": [
+      "gravity",
+      "input",
+      "elution",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "e2e3afaf11a3bad5c82a0f721dee410365fdd93509c756586ec080ea32b21c7e",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "feeder",
+      "filter",
+      "flotation",
+      "input",
+      "mill",
+      "screen",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8905,
+      "cyclone": 0.9332,
+      "feeder": 0.9884,
+      "filter": 0.8075,
+      "flotation": 0.8764,
+      "input": 0.8038,
+      "regrind": 0.3797,
+      "screen": 0.963,
+      "thickener": 0.8431
+    },
+    "xgb_stages": [
+      "feeder",
+      "screen",
+      "cyclone",
+      "bin",
+      "flotation",
+      "thickener",
+      "filter",
+      "input",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "50d774464e78dc6fada4d7cf6363a7dddd0191b1a0470824c562a0efc57d5ec7",
+    "ground_truth": [
+      "crusher",
+      "cyclone",
+      "feeder",
+      "flotation",
+      "input",
+      "mill",
+      "stockpile"
+    ],
+    "xgb_predicted": {
+      "bin": 0.9087,
+      "cyclone": 0.8721,
+      "feeder": 0.9625,
+      "filter": 0.8214,
+      "flotation": 0.8788,
+      "input": 0.832,
+      "regrind": 0.3372,
+      "stockpile": 0.9477,
+      "thickener": 0.8677
+    },
+    "xgb_stages": [
+      "feeder",
+      "stockpile",
+      "bin",
+      "flotation",
+      "cyclone",
+      "thickener",
+      "input",
+      "filter",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "60ee842f886fc55f99bf1ee25c8c211fad4d2fd41c222c1282b59a3d2a6be975",
+    "ground_truth": [
+      "crusher",
+      "flotation",
+      "mill",
+      "regrind",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "filter": 0.9158,
+      "flotation": 0.887,
+      "mill": 0.8903,
+      "regrind": 0.9631,
+      "thickener": 0.7787
+    },
+    "xgb_stages": [
+      "regrind",
+      "filter",
+      "mill",
+      "flotation",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "2b20b220c2f03dda8ec044767ce4371964b955aaa7021deab78abcd85982741a",
+    "ground_truth": [
+      "crusher",
+      "cyclone",
+      "filter",
+      "flotation",
+      "gravity",
+      "input",
+      "mill",
+      "regrind",
+      "screen",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "cyclone": 0.9343,
+      "flotation": 0.8822,
+      "gravity": 0.8944,
+      "input": 0.8034,
+      "regrind": 0.915,
+      "screen": 0.9382
+    },
+    "xgb_stages": [
+      "screen",
+      "cyclone",
+      "regrind",
+      "gravity",
+      "flotation",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "3619dee2650b0751855c9cdc3becabeede5384a7f03bb2bcf0d269d86d2fb5fb",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "feeder",
+      "input",
+      "screen",
+      "stockpile",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8684,
+      "cyclone": 0.9176,
+      "feeder": 0.9733,
+      "filter": 0.8046,
+      "input": 0.8505,
+      "screen": 0.9556,
+      "stockpile": 0.9324,
+      "thickener": 0.7253
+    },
+    "xgb_stages": [
+      "feeder",
+      "screen",
+      "stockpile",
+      "cyclone",
+      "bin",
+      "input",
+      "filter",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "b57c0a6ac552042b0cb3fa8c3bf5390a8b7e197f38dfca86f0509a481b28ac20",
+    "ground_truth": [
+      "bin",
+      "cyclone",
+      "filter",
+      "input",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8759,
+      "cyclone": 0.9506,
+      "feeder": 0.9784,
+      "input": 0.8533,
+      "thickener": 0.8985
+    },
+    "xgb_stages": [
+      "feeder",
+      "cyclone",
+      "thickener",
+      "bin",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "bfd8849c1f49ee151c76797f8c93e625a189ce37645d426108b1319521dfc777",
+    "ground_truth": [
+      "cyclone",
+      "feeder",
+      "filter",
+      "flotation",
+      "regrind",
+      "screen",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8629,
+      "cyclone": 0.9034,
+      "feeder": 0.9794,
+      "filter": 0.9468,
+      "flotation": 0.8733,
+      "regrind": 0.9263,
+      "screen": 0.8701,
+      "thickener": 0.8043
+    },
+    "xgb_stages": [
+      "feeder",
+      "filter",
+      "regrind",
+      "cyclone",
+      "flotation",
+      "screen",
+      "bin",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "516133875d95c33684a94fc023fcee95e55393da5f353c50a5ce4c5908c952dc",
+    "ground_truth": [
+      "adsorption",
+      "crusher",
+      "electrowinning",
+      "elution",
+      "gravity",
+      "input",
+      "leach",
+      "mill",
+      "product_recovery",
+      "screen",
+      "stockpile",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9731,
+      "electrowinning": 0.9132,
+      "elution": 0.992,
+      "gravity": 0.9829,
+      "input": 0.8478,
+      "product_recovery": 0.7635,
+      "screen": 0.8407
+    },
+    "xgb_stages": [
+      "elution",
+      "gravity",
+      "adsorption",
+      "electrowinning",
+      "input",
+      "screen",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "f19b16e6846f8c401a1e8f76a36ce482629d63480aa69f870344f8ecd5c22a19",
+    "ground_truth": [
+      "crusher",
+      "electrowinning",
+      "elution",
+      "gravity",
+      "input",
+      "leach",
+      "mill",
+      "product_recovery",
+      "screen",
+      "stockpile",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "electrowinning": 0.9336,
+      "elution": 0.9916,
+      "gravity": 0.9859,
+      "input": 0.8285,
+      "product_recovery": 0.8322,
+      "screen": 0.9173
+    },
+    "xgb_stages": [
+      "elution",
+      "gravity",
+      "electrowinning",
+      "screen",
+      "product_recovery",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "a5522659df0ec4ae1bd549f42e9fdb3780190fe9ce1f95428257434302c5b40a",
+    "ground_truth": [
+      "adsorption",
+      "bin",
+      "crusher",
+      "electrowinning",
+      "gravity",
+      "input",
+      "leach",
+      "mill",
+      "product_recovery",
+      "tailing",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9058,
+      "gravity": 0.9688,
+      "input": 0.8087,
+      "leach": 0.9091,
+      "product_recovery": 0.9031
+    },
+    "xgb_stages": [
+      "gravity",
+      "leach",
+      "adsorption",
+      "product_recovery",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "aad15f406463df89848290b7c499d50acfed886868daa3299484d5df4013f796",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "filter",
+      "flotation",
+      "gravity",
+      "input",
+      "mill",
+      "product_recovery",
+      "regrind",
+      "screen",
+      "tailing",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "flotation": 0.8913,
+      "input": 0.7836,
+      "tank": 0.9247
+    },
+    "xgb_stages": [
+      "tank",
+      "flotation",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "915d676e6ae9ebcc0027baa14f79a49f041f91ffce275d7a57314c2a08d44a55",
+    "ground_truth": [
+      "adsorption",
+      "crusher",
+      "cyclone",
+      "electrowinning",
+      "elution",
+      "feeder",
+      "gravity",
+      "kiln",
+      "leach",
+      "screen",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9769,
+      "cyclone": 0.9466,
+      "electrowinning": 0.9439,
+      "elution": 0.9662,
+      "gravity": 0.9652,
+      "input": 0.8057,
+      "kiln": 0.9543,
+      "leach": 0.8966,
+      "product_recovery": 0.7261,
+      "screen": 0.9442
+    },
+    "xgb_stages": [
+      "adsorption",
+      "elution",
+      "gravity",
+      "kiln",
+      "cyclone",
+      "screen",
+      "electrowinning",
+      "leach",
+      "input",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "46e44bbb84cbc55f7331260fa7bd332195e5349c15bd4680c37e710ae291a544",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "filter",
+      "flotation",
+      "mill",
+      "stockpile",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.917,
+      "feeder": 0.935,
+      "filter": 0.822,
+      "flotation": 0.8833,
+      "regrind": 0.7312,
+      "stockpile": 0.9113,
+      "tank": 0.9223
+    },
+    "xgb_stages": [
+      "feeder",
+      "tank",
+      "bin",
+      "stockpile",
+      "flotation",
+      "filter",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "0620ba658d90ec4bee5dffe8fbd37e81337eb74a8535dfa5cf41664bd8078f5a",
+    "ground_truth": [
+      "adsorption",
+      "agglomeration",
+      "crusher",
+      "electrowinning",
+      "input",
+      "leach",
+      "product_recovery",
+      "screen",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9747,
+      "agglomeration": 0.9948,
+      "electrowinning": 0.9436,
+      "elution": 0.9782,
+      "input": 0.8644,
+      "leach": 0.934,
+      "product_recovery": 0.7359
+    },
+    "xgb_stages": [
+      "agglomeration",
+      "elution",
+      "adsorption",
+      "electrowinning",
+      "leach",
+      "input",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "da6b10cdde95bf1723e8ad91d25df7ee3f9a63be0d724e6e9e5376f39f76e5b3",
+    "ground_truth": [
+      "crusher",
+      "leach",
+      "mill",
+      "product_recovery",
+      "solution_recovery",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "leach": 0.9005,
+      "product_recovery": 0.9386,
+      "solution_recovery": 0.9972
+    },
+    "xgb_stages": [
+      "solution_recovery",
+      "product_recovery",
+      "leach"
+    ]
+  },
+  {
+    "doc_id": "03ef1b4b6f8cea4bc788a9478eb8b9b8369af2abeffa25cfa2a781cff765bd71",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "feeder",
+      "filter",
+      "flotation",
+      "input",
+      "regrind",
+      "screen",
+      "stockpile",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8724,
+      "cyclone": 0.9731,
+      "feeder": 0.9608,
+      "filter": 0.8827,
+      "flotation": 0.8494,
+      "input": 0.8455,
+      "regrind": 0.8936,
+      "screen": 0.8866,
+      "stockpile": 0.9393,
+      "thickener": 0.7011
+    },
+    "xgb_stages": [
+      "cyclone",
+      "feeder",
+      "stockpile",
+      "regrind",
+      "screen",
+      "filter",
+      "bin",
+      "flotation",
+      "input",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "e2a2ebe383e9917f27c10d3880be051147fbaf66c2bf86099650d39fc9900754",
+    "ground_truth": [
+      "adsorption",
+      "crusher",
+      "filter",
+      "gravity",
+      "input",
+      "mill",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "gravity": 0.9762,
+      "input": 0.8265,
+      "mill": 0.9021
+    },
+    "xgb_stages": [
+      "gravity",
+      "mill",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "3ffd2cb7f180b3f247e9818be2f5ae797ce61ad53a9f8501938b1d2ec50e0680",
+    "ground_truth": [
+      "crusher",
+      "elution",
+      "gravity",
+      "input",
+      "leach",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9784,
+      "electrowinning": 0.917,
+      "elution": 0.989,
+      "gravity": 0.9605,
+      "input": 0.8318,
+      "screen": 0.9254
+    },
+    "xgb_stages": [
+      "elution",
+      "adsorption",
+      "gravity",
+      "screen",
+      "electrowinning",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "2cef9aca69feb47f1d4df7c14073bb619bea539b375d1a10ffc75999bfdeb5aa",
+    "ground_truth": [
+      "crusher",
+      "cyclone",
+      "filter",
+      "flotation",
+      "mill",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "cyclone": 0.939,
+      "filter": 0.8362,
+      "mill": 0.879
+    },
+    "xgb_stages": [
+      "cyclone",
+      "mill",
+      "filter"
+    ]
+  },
+  {
+    "doc_id": "68ebf7d5e68d96db559706a814a5a26f604e1b39184df2ea7ecae4f23fa2a571",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "feeder",
+      "filter",
+      "flotation",
+      "input",
+      "leach",
+      "mill",
+      "product_recovery",
+      "screen",
+      "solution_recovery",
+      "stockpile",
+      "tailing",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "feeder": 0.965,
+      "input": 0.8069,
+      "solution_recovery": 0.2784,
+      "tank": 0.9447,
+      "thickener": 0.9113
+    },
+    "xgb_stages": [
+      "feeder",
+      "tank",
+      "thickener",
+      "input",
+      "solution_recovery"
+    ]
+  },
+  {
+    "doc_id": "656c3e89d5e58f63b781403e5f5302182a10cc67c59f9d98101bb51cc7c654df",
+    "ground_truth": [
+      "crusher",
+      "feeder",
+      "flotation",
+      "input",
+      "mill",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "feeder": 0.9587,
+      "flotation": 0.872,
+      "regrind": 0.3281,
+      "thickener": 0.739
+    },
+    "xgb_stages": [
+      "feeder",
+      "flotation",
+      "thickener",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "2b3279dbf348768908ce382f2ebbc2d8f857047a9c8b62603af91a1848b75dcf",
+    "ground_truth": [
+      "adsorption",
+      "crusher",
+      "electrowinning",
+      "elution",
+      "filter",
+      "leach",
+      "product_recovery",
+      "screen",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9884,
+      "electrowinning": 0.9316,
+      "elution": 0.9916,
+      "gravity": 0.7987,
+      "input": 0.7821,
+      "leach": 0.9165,
+      "product_recovery": 0.601
+    },
+    "xgb_stages": [
+      "elution",
+      "adsorption",
+      "electrowinning",
+      "leach",
+      "gravity",
+      "input",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "07246f1740bdfa1d7fe3031624a3a5425d6319ddaaa9f43a86c3a56174ca5652",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "filter",
+      "flotation",
+      "input",
+      "mill",
+      "regrind",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8399,
+      "flotation": 0.8832,
+      "regrind": 0.9124,
+      "thickener": 0.7552
+    },
+    "xgb_stages": [
+      "regrind",
+      "flotation",
+      "bin",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "99a0a30ef7eecd2fb2d7498d9e8f29cf251db1dbffec5cf84f98ed9ae47d1be2",
+    "ground_truth": [
+      "crusher",
+      "input",
+      "leach",
+      "screen"
+    ],
+    "xgb_predicted": {
+      "input": 0.843,
+      "leach": 0.897,
+      "product_recovery": 0.9689,
+      "screen": 0.9494
+    },
+    "xgb_stages": [
+      "product_recovery",
+      "screen",
+      "leach",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "7d0f0bc4502d2d0ed46c527d37a40f909203a82011cbb7e3cfd28bb63362e47d",
+    "ground_truth": [
+      "flotation",
+      "mill",
+      "screen",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "flotation": 0.8788,
+      "regrind": 0.9539,
+      "screen": 0.9185
+    },
+    "xgb_stages": [
+      "regrind",
+      "screen",
+      "flotation"
+    ]
+  },
+  {
+    "doc_id": "71ca417cae8669c4070d9a90e1cd79c3c206ccc9a7da07e8fa29618d81fe016c",
+    "ground_truth": [
+      "bin",
+      "input",
+      "leach",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8664,
+      "input": 0.756
+    },
+    "xgb_stages": [
+      "bin",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "d457a1c5f93dc59450fd506dfe8e00bbbca1c1010e82b29c5c78d4e224664b08",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "feeder",
+      "filter",
+      "flotation",
+      "gravity",
+      "mill",
+      "stockpile",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.7943,
+      "cyclone": 0.8935,
+      "feeder": 0.9868,
+      "flotation": 0.8866,
+      "stockpile": 0.9413,
+      "thickener": 0.779
+    },
+    "xgb_stages": [
+      "feeder",
+      "stockpile",
+      "cyclone",
+      "flotation",
+      "bin",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "dba8c1fe38953db9c042d063e607dff408d43706979329919d3f9b47943463af",
+    "ground_truth": [
+      "agglomeration",
+      "bin",
+      "crusher",
+      "feeder",
+      "filter",
+      "flotation",
+      "leach",
+      "mill",
+      "product_recovery",
+      "tailing",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8627,
+      "flotation": 0.7014,
+      "product_recovery": 0.6708,
+      "tank": 0.9782
+    },
+    "xgb_stages": [
+      "tank",
+      "bin",
+      "flotation",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "7b232a3e872c59da07e0c4116a3630d4aa42fbc950072e310a1cc0bd40fa85ae",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "filter",
+      "flotation",
+      "gravity",
+      "input",
+      "leach",
+      "mill",
+      "regrind",
+      "stockpile",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8368,
+      "flotation": 0.8693,
+      "regrind": 0.4791,
+      "stockpile": 0.9499,
+      "thickener": 0.8262
+    },
+    "xgb_stages": [
+      "stockpile",
+      "flotation",
+      "bin",
+      "thickener",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "0750a653cc642cc500f1581a1df54227f75b5efd83ef85de3c09b0169bd94f72",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "filter",
+      "flotation",
+      "product_recovery",
+      "stockpile",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8097,
+      "filter": 0.8782,
+      "flotation": 0.8688,
+      "regrind": 0.676,
+      "stockpile": 0.9503,
+      "thickener": 0.8374
+    },
+    "xgb_stages": [
+      "stockpile",
+      "filter",
+      "flotation",
+      "thickener",
+      "bin",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "0da58f7ed0d44f2ee8162a3aafe398176eddb2f338a6292b78b3957360f964aa",
+    "ground_truth": [
+      "adsorption",
+      "bin",
+      "crusher",
+      "electrowinning",
+      "input",
+      "kiln",
+      "product_recovery",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9868,
+      "bin": 0.9266,
+      "electrowinning": 0.9492,
+      "input": 0.8276,
+      "kiln": 0.9614,
+      "product_recovery": 0.9033
+    },
+    "xgb_stages": [
+      "adsorption",
+      "kiln",
+      "electrowinning",
+      "bin",
+      "product_recovery",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "4966f88ca9ca323653f790811d5552099325b6f7ef0c2b2832010b0ea4078b67",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "filter",
+      "flotation",
+      "mill",
+      "regrind",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8859,
+      "flotation": 0.8814,
+      "regrind": 0.923,
+      "thickener": 0.8103
+    },
+    "xgb_stages": [
+      "regrind",
+      "bin",
+      "flotation",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "cf9911d82054e99302d4b245318eb7afe867119a4800e510bdcd8e786e15d044",
+    "ground_truth": [
+      "crusher",
+      "feeder",
+      "filter",
+      "flotation",
+      "gravity",
+      "leach",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "feeder": 0.8809,
+      "flotation": 0.8316,
+      "gravity": 0.9545,
+      "mill": 0.8979,
+      "thickener": 0.7668
+    },
+    "xgb_stages": [
+      "gravity",
+      "mill",
+      "feeder",
+      "flotation",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "b2fa646dc2a96f3ef01344c1dd71353a0676714fbe99e7613d63bb161db55e41",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "filter",
+      "flotation",
+      "input",
+      "mill",
+      "screen",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8678,
+      "cyclone": 0.9476,
+      "input": 0.8471,
+      "screen": 0.9281,
+      "thickener": 0.7157
+    },
+    "xgb_stages": [
+      "cyclone",
+      "screen",
+      "bin",
+      "input",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "149cfa307d537eefbfbd3c3c71079c5cac76267890033c2c1bf7dc26d11902d1",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "flotation",
+      "input",
+      "mill",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8768,
+      "flotation": 0.8954,
+      "input": 0.8749,
+      "mill": 0.8716,
+      "regrind": 0.4265,
+      "thickener": 0.8785
+    },
+    "xgb_stages": [
+      "flotation",
+      "thickener",
+      "bin",
+      "input",
+      "mill",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "5eda678bf92618ac3de0cf5ec8f24fb295ea4cb6adfb17ce2197e23049dd4624",
+    "ground_truth": [
+      "adsorption",
+      "crusher",
+      "electrowinning",
+      "gravity",
+      "leach",
+      "mill",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9729,
+      "electrowinning": 0.9329,
+      "elution": 0.9032,
+      "gravity": 0.9752
+    },
+    "xgb_stages": [
+      "gravity",
+      "adsorption",
+      "electrowinning",
+      "elution"
+    ]
+  },
+  {
+    "doc_id": "d60a560db53d0602fea0636e38a1f583bc7ec31839d4079ab6762538900361f9",
+    "ground_truth": [
+      "adsorption",
+      "agglomeration",
+      "bin",
+      "crusher",
+      "elution",
+      "input",
+      "kiln",
+      "leach",
+      "product_recovery"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9825,
+      "agglomeration": 0.9958,
+      "electrowinning": 0.8995,
+      "elution": 0.8316,
+      "input": 0.8329,
+      "kiln": 0.9046,
+      "product_recovery": 0.7453
+    },
+    "xgb_stages": [
+      "agglomeration",
+      "adsorption",
+      "kiln",
+      "electrowinning",
+      "input",
+      "elution",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "b575bd3cf850b38bc9bdbb642f1b9bd2f1311ccc7b4b19751e70bb0f917fc2e7",
+    "ground_truth": [
+      "crusher",
+      "cyclone",
+      "feeder",
+      "filter",
+      "flotation",
+      "gravity",
+      "regrind",
+      "screen",
+      "stockpile",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.7061,
+      "cyclone": 0.9486,
+      "feeder": 0.9283,
+      "filter": 0.8257,
+      "flotation": 0.7569,
+      "gravity": 0.9073,
+      "regrind": 0.807,
+      "screen": 0.9507,
+      "stockpile": 0.9354,
+      "thickener": 0.7754
+    },
+    "xgb_stages": [
+      "screen",
+      "cyclone",
+      "stockpile",
+      "feeder",
+      "gravity",
+      "filter",
+      "regrind",
+      "thickener",
+      "flotation",
+      "bin"
+    ]
+  },
+  {
+    "doc_id": "c8c29e27c7336c413be04fc8701d75bc17ffa1ff24e96f84676284d3b8ef842c",
+    "ground_truth": [
+      "input"
+    ],
+    "xgb_predicted": {
+      "bin": 0.6581,
+      "input": 0.7981,
+      "screen": 0.9023
+    },
+    "xgb_stages": [
+      "screen",
+      "input",
+      "bin"
+    ]
+  },
+  {
+    "doc_id": "e22e8a6031fe337272971103b90f05d729b66e902fe69d177c55f81881b5e3b3",
+    "ground_truth": [
+      "bin",
+      "electrowinning",
+      "filter",
+      "solution_recovery",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "filter": 0.82,
+      "product_recovery": 0.8919,
+      "solution_recovery": 0.9907
+    },
+    "xgb_stages": [
+      "solution_recovery",
+      "product_recovery",
+      "filter"
+    ]
+  },
+  {
+    "doc_id": "526aa03289338398c83d74c74e27b309a2e6d9d2e6a63b529b72ef2c6eb66921",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "flotation",
+      "input",
+      "regrind",
+      "screen",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8838,
+      "flotation": 0.8944,
+      "input": 0.7708,
+      "regrind": 0.745,
+      "screen": 0.9314,
+      "thickener": 0.8188
+    },
+    "xgb_stages": [
+      "screen",
+      "flotation",
+      "bin",
+      "thickener",
+      "input",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "476eb7bf16d8381d14c878853196a5c7404bfeefe2ed409177bbbf6338dd3d67",
+    "ground_truth": [
+      "crusher",
+      "filter",
+      "flotation",
+      "leach",
+      "mill",
+      "solution_recovery",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "flotation": 0.7345,
+      "mill": 0.8867,
+      "regrind": 0.3842,
+      "solution_recovery": 0.9437
+    },
+    "xgb_stages": [
+      "solution_recovery",
+      "mill",
+      "flotation",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "93e9878330224ec7f27846a4b589be6679e50ab6a35bfa6cc862ccbe99660f7d",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "filter",
+      "flotation",
+      "input",
+      "mill",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "bin": 0.7456,
+      "filter": 0.8714,
+      "flotation": 0.8917,
+      "input": 0.8328,
+      "thickener": 0.7724
+    },
+    "xgb_stages": [
+      "flotation",
+      "filter",
+      "input",
+      "thickener",
+      "bin"
+    ]
+  },
+  {
+    "doc_id": "40f0e4e33d394b3fd92578b3fe97901985f9d8aa5f90aa726ec7ac901faeaa85",
+    "ground_truth": [
+      "adsorption",
+      "flotation",
+      "leach",
+      "product_recovery",
+      "regrind"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9861,
+      "product_recovery": 0.9125,
+      "regrind": 0.431
+    },
+    "xgb_stages": [
+      "adsorption",
+      "product_recovery",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "f16890adb41c12a81aaa0a101aba8627833c3e60f3e232ba6104d77f6ad07991",
+    "ground_truth": [
+      "crusher",
+      "feeder",
+      "filter",
+      "flotation",
+      "mill"
+    ],
+    "xgb_predicted": {
+      "bin": 0.6926,
+      "feeder": 0.98,
+      "filter": 0.8639,
+      "flotation": 0.8773,
+      "mill": 0.9349,
+      "thickener": 0.7973
+    },
+    "xgb_stages": [
+      "feeder",
+      "mill",
+      "flotation",
+      "filter",
+      "thickener",
+      "bin"
+    ]
+  },
+  {
+    "doc_id": "4944c076d3e32196db7e787ec1a48594ed299a4eeaca3cba4a6a3cead78a0433",
+    "ground_truth": [
+      "crusher",
+      "cyclone",
+      "filter",
+      "flotation",
+      "input",
+      "mill",
+      "screen",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8336,
+      "cyclone": 0.9263,
+      "flotation": 0.8837,
+      "input": 0.8,
+      "mill": 0.8896,
+      "screen": 0.9416
+    },
+    "xgb_stages": [
+      "screen",
+      "cyclone",
+      "mill",
+      "flotation",
+      "bin",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "3f5b8f2b82c3b960f0d879a2c2e5390d42b211aa30aa580c684d1d2b031633d5",
+    "ground_truth": [
+      "crusher",
+      "cyclone",
+      "electrowinning",
+      "elution",
+      "filter",
+      "input",
+      "leach",
+      "product_recovery",
+      "screen",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9447,
+      "electrowinning": 0.8597,
+      "elution": 0.9897,
+      "gravity": 0.9409,
+      "input": 0.8589,
+      "product_recovery": 0.9409,
+      "screen": 0.9238
+    },
+    "xgb_stages": [
+      "elution",
+      "adsorption",
+      "gravity",
+      "product_recovery",
+      "screen",
+      "electrowinning",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "799a8d31c3b37e13a600892810fd6f981e3c7b4aaf9ce5be4b3a30e43bf67778",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "filter",
+      "input",
+      "kiln",
+      "leach",
+      "product_recovery",
+      "solution_recovery",
+      "stockpile",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.6942,
+      "input": 0.7525,
+      "kiln": 0.924,
+      "product_recovery": 0.8954,
+      "solution_recovery": 0.9962
+    },
+    "xgb_stages": [
+      "solution_recovery",
+      "kiln",
+      "product_recovery",
+      "input",
+      "bin"
+    ]
+  },
+  {
+    "doc_id": "192032642338cf573b3a281f5c3f45af256081b541ce1593c2d0b44d661ff786",
+    "ground_truth": [
+      "bin",
+      "feeder",
+      "filter",
+      "flotation",
+      "mill",
+      "screen",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.6325,
+      "cyclone": 0.9517,
+      "feeder": 0.9797,
+      "filter": 0.885,
+      "flotation": 0.873,
+      "regrind": 0.3102,
+      "thickener": 0.7989
+    },
+    "xgb_stages": [
+      "feeder",
+      "cyclone",
+      "filter",
+      "flotation",
+      "thickener",
+      "bin",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "4926b1a9d3db0d540095fa7cbbbd67560c4c34ed8ed299f79f9636e58533ea0d",
+    "ground_truth": [
+      "adsorption",
+      "crusher",
+      "cyclone",
+      "flotation",
+      "gravity",
+      "input",
+      "leach",
+      "product_recovery",
+      "regrind",
+      "screen",
+      "stockpile",
+      "tailing",
+      "tank"
+    ],
+    "xgb_predicted": {
+      "gravity": 0.9788,
+      "input": 0.8221,
+      "regrind": 0.3782,
+      "screen": 0.9448,
+      "stockpile": 0.95,
+      "tank": 0.9659
+    },
+    "xgb_stages": [
+      "gravity",
+      "tank",
+      "stockpile",
+      "screen",
+      "input",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "eb774d88db89587174627b6dceb9d784e33a2ec47f7e0f42b8a757093c009fbd",
+    "ground_truth": [
+      "electrowinning",
+      "feeder",
+      "filter",
+      "leach",
+      "solution_recovery",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "electrowinning": 0.8984,
+      "feeder": 0.9831,
+      "product_recovery": 0.83,
+      "solution_recovery": 0.9981
+    },
+    "xgb_stages": [
+      "solution_recovery",
+      "feeder",
+      "electrowinning",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "b077d872046a3ced9dc57e17ff32ff33ff6479b343abde1a1f5808419b64ec27",
+    "ground_truth": [
+      "crusher",
+      "electrowinning",
+      "elution",
+      "flotation",
+      "input",
+      "leach",
+      "mill",
+      "product_recovery",
+      "regrind",
+      "screen",
+      "stockpile",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "gravity": 0.9655,
+      "input": 0.7842
+    },
+    "xgb_stages": [
+      "gravity",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "2fa7420a743765d5e9b86ede0612847ccac2d043ea735e881a5c8cc6cf384027",
+    "ground_truth": [
+      "adsorption",
+      "bin",
+      "crusher",
+      "cyclone",
+      "electrowinning",
+      "gravity",
+      "input",
+      "leach",
+      "product_recovery",
+      "screen",
+      "stockpile",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.8897,
+      "gravity": 0.9732,
+      "input": 0.7799,
+      "leach": 0.897,
+      "product_recovery": 0.9467,
+      "screen": 0.9519
+    },
+    "xgb_stages": [
+      "gravity",
+      "screen",
+      "product_recovery",
+      "leach",
+      "adsorption",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "d2af4ecb73284e8dfcc1d5c226f9526c21bf348b6ba5578d37f0170b249d525e",
+    "ground_truth": [
+      "adsorption",
+      "bin",
+      "crusher",
+      "cyclone",
+      "electrowinning",
+      "elution",
+      "input",
+      "kiln",
+      "leach",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.985,
+      "bin": 0.8792,
+      "electrowinning": 0.8543,
+      "elution": 0.9687,
+      "input": 0.7813,
+      "kiln": 0.9713,
+      "product_recovery": 0.5823
+    },
+    "xgb_stages": [
+      "adsorption",
+      "kiln",
+      "elution",
+      "bin",
+      "electrowinning",
+      "input",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "e5ab62e65c4c90c244ceefcca8953d29e6eb6a216d447cb9071f9e174a2026e7",
+    "ground_truth": [
+      "crusher",
+      "filter",
+      "flotation",
+      "input",
+      "mill",
+      "product_recovery",
+      "regrind",
+      "screen",
+      "solution_recovery",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "filter": 0.8584,
+      "flotation": 0.8591,
+      "input": 0.838
+    },
+    "xgb_stages": [
+      "flotation",
+      "filter",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "010e4b93638ce549fc9de73861dda7fe7ce9325a18d65d6a9d1894c1e444551d",
+    "ground_truth": [
+      "crusher",
+      "flotation",
+      "gravity",
+      "input",
+      "leach",
+      "mill",
+      "product_recovery",
+      "screen",
+      "tailing",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "flotation": 0.796,
+      "gravity": 0.9726,
+      "input": 0.8439,
+      "product_recovery": 0.5674,
+      "screen": 0.945,
+      "tank": 0.8996
+    },
+    "xgb_stages": [
+      "gravity",
+      "screen",
+      "tank",
+      "input",
+      "flotation",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "44ff213d6490c2ffbcfc67ffb3efcf5cb1539617f5b20a9372f0aeb0e90defff",
+    "ground_truth": [
+      "flotation",
+      "regrind",
+      "tailing",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "filter": 0.882,
+      "flotation": 0.864,
+      "regrind": 0.8112,
+      "tank": 0.9405
+    },
+    "xgb_stages": [
+      "tank",
+      "filter",
+      "flotation",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "c67a90c95e76f1dfe95802d274b814692c6d5ad69663d9a0ebbb484a8dc9272c",
+    "ground_truth": [
+      "adsorption",
+      "crusher",
+      "electrowinning",
+      "filter",
+      "mill",
+      "product_recovery",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9822,
+      "electrowinning": 0.9494,
+      "leach": 0.8973,
+      "product_recovery": 0.8254
+    },
+    "xgb_stages": [
+      "adsorption",
+      "electrowinning",
+      "leach",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "b27c742e54ac21fe10360fcc48e87708bd18028df3e4f9e42b835302347d5be9",
+    "ground_truth": [
+      "adsorption",
+      "crusher",
+      "elution",
+      "flotation",
+      "input",
+      "leach",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9894,
+      "electrowinning": 0.9428,
+      "elution": 0.9585,
+      "gravity": 0.7924,
+      "input": 0.7433
+    },
+    "xgb_stages": [
+      "adsorption",
+      "elution",
+      "electrowinning",
+      "gravity",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "ca31e871aeaf743b9457978c79a77cb97de990095d3ae8c59ac9b38a6a73aeaa",
+    "ground_truth": [
+      "crusher",
+      "input",
+      "leach",
+      "mill",
+      "product_recovery",
+      "solution_recovery",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "input": 0.8654,
+      "leach": 0.8991,
+      "product_recovery": 0.9029,
+      "solution_recovery": 0.9865
+    },
+    "xgb_stages": [
+      "solution_recovery",
+      "product_recovery",
+      "leach",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "909454a8af210ce5cf7aa799946576616856e360255e42cf13801be32c5c762c",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "cyclone",
+      "feeder",
+      "filter",
+      "flotation",
+      "input",
+      "mill",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8836,
+      "cyclone": 0.94,
+      "feeder": 0.967,
+      "filter": 0.8402,
+      "flotation": 0.8744,
+      "input": 0.8315,
+      "thickener": 0.8129
+    },
+    "xgb_stages": [
+      "feeder",
+      "cyclone",
+      "bin",
+      "flotation",
+      "filter",
+      "input",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "8e7a97cdb325e1163e556f88f607330f56cc904aa90e6d6d344079d0e58ba88f",
+    "ground_truth": [
+      "crusher",
+      "cyclone",
+      "flotation",
+      "input",
+      "mill",
+      "screen"
+    ],
+    "xgb_predicted": {
+      "bin": 0.6835,
+      "cyclone": 0.9074,
+      "flotation": 0.8966,
+      "input": 0.7844,
+      "regrind": 0.3817,
+      "screen": 0.9497
+    },
+    "xgb_stages": [
+      "screen",
+      "cyclone",
+      "flotation",
+      "input",
+      "bin",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "a1703956ce400f6cfa4613372f7b1c56d065fc5fbb68bc2abc695aeaccadceea",
+    "ground_truth": [
+      "crusher",
+      "input",
+      "screen"
+    ],
+    "xgb_predicted": {
+      "input": 0.8974,
+      "screen": 0.9538
+    },
+    "xgb_stages": [
+      "screen",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "797c9028f9db7123e33e054f79a66da8de4115061140aae241392b38686d8312",
+    "ground_truth": [
+      "bin",
+      "feeder",
+      "filter",
+      "flotation",
+      "mill",
+      "regrind",
+      "stockpile",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.9095,
+      "feeder": 0.9791,
+      "filter": 0.8431,
+      "flotation": 0.8814,
+      "regrind": 0.9623,
+      "stockpile": 0.9512,
+      "thickener": 0.8248
+    },
+    "xgb_stages": [
+      "feeder",
+      "regrind",
+      "stockpile",
+      "bin",
+      "flotation",
+      "filter",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "61ad0aa687eecc902c266267a4d4dbe7c6b91630da990d2dd052492032d58134",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "input",
+      "leach",
+      "mill",
+      "product_recovery",
+      "screen",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "input": 0.8543,
+      "screen": 0.8815,
+      "thickener": 0.7668
+    },
+    "xgb_stages": [
+      "screen",
+      "input",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "a7de176b1ee97d4512b7dd152f79bca222bb0e0abb19e796bfb8f27b42a54938",
+    "ground_truth": [
+      "flotation",
+      "mill",
+      "regrind"
+    ],
+    "xgb_predicted": {
+      "filter": 0.8381,
+      "flotation": 0.8884,
+      "regrind": 0.7802,
+      "thickener": 0.7539
+    },
+    "xgb_stages": [
+      "flotation",
+      "filter",
+      "regrind",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "fafb2a9d4bb14522dfe6f65b58781fe052463456de14673e844ee502a0d6718d",
+    "ground_truth": [
+      "crusher",
+      "flotation",
+      "input",
+      "mill"
+    ],
+    "xgb_predicted": {
+      "flotation": 0.8109,
+      "input": 0.7509
+    },
+    "xgb_stages": [
+      "flotation",
+      "input"
+    ]
+  },
+  {
+    "doc_id": "17fa2abb8be6ab1c6ce0fb2f21cac2d565c2cd721c0a0de422ea872cb5f73032",
+    "ground_truth": [
+      "crusher",
+      "electrowinning",
+      "gravity",
+      "input",
+      "leach",
+      "product_recovery",
+      "screen",
+      "stockpile",
+      "tailing",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "gravity": 0.9693,
+      "input": 0.8634,
+      "kiln": 0.1735,
+      "product_recovery": 0.8287,
+      "screen": 0.9223,
+      "stockpile": 0.8853
+    },
+    "xgb_stages": [
+      "gravity",
+      "screen",
+      "stockpile",
+      "input",
+      "product_recovery",
+      "kiln"
+    ]
+  },
+  {
+    "doc_id": "5b4655cac00dea000bb792a920e53cce50d73f0c80698f415c8c48eb953d159b",
+    "ground_truth": [
+      "adsorption",
+      "electrowinning",
+      "elution",
+      "input",
+      "leach",
+      "tailing"
+    ],
+    "xgb_predicted": {
+      "adsorption": 0.9716,
+      "electrowinning": 0.8805,
+      "elution": 0.9773,
+      "gravity": 0.7617,
+      "input": 0.8289,
+      "leach": 0.9038,
+      "product_recovery": 0.8414,
+      "screen": 0.9484
+    },
+    "xgb_stages": [
+      "elution",
+      "adsorption",
+      "screen",
+      "leach",
+      "electrowinning",
+      "product_recovery",
+      "input",
+      "gravity"
+    ]
+  },
+  {
+    "doc_id": "927821e9150a531e847acaa013ad21d5145371526e767a7be69d73eecb672bed",
+    "ground_truth": [
+      "bin",
+      "crusher",
+      "elution",
+      "feeder",
+      "flotation",
+      "gravity",
+      "leach",
+      "mill",
+      "product_recovery",
+      "screen"
+    ],
+    "xgb_predicted": {
+      "bin": 0.6557,
+      "gravity": 0.8451,
+      "product_recovery": 0.5382,
+      "screen": 0.8843,
+      "thickener": 0.7249
+    },
+    "xgb_stages": [
+      "screen",
+      "gravity",
+      "thickener",
+      "bin",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "0dd83b8f091657fe41249524b41972338ec1842d635582a5203b92019c1a0369",
+    "ground_truth": [
+      "crusher",
+      "flotation",
+      "product_recovery",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "flotation": 0.8733,
+      "mill": 0.8875,
+      "product_recovery": 0.9143,
+      "thickener": 0.8595
+    },
+    "xgb_stages": [
+      "product_recovery",
+      "mill",
+      "flotation",
+      "thickener"
+    ]
+  },
+  {
+    "doc_id": "83ba7bd953d32859d457d4811d6059e88f67202fb78037ce676ed73e1df49ccd",
+    "ground_truth": [
+      "crusher",
+      "flotation",
+      "mill",
+      "stockpile",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "filter": 0.8293,
+      "flotation": 0.8814,
+      "regrind": 0.4047,
+      "stockpile": 0.9475,
+      "thickener": 0.8649
+    },
+    "xgb_stages": [
+      "stockpile",
+      "flotation",
+      "thickener",
+      "filter",
+      "regrind"
+    ]
+  },
+  {
+    "doc_id": "f815168c5729a281790c3877c9ab4c75d2999e02948233b1f274d012072f0d61",
+    "ground_truth": [
+      "adsorption",
+      "feeder",
+      "filter",
+      "flotation",
+      "leach",
+      "product_recovery",
+      "solution_recovery",
+      "tailing",
+      "tank"
+    ],
+    "xgb_predicted": {
+      "feeder": 0.9869,
+      "product_recovery": 0.7221,
+      "solution_recovery": 0.9951,
+      "tank": 0.9313
+    },
+    "xgb_stages": [
+      "solution_recovery",
+      "feeder",
+      "tank",
+      "product_recovery"
+    ]
+  },
+  {
+    "doc_id": "904c7c2d9219112ed6b4b3b88fdf77ec743a2ec23d5e30cc0cdcdeb73ce65887",
+    "ground_truth": [
+      "bin",
+      "feeder",
+      "filter",
+      "input",
+      "product_recovery",
+      "solution_recovery",
+      "stockpile",
+      "tailing",
+      "tank",
+      "thickener"
+    ],
+    "xgb_predicted": {
+      "bin": 0.8701,
+      "feeder": 0.987,
+      "filter": 0.8571,
+      "input": 0.8048,
+      "product_recovery": 0.8141,
+      "solution_recovery": 0.9812,
+      "stockpile": 0.9326,
+      "tank": 0.942,
+      "thickener": 0.85
+    },
+    "xgb_stages": [
+      "feeder",
+      "solution_recovery",
+      "tank",
+      "stockpile",
+      "bin",
+      "filter",
+      "thickener",
+      "product_recovery",
+      "input"
+    ]
+  }
+]

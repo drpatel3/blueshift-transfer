@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "mineral-processing-pipeline"
+version = "0.1.0"
+description = "Extract and analyze mineral processing flowsheets from PDF documents"
+requires-python = ">=3.11"
+dependencies = [
+    "boto3",
+    "python-dotenv",
+    "pydantic>=2.0",
+    "pypdf",
+    "pdfplumber",
+    "nltk",
+    "tiktoken",
+    "rapidfuzz",
+    "networkx",
+    "matplotlib",
+    "pandas",
+    "pyarrow",
+]
+
+[project.optional-dependencies]
+clip = [
+    "sentence-transformers",
+]
+llama = [
+    "llama-cloud-services",
+]
+dev = [
+    "pytest",
+]
+lambda = [
+    "boto3",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["."]
+python_files = ["test_*.py"]

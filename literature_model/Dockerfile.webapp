@@ -1,0 +1,34 @@
+FROM public.ecr.aws/lambda/python:3.11
+
+# Build deps for matplotlib/scipy wheels are usually unneeded (manylinux), but
+# keep the toolchain available for any source builds.
+RUN yum install -y gcc gcc-c++ && yum clean all
+
+WORKDIR ${LAMBDA_TASK_ROOT}
+
+COPY requirements-webapp.txt .
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements-webapp.txt
+
+# Mirror the repo layout the code expects:
+#   ${LAMBDA_TASK_ROOT}/classification/   (predict.py, app.py, pfs_visual.py, webapp_handler.py, checkpoints)
+#   ${LAMBDA_TASK_ROOT}/quantitative/     (similarity.py, eval.py, grade maps)
+COPY classification/predict.py            classification/predict.py
+COPY classification/app.py                classification/app.py
+COPY classification/pfs_visual.py         classification/pfs_visual.py
+COPY classification/xgb_checkpoint_v2/    classification/xgb_checkpoint_v2/
+COPY classification/xgb_checkpoint_au/    classification/xgb_checkpoint_au/
+
+COPY quantitative/similarity.py           quantitative/similarity.py
+COPY quantitative/eval.py                 quantitative/eval.py
+COPY quantitative/grade_map.json          quantitative/grade_map.json
+COPY quantitative/grade_map_au.json       quantitative/grade_map_au.json
+
+# Lambda handler at task root so CMD is simply webapp_handler.handler.
+COPY classification/webapp_handler.py     webapp_handler.py
+
+ENV MPLBACKEND=Agg
+ENV PFS_IMG_DIR=/tmp/pfs_cache
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Lambda invokes <module>.<function>; webapp_handler.handler is the apig-wsgi adapter.
+CMD ["webapp_handler.handler"]

@@ -1,0 +1,73 @@
+1.
+Learning Rate: .1
+Max Depth: 6
+Sample Size: 50_000
+Max Features Text: 10_000
+Max Features Table: 10_000
+Number of Estimators: 300
+Resulting F1: .9
+
+2.
+Learning Rate: .05
+Max Depth: 6
+Sample Size: 50_000
+Max Features Text: 10_000
+Max Features Table: 10_000
+Number of Estimators: 300
+Resulting F1: .881
+
+3.
+Learning Rate: .05
+Max Depth: 6
+Sample Size: 50_000
+Max Features Text: 10_000
+Max Features Table: 10_000
+Number of Estimators: 600
+Resulting F1: .9
+
+4.
+Learning Rate: .15
+Max Depth: 6
+Sample Size: 50_000
+Max Features Text: 10_000
+Max Features Table: 10_000
+Number of Estimators: 300
+Resulting F1: .9
+
+5.
+Learning Rate: .15
+Max Depth: 6
+Sample Size: 50_000
+Max Features Text: 10_000
+Max Features Table: 10_000
+Number of Estimators: 150
+Resulting F1: .89
+
+6.
+Learning Rate: .15
+Max Depth: 3
+Sample Size: 50_000
+Max Features Text: 10_000
+Max Features Table: 10_000
+Number of Estimators: 150
+Resulting F1: .86
+
+7.
+Learning Rate: .15
+Max Depth: 6
+Sample Size: 100_000
+Max Features Text: 10_000
+Max Features Table: 10_000
+Number of Estimators: 150
+Resulting F1: .8955
+
+
+
+8.
+Learning Rate: .1
+Max Depth: 6
+Sample Size: 100_000
+Max Features Text: 10_000
+Max Features Table: 10_000
+Number of Estimators: 150
+Resulting F1: .8871

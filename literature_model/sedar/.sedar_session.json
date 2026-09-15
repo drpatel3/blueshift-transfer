@@ -1,0 +1,245 @@
+{
+  "cookies": [
+    {
+      "name": "__uzma",
+      "value": "ffe3f2e1-e219-49d6-a7a4-af7a73af1cee",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": 1787149924.939668,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__uzmb",
+      "value": "1771425120",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": 1787149924.9399,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__uzme",
+      "value": "0213",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": 1787149924.939952,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.273876354.1771425125",
+      "domain": ".sedarplus.ca",
+      "path": "/",
+      "expires": 1806072120.342338,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__ssds",
+      "value": "0",
+      "domain": ".www.sedarplus.ca",
+      "path": "/",
+      "expires": 1787060529,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__ssuzjsr0",
+      "value": "a9be0cd8e",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": 1787060529,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__uzmaj0",
+      "value": "ffe3f2e1-e219-49d6-a7a4-af7a73af1cee",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": 1787060529,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__uzmbj0",
+      "value": "1771425121",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": 1787060529,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__uzmlj0",
+      "value": "aEBrTvheOA+gC1CI/p/UKg7fCGh0t27XDVik9buD1Hw=",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": 1787060529,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "x-catalyst-timezone",
+      "value": "EST5EDT",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "x-catalyst-session-global",
+      "value": "0c55204a098f8ffb33bb674924991b8204eb5a6d16ee5ffac3921eac74d6809ab1430e47a411c00f",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "x-catalyst-locale",
+      "value": "en",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga_B5PXSH4TYY",
+      "value": "GS2.1.s1771511145$o4$g1$t1771512128$j52$l0$h0",
+      "domain": ".sedarplus.ca",
+      "path": "/",
+      "expires": 1806072128.875319,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__uzmcj0",
+      "value": "446449744080",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": 1787060529,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__uzmdj0",
+      "value": "1771512129",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": 1787060529,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__uzmfj0",
+      "value": "7f9000ffe3f2e1-e219-49d6-a7a4-af7a73af1cee2-177142512177387007923-0028679a0cf14cfdb9497",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": 1787060529,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "uzmxj",
+      "value": "7f9000466dff14-c856-4d12-a02d-b6fe1ea975d62-177142512177387007923-b4a0c1ac90a7541697",
+      "domain": ".sedarplus.ca",
+      "path": "/",
+      "expires": 1787060529,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "browserupdateorg",
+      "value": "pause",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": 1771598627,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "TS01bfbdd0",
+      "value": "016abe8a18b6c4224b803240607a0ed9ff7b425184f354dd69b23bc9355dff8d83bb5cf631a6f853c1d05f7948374941af174e3fdfb9a9b86d422746dc72074ab90427176467404a60aec5a192160d9cccd694ae5a44f15d81c4b9ca597d9695e6f66035c5d60ccf4c75bdc5b990e0f7b6a3a736aa",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__uzmc",
+      "value": "23168562657847",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": 1787247803.807432,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__uzmd",
+      "value": "1771522992",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": 1787247803.807593,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__uzmf",
+      "value": "7f9000ffe3f2e1-e219-49d6-a7a4-af7a73af1cee2-177142512097497872008-002487f061c71b76cd65626",
+      "domain": "www.sedarplus.ca",
+      "path": "/",
+      "expires": 1787247803.807672,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "uzmx",
+      "value": "7f9000466dff14-c856-4d12-a02d-b6fe1ea975d62-177142512097497872008-08814a0af3319a615626",
+      "domain": ".sedarplus.ca",
+      "path": "/",
+      "expires": 1787247803.807728,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.sedarplus.ca",
+      "localStorage": [
+        {
+          "name": "radRandom",
+          "value": "8483c33a054090b3d57e606f999a0ab2477e340357228751f9a12c90bb6a00f0"
+        }
+      ]
+    }
+  ]
+}

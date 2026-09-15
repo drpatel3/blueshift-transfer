@@ -1,0 +1,18 @@
+{
+  "docs_with_edges": 97,
+  "unconditional": {
+    "precision": 0.1414,
+    "recall": 0.7797,
+    "f1": 0.2394
+  },
+  "conditional": {
+    "precision": 0.19,
+    "recall": 1.0,
+    "f1": 0.3194
+  },
+  "self_loops": {
+    "tp": 130,
+    "total_true": 145,
+    "total_pred": 720
+  }
+}

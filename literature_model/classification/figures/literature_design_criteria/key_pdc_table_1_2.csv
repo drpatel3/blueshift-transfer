@@ -1,0 +1,21 @@
+# caption: Table 1.2: Key Process Design Criteria
+# doc: bfd8849c1f49ee151c76797f8c93e625a189ce37645d426108b1319521dfc777  page: 33  section: None
+Parameter,Units,Value,Value LCT-8,Source
+Plant Throughput,mtpd,"6,600",-,Highland
+Head Grade - LoM,% Cu,1.35,,Highland
+,g/t Ag,3.41,,Highland
+Plant Availability,%,91.3,,Lycopodium
+Bond Crusher Work Index (CWi),kWh/t,20.3,,Consultant
+Bond Ball Mill Work Index (BWi),kWh/t,16.2,,Testwork
+SMC Axb1,,34.5,,Consultant
+Bond Abrasion Index (Ai),G,0.014,,Testwork
+Grind Size (P )80,µm,45,40-45,Testwork
+Rougher Residence Time – Lab,Min,50,75,Testwork
+Cleaner 1 Residence Time – Lab,Min,6,20,Testwork
+Cleaner 1st Scavenger Residence Time – Lab,Min,10,20,Testwork
+Cleaner 2 Residence Time – Lab,Min,5,10,Testwork
+Cleaner 3 Residence Time – Lab,Min,3,5,Testwork
+Regrind Mill Product Size (P )80,µm,20,15,Testwork
+Concentrate Production Rate,t/h,15.1,,Calc
+Concentrate Thickener Solids Loading,t/m2.h,0.20,,Lycopodium
+Filter Solids Loading,kg/m2.h,160,,Lycopodium

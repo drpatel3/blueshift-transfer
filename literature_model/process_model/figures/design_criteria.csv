@@ -1,0 +1,27 @@
+stage,parameter,default,units,optimizer_bounds,source,notes
+Crusher,Bond Wi (rod),13.5,kWh/t,—,crusher.py,"primary crush, Bond/Rowland"
+Crusher,P80 product,150,mm,—,crusher.py,feed to SAG
+SAG mill,specific energy,8.0,kWh/t,5.0 – 12.0,sag.py / optimizer.py,Bond/Rowland
+Ball mill,P80 grind,150,µm,75 – 250,throughput.py / optimizer.py,primary grind target
+Hydrocyclone,cut size d50,150,µm,—,hydrocyclone.py,Plitt
+Rougher flotation,cell volume,100,m³,—,flotation.py:64,FlotationOp default
+Rougher flotation,num_cells (series),6,cells,—,throughput.py:151,bank cells in series
+Rougher flotation,residence time (bank),15 – 20,min,15.0 – 20.0,optimizer.py:34,"total bank, DE-tuned"
+Rougher flotation,air fraction,0.25,—,—,throughput.py:151,gas holdup
+Rougher flotation,slurry fraction,0.30,—,—,throughput.py:151,solids by volume
+Rougher flotation,froth height,0.4,m,—,flotation.py,Pe model
+Regrind mill,P80 product,25 – 45,µm,—,topology.py,ball/tower/IsaMill variants
+Cleaner flotation,n stages (series banks),1 – 3,stages,discrete,topology.py:51,Wills 7e Ch.12.4
+Concentrate leach,residence time / stage,4.0,h,—,leach.py:64,POX autoclave
+Concentrate leach,num_stages,—,stages,—,leach.py:85,t_total = T_h * N
+Heap leach,leach cycle,—,days,—,heap_leach.py,ore-on-pad
+Heap leach,extraction_fraction,by mineralogy,—,—,heap_leach.py,MINERALOGY_PROPS
+SX,extraction stages,—,stages,—,sx.py,isotherm-based
+SX,stripping stages,—,stages,—,sx.py,
+Electrowinning,current density,—,A/m²,—,ew.py,drives num_cells
+Electrowinning,cathodes per cell,—,cathodes,—,ew.py:96,p.cathodes_per_cell
+Electrowinning,num_cells,derived,cells,—,ew.py:94,= ceil(g/h target / per-cell)
+Thickener,rise rate,—,m/h,—,thickener.py,Coe-Clevenger
+Filter,cake moisture,—,% w/w,—,filter.py,
+Neutralization,residence time / stage,1.0,h,—,neutralization.py:31,lime addition
+Neutralization,num_stages_each,—,stages,—,neutralization.py:109,lime + ARD

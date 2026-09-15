@@ -1,0 +1,126 @@
+2026-05-07 16:29:33,070 INFO Loading data from s3://mineral-pipeline-pipeline/graphs_au/
+2026-05-07 16:29:33,079 INFO Found credentials in shared credentials file: ~/.aws/credentials
+2026-05-07 16:30:26,214 INFO Loaded 335 graphs from s3://mineral-pipeline-pipeline/graphs_au/
+2026-05-07 16:30:26,225 INFO Stage vocab (v1): 26 canonical -> 24 with >=3 support (from 92 raw IDs)
+2026-05-07 16:30:26,225 INFO   adsorption: 49 docs
+2026-05-07 16:30:26,225 INFO   agglomeration: 8 docs
+2026-05-07 16:30:26,225 INFO   bin: 60 docs
+2026-05-07 16:30:26,225 INFO   carbon_handling: 4 docs
+2026-05-07 16:30:26,225 INFO   crusher: 113 docs
+2026-05-07 16:30:26,225 INFO   cyclone: 44 docs
+2026-05-07 16:30:26,225 INFO   electrowinning: 51 docs
+2026-05-07 16:30:26,225 INFO   elution: 37 docs
+2026-05-07 16:30:26,225 INFO   feeder: 28 docs
+2026-05-07 16:30:26,225 INFO   filter: 67 docs
+2026-05-07 16:30:26,225 INFO   flotation: 73 docs
+2026-05-07 16:30:26,225 INFO   gravity: 45 docs
+2026-05-07 16:30:26,225 INFO   input: 75 docs
+2026-05-07 16:30:26,225 INFO   kiln: 18 docs
+2026-05-07 16:30:26,225 INFO   leach: 74 docs
+2026-05-07 16:30:26,225 INFO   mill: 71 docs
+2026-05-07 16:30:26,225 INFO   product_recovery: 52 docs
+2026-05-07 16:30:26,226 INFO   regrind: 42 docs
+2026-05-07 16:30:26,226 INFO   screen: 50 docs
+2026-05-07 16:30:26,226 INFO   solution_recovery: 8 docs
+2026-05-07 16:30:26,226 INFO   stockpile: 41 docs
+2026-05-07 16:30:26,226 INFO   tailing: 94 docs
+2026-05-07 16:30:26,226 INFO   tank: 29 docs
+2026-05-07 16:30:26,226 INFO   thickener: 82 docs
+2026-05-07 16:30:26,226 INFO Feature vector dimension: 938
+C:\Users\Ryan Murray\Desktop\development\literature_platform\dev\classification\stage_predictor.py:485: RuntimeWarning: overflow encountered in cast
+  vec[offset + j] = float(feats.get(feat, 0.0))
+C:\Users\Ryan Murray\Desktop\development\literature_platform\dev\classification\stage_predictor.py:523: RuntimeWarning: overflow encountered in cast
+  vec[grade_offset] = min(vec[grade_offset], num_mean) if vec[grade_offset] > 0 else num_mean
+C:\Users\Ryan Murray\Desktop\development\literature_platform\dev\classification\stage_predictor.py:524: RuntimeWarning: overflow encountered in cast
+  vec[grade_offset + 1] = num_mean
+C:\Users\Ryan Murray\Desktop\development\literature_platform\dev\classification\stage_predictor.py:526: RuntimeWarning: overflow encountered in cast
+  vec[grade_offset + 2] = max(vec[grade_offset + 2], num_max)
+2026-05-07 16:30:26,316 INFO Training data: 141 labeled docs, 194 unlabeled, 938 features, 24 stages, 261 transitions
+2026-05-07 16:30:26,316 INFO Feature range: [-11.5129, 20.7233], nonzero: 23250 / 132258
+2026-05-07 16:30:26,334 INFO Fitting TF-IDF SVD...
+2026-05-07 16:30:26,353 INFO   SVD geology: 309 docs, 20 components, explained_var=0.647
+2026-05-07 16:30:26,358 INFO   SVD metallurgical_testing: 285 docs, 20 components, explained_var=0.637
+2026-05-07 16:30:26,363 INFO   SVD recovery_methods: 264 docs, 20 components, explained_var=0.668
+2026-05-07 16:30:26,367 INFO   SVD economics: 233 docs, 20 components, explained_var=0.652
+2026-05-07 16:30:26,372 INFO   SVD mining_method: 261 docs, 20 components, explained_var=0.592
+2026-05-07 16:30:26,376 INFO   SVD infrastructure: 231 docs, 20 components, explained_var=0.635
+2026-05-07 16:30:26,380 INFO   SVD climate: 203 docs, 20 components, explained_var=0.572
+2026-05-07 16:30:26,380 INFO Fitted TF-IDF SVD for 7 sections (140 new features)
+2026-05-07 16:30:26,793 WARNING Could not load cross_doc_edges.json: An error occurred (NoSuchKey) when calling the GetObject operation: The specified key does not exist.
+2026-05-07 16:30:26,794 INFO Total features: 1078
+2026-05-07 16:30:26,796 INFO Split: 98 train (70%), 28 val (20%), 15 test (10%)
+2026-05-07 16:30:26,796 INFO Training XGBoost classifier chain...
+2026-05-07 16:30:26,798 INFO VarianceThreshold: 1078 -> 813 features (265 removed)
+2026-05-07 16:30:26,800 INFO Chain order (24 stages): crusher(79), tailing(64), thickener(57), input(55), flotation(50), leach(50), filter(49), mill(48), bin(39), screen(37)...
+2026-05-07 16:30:26,804 INFO Co-occurrence priors: (24, 24) matrix, nonzero=558
+2026-05-07 16:30:44,481 INFO   crusher: F1=0.8927 (n_pos=79, 5 folds, depth=3, lr=0.03, col=0.5, mcw=5)
+2026-05-07 16:31:13,470 INFO   tailing: F1=0.8335 (n_pos=64, 5 folds, depth=3, lr=0.1, col=0.7, mcw=5)
+2026-05-07 16:31:42,826 INFO   thickener: F1=0.8923 (n_pos=57, 5 folds, depth=3, lr=0.05, col=0.7, mcw=5)
+2026-05-07 16:32:09,448 INFO   input: F1=0.8990 (n_pos=55, 5 folds, depth=3, lr=0.03, col=0.5, mcw=5)
+2026-05-07 16:32:48,904 INFO   flotation: F1=0.8999 (n_pos=50, 5 folds, depth=3, lr=0.03, col=0.5, mcw=5)
+2026-05-07 16:33:19,750 INFO   leach: F1=0.9129 (n_pos=50, 5 folds, depth=3, lr=0.05, col=0.5, mcw=5)
+2026-05-07 16:33:53,954 INFO   filter: F1=0.8230 (n_pos=49, 5 folds, depth=3, lr=0.05, col=0.9, mcw=3)
+2026-05-07 16:34:30,148 INFO   mill: F1=0.8833 (n_pos=48, 5 folds, depth=3, lr=0.05, col=0.7, mcw=3)
+2026-05-07 16:35:03,635 INFO   bin: F1=0.9051 (n_pos=39, 5 folds, depth=3, lr=0.1, col=0.9, mcw=3)
+2026-05-07 16:35:38,151 INFO   screen: F1=0.9087 (n_pos=37, 5 folds, depth=3, lr=0.1, col=0.9, mcw=3)
+2026-05-07 16:36:21,570 INFO   adsorption: F1=0.8927 (n_pos=35, 5 folds, depth=3, lr=0.03, col=0.7, mcw=3)
+2026-05-07 16:37:01,840 INFO   electrowinning: F1=0.9130 (n_pos=35, 5 folds, depth=3, lr=0.05, col=0.7, mcw=3)
+2026-05-07 16:37:41,025 INFO   regrind: F1=0.8020 (n_pos=32, 5 folds, depth=3, lr=0.03, col=0.7, mcw=3)
+2026-05-07 16:42:52,878 INFO   gravity: F1=0.9217 (n_pos=32, 5 folds, depth=3, lr=0.03, col=0.7, mcw=3)
+2026-05-07 16:43:44,810 INFO   product_recovery: F1=0.8504 (n_pos=31, 5 folds, depth=3, lr=0.03, col=0.9, mcw=3)
+2026-05-07 16:44:43,360 INFO   cyclone: F1=0.9083 (n_pos=29, 5 folds, depth=3, lr=0.03, col=0.5, mcw=3)
+2026-05-07 16:45:41,674 INFO   elution: F1=0.8967 (n_pos=28, 5 folds, depth=3, lr=0.03, col=0.7, mcw=3)
+2026-05-07 16:46:38,983 INFO   stockpile: F1=0.9045 (n_pos=27, 5 folds, depth=3, lr=0.1, col=0.9, mcw=3)
+2026-05-07 16:47:45,302 INFO   tank: F1=0.8661 (n_pos=21, 5 folds, depth=3, lr=0.03, col=0.5, mcw=3)
+2026-05-07 16:49:13,485 INFO   feeder: F1=0.8600 (n_pos=17, 5 folds, depth=3, lr=0.03, col=0.5, mcw=1)
+2026-05-07 16:50:57,694 INFO   kiln: F1=0.9200 (n_pos=12, 5 folds, depth=3, lr=0.03, col=0.5, mcw=1)
+2026-05-07 16:52:26,447 INFO   solution_recovery: F1=0.8000 (n_pos=7, 5 folds, depth=3, lr=0.03, col=0.5, mcw=1)
+2026-05-07 16:53:52,472 INFO   agglomeration: F1=0.8000 (n_pos=6, 5 folds, depth=3, lr=0.03, col=0.5, mcw=1)
+2026-05-07 16:54:18,717 INFO   carbon_handling: F1=0.3333 (n_pos=3, 3 folds, depth=3, lr=0.03, col=0.5, mcw=1)
+2026-05-07 16:54:19,238 INFO 
+Pre-pseudo-label OOF metrics (24 active stages):
+2026-05-07 16:54:19,238 INFO   macro-F1=0.8322  micro-F1=0.8549  P=0.8024  R=0.8725
+2026-05-07 16:54:19,309 INFO   Pseudo-label round 1: no confident docs, stopping
+2026-05-07 16:54:19,409 INFO Saved 24 models to C:\Users\Ryan Murray\Desktop\development\literature_platform\dev\classification\xgb_checkpoint_au
+2026-05-07 16:54:19,426 INFO 
+Connection evaluation (97 docs with edges):
+2026-05-07 16:54:19,426 INFO   Unconditional — P=0.1414  R=0.7797  F1=0.2394
+2026-05-07 16:54:19,426 INFO   Conditional   — P=0.1900  R=1.0000  F1=0.3194
+2026-05-07 16:54:19,426 INFO   Self-loops    — TP=130  true=145  pred=720
+2026-05-07 16:54:19,445 INFO Saved OOF predictions for 98 labeled docs
+2026-05-07 16:54:19,490 INFO 
+Validation set (28 docs):
+2026-05-07 16:54:19,490 INFO   macro-F1=0.8739  micro-F1=0.8786  P=0.8685  R=0.9020
+2026-05-07 16:54:19,578 INFO 
+Test set (15 docs):
+2026-05-07 16:54:19,578 INFO   macro-F1=0.7617  micro-F1=0.8803  P=0.7276  R=0.8277
+2026-05-07 16:54:19,624 INFO Saved validation predictions (28 docs)
+2026-05-07 16:54:19,628 INFO Saved test predictions (15 docs)
+2026-05-07 16:54:19,628 INFO Computing SHAP influences...
+2026-05-07 16:54:19,840 INFO tree_shap influence matrix saved: 7 sections × 24 stages
+2026-05-07 16:54:19,840 INFO   adsorption: infrastructure=1.000, metallurgical_testing=0.294, recovery_methods=0.128
+2026-05-07 16:54:19,841 INFO   agglomeration: infrastructure=1.000, climate=0.343, metallurgical_testing=0.255
+2026-05-07 16:54:19,841 INFO   bin: infrastructure=1.000, recovery_methods=0.327, metallurgical_testing=0.141
+2026-05-07 16:54:19,841 INFO   carbon_handling: economics=1.000, metallurgical_testing=0.551, recovery_methods=0.490
+2026-05-07 16:54:19,841 INFO   crusher: climate=0.000, infrastructure=0.000, mining_method=0.000
+2026-05-07 16:54:19,841 INFO   cyclone: infrastructure=1.000, climate=0.347, recovery_methods=0.265
+2026-05-07 16:54:19,841 INFO   electrowinning: infrastructure=1.000, metallurgical_testing=0.797, economics=0.315
+2026-05-07 16:54:19,841 INFO   elution: infrastructure=1.000, geology=0.267, metallurgical_testing=0.132
+2026-05-07 16:54:19,841 INFO   feeder: geology=1.000, economics=0.806, infrastructure=0.473
+2026-05-07 16:54:19,841 INFO   filter: infrastructure=1.000, geology=0.251, recovery_methods=0.199
+2026-05-07 16:54:19,841 INFO   flotation: infrastructure=1.000, geology=0.383, metallurgical_testing=0.203
+2026-05-07 16:54:19,841 INFO   gravity: geology=1.000, infrastructure=0.440, metallurgical_testing=0.329
+2026-05-07 16:54:19,841 INFO   input: infrastructure=1.000, climate=0.319, mining_method=0.129
+2026-05-07 16:54:19,841 INFO   kiln: infrastructure=1.000, geology=0.556, metallurgical_testing=0.263
+2026-05-07 16:54:19,841 INFO   leach: infrastructure=1.000, metallurgical_testing=0.966, geology=0.274
+2026-05-07 16:54:19,841 INFO   mill: infrastructure=1.000, metallurgical_testing=0.608, geology=0.169
+2026-05-07 16:54:19,841 INFO   product_recovery: infrastructure=1.000, recovery_methods=0.316, mining_method=0.276
+2026-05-07 16:54:19,842 INFO   regrind: infrastructure=1.000, metallurgical_testing=0.491, economics=0.462
+2026-05-07 16:54:19,842 INFO   screen: infrastructure=1.000, metallurgical_testing=0.307, geology=0.055
+2026-05-07 16:54:19,842 INFO   solution_recovery: infrastructure=1.000, recovery_methods=0.820, economics=0.680
+2026-05-07 16:54:19,842 INFO   stockpile: infrastructure=1.000, geology=0.341, economics=0.283
+2026-05-07 16:54:19,842 INFO   tailing: geology=1.000, infrastructure=0.565, metallurgical_testing=0.128
+2026-05-07 16:54:19,842 INFO   tank: infrastructure=1.000, metallurgical_testing=0.615, recovery_methods=0.337
+2026-05-07 16:54:19,842 INFO   thickener: metallurgical_testing=1.000, economics=0.560, climate=0.000
+2026-05-07 16:54:19,850 INFO Training complete in 1487s
+2026-05-07 16:54:19,850 INFO Models: 24, stages: 24

@@ -1,0 +1,17 @@
+Per-grade archetype sweep at 10 grades...
+  per-grade DE: maxiter=40, popsize=10
+
+ grade  winner                                          NPV ($B)      IRR  capex ($M)
+------------------------------------------------------------------------------------------
+   0.2%  [heap] crusher / heap / heap-leach+SX+EW          -2.17      n/a      465.3
+   0.4%  [heap] crusher / heap / heap-leach+SX+EW          -1.71      n/a      578.7
+   0.6%  [sulfide] SAG+BM closed / rougher+regrind(tower)+cleaner(3-stage) / thickener+filter      0.17    11.6%      514.3
+   0.8%  [sulfide] SAG+BM closed / rougher+regrind(tower)+cleaner(3-stage) / thickener+filter      2.27    50.1%      522.6
+   1.0%  [sulfide] SAG+BM closed / rougher+regrind(IsaMill)+cleaner(3-stage) / thickener+filter      3.77    75.9%      531.4
+   1.2%  [sulfide] SAG+BM closed / rougher+regrind(tower)+cleaner(3-stage) / thickener+filter      5.26   103.5%      523.9
+   1.4%  [sulfide] SAG+BM closed / rougher+regrind(tower)+cleaner(3-stage) / thickener+filter      6.76   130.0%      524.5
+   1.6%  [sulfide] SAG+BM closed / rougher+regrind(tower)+cleaner(3-stage) / thickener+filter      8.25   156.5%      525.1
+   1.8%  [sulfide] SAG+BM closed / rougher+regrind(tower)+cleaner(3-stage) / thickener+filter      9.74   183.0%      525.7
+   2.0%  [sulfide] SAG+BM closed / rougher+regrind(tower)+cleaner(3-stage) / thickener+filter     11.25   212.5%      518.8
+
+Done: flowsheet+leaderboard PNGs in process_model/figures/grade_sweep_v9/

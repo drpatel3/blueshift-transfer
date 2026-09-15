@@ -1,0 +1,8 @@
+# Flowsheet Predictor web app — Lambda container deps.
+# predict.py reads cached predictions only (no XGBoost inference at runtime),
+# so we can skip xgboost / scikit-learn / imbalanced-learn entirely.
+flask==3.0.3
+apig-wsgi==2.18.0
+numpy<2.1
+scipy==1.13.1
+matplotlib==3.9.2

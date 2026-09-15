@@ -1,0 +1,23 @@
+# caption: Table 17-2 Principal Mechanical Equipment
+# doc: 1151f63ff18a07e78e04114b707ae1f5a108a8327b01b18d39bb5fdf17de0747  page: 206  section: 17
+Description,Quantity,Size / Capacity
+ROM Bin,1,250 m3 capacity
+Primary Crusher,1,"Single toggle jaw crusher, 160 kW"
+Coarse Ore Stockpile,1,"6,700 t live capacity, 24,000 t total capacity"
+SAG Mill,1,"6.71 m dia x 5.50 m EGL, 4.7 MW"
+Ball Mill,1,"6.10 m dia x 9.20 m EGL, 6.2 MW"
+Pebble Crusher,1,"Hydrocone H4800, 250 kW (existing, repurposed)"
+Rougher Flotation Cells,4,"TC-70 Tank Cell, 70 m3"
+Scavenger Flotation Cells,4,"TC-70 Tank Cell, 70 m3"
+Flotation Tailings Thickener,1,30 m diameter
+Concentrate Regrind Mill,1,"3,500 kW"
+Concentrate Thickener,1,"26 m diameter (existing, repurposed)"
+Concentrate Filters,3,"Vacuum belt filters (existing, repurposed)"
+Concentrate Storage Shed,1,"6,000 t total capacity"
+Primary Leach Reactors,8,"350 m3 live capacity, 6.9 m dia x 10.4 m S/W"
+Primary Leach Thickener,1,"20 m diameter (existing, repurposed)"
+Primary Leach Filters,3,"156 m2, Larox Tower Filter (existing, repurposed)"
+Primary Leach Residue Storage,1,"6,000 t total capacity"
+Copper pH Adjust Reactors,3,"98 m3 live capacity, 5 m dia x 6 m S/W"
+Copper pH Adjust Thickener,1,"26 m diameter (existing, repurposed)"
+Copper PLS Clarifier,1,"6 m diameter (existing, repurposed)"

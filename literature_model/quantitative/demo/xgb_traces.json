@@ -1,0 +1,1141 @@
+{
+  "examples": [
+    {
+      "label": "Cu 0.21%",
+      "provenance": {
+        "year": 2024,
+        "year_source": "filing",
+        "study_type": null,
+        "study_type_label": null,
+        "grade_stated": false
+      },
+      "stages": [
+        {
+          "stage": "screen",
+          "probability": 0.9947,
+          "threshold": 0.75,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.88,
+          "val_support": 12,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            },
+            {
+              "section": "geology",
+              "weight": 0.539
+            },
+            {
+              "section": "metallurgical_testing",
+              "weight": 0.531
+            }
+          ]
+        },
+        {
+          "stage": "flotation",
+          "probability": 0.987,
+          "threshold": 0.65,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.9167,
+          "val_support": 23,
+          "sections": [
+            {
+              "section": "metallurgical_testing",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "gravity",
+          "probability": 0.983,
+          "threshold": 0.7,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 1.0,
+          "val_support": 7,
+          "sections": [
+            {
+              "section": "metallurgical_testing",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "thickener",
+          "probability": 0.9587,
+          "threshold": 0.7,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.7451,
+          "val_support": 19,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "mill",
+          "probability": 0.9582,
+          "threshold": 0.87,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.9091,
+          "val_support": 16,
+          "sections": [
+            {
+              "section": "geology",
+              "weight": 1.0
+            },
+            {
+              "section": "economics",
+              "weight": 0.797
+            },
+            {
+              "section": "climate",
+              "weight": 0.792
+            }
+          ]
+        },
+        {
+          "stage": "leach",
+          "probability": 0.9417,
+          "threshold": 0.89,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.9375,
+          "val_support": 15,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "cyclone",
+          "probability": 0.9393,
+          "threshold": 0.8,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 1.0,
+          "val_support": 16,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            },
+            {
+              "section": "geology",
+              "weight": 0.796
+            }
+          ]
+        },
+        {
+          "stage": "tailing",
+          "probability": 0.9105,
+          "threshold": 0.9,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.8571,
+          "val_support": 24,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "crusher",
+          "probability": 0.7978,
+          "threshold": 0.68,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.9841,
+          "val_support": 31,
+          "sections": [
+            {
+              "section": "metallurgical_testing",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "product_recovery",
+          "probability": 0.769,
+          "threshold": 0.5,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.72,
+          "val_support": 9,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            },
+            {
+              "section": "recovery_methods",
+              "weight": 0.429
+            }
+          ]
+        },
+        {
+          "stage": "regrind",
+          "probability": 0.6353,
+          "threshold": 0.3,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.7407,
+          "val_support": 10,
+          "sections": [
+            {
+              "section": "metallurgical_testing",
+              "weight": 1.0
+            },
+            {
+              "section": "recovery_methods",
+              "weight": 0.536
+            }
+          ]
+        },
+        {
+          "stage": "electrowinning",
+          "probability": null,
+          "threshold": 0.8,
+          "selected": false,
+          "in_ground_truth": true,
+          "val_f1": 0.5263,
+          "val_support": 11,
+          "sections": [
+            {
+              "section": "metallurgical_testing",
+              "weight": 1.0
+            },
+            {
+              "section": "climate",
+              "weight": 0.379
+            }
+          ]
+        },
+        {
+          "stage": "feeder",
+          "probability": null,
+          "threshold": 0.85,
+          "selected": false,
+          "in_ground_truth": true,
+          "val_f1": 0.8,
+          "val_support": 10,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            },
+            {
+              "section": "geology",
+              "weight": 0.514
+            },
+            {
+              "section": "recovery_methods",
+              "weight": 0.493
+            }
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "src": "flotation",
+          "dst": "thickener",
+          "support": 99,
+          "score": 1.0
+        },
+        {
+          "src": "flotation",
+          "dst": "flotation",
+          "support": 88,
+          "score": 0.889
+        },
+        {
+          "src": "crusher",
+          "dst": "mill",
+          "support": 51,
+          "score": 0.515
+        },
+        {
+          "src": "flotation",
+          "dst": "regrind",
+          "support": 48,
+          "score": 0.485
+        },
+        {
+          "src": "mill",
+          "dst": "flotation",
+          "support": 47,
+          "score": 0.475
+        },
+        {
+          "src": "regrind",
+          "dst": "flotation",
+          "support": 46,
+          "score": 0.465
+        },
+        {
+          "src": "thickener",
+          "dst": "tailing",
+          "support": 42,
+          "score": 0.424
+        },
+        {
+          "src": "crusher",
+          "dst": "crusher",
+          "support": 42,
+          "score": 0.424
+        },
+        {
+          "src": "flotation",
+          "dst": "tailing",
+          "support": 39,
+          "score": 0.394
+        },
+        {
+          "src": "screen",
+          "dst": "crusher",
+          "support": 34,
+          "score": 0.343
+        }
+      ],
+      "accuracy": {
+        "correct": 11,
+        "extra": 0,
+        "missed": 2,
+        "f1": 0.917
+      },
+      "influences": [
+        {
+          "similarity": 0.614,
+          "year": 2017,
+          "year_source": "effective_date",
+          "study_type": "FS",
+          "study_type_label": "Feasibility Study",
+          "matches_on": [
+            {
+              "section": "climate",
+              "similarity": 1.0
+            },
+            {
+              "section": "market",
+              "similarity": 1.0
+            },
+            {
+              "section": "recovery_methods",
+              "similarity": 0.865
+            }
+          ],
+          "label": "Report A"
+        },
+        {
+          "similarity": 0.601,
+          "year": 2011,
+          "year_source": "effective_date",
+          "study_type": "FS",
+          "study_type_label": "Feasibility Study",
+          "matches_on": [
+            {
+              "section": "climate",
+              "similarity": 1.0
+            },
+            {
+              "section": "drilling",
+              "similarity": 0.822
+            },
+            {
+              "section": "environmental",
+              "similarity": 0.819
+            }
+          ],
+          "label": "Report B"
+        }
+      ],
+      "influences_of": 10
+    },
+    {
+      "label": "Cu 0.71%",
+      "provenance": {
+        "year": 2016,
+        "year_source": "filing",
+        "study_type": null,
+        "study_type_label": null,
+        "grade_stated": false
+      },
+      "stages": [
+        {
+          "stage": "screen",
+          "probability": 0.9941,
+          "threshold": 0.75,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.88,
+          "val_support": 12,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            },
+            {
+              "section": "geology",
+              "weight": 0.539
+            },
+            {
+              "section": "metallurgical_testing",
+              "weight": 0.531
+            }
+          ]
+        },
+        {
+          "stage": "cyclone",
+          "probability": 0.9904,
+          "threshold": 0.8,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 1.0,
+          "val_support": 16,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            },
+            {
+              "section": "geology",
+              "weight": 0.796
+            }
+          ]
+        },
+        {
+          "stage": "bin",
+          "probability": 0.9898,
+          "threshold": 0.6,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.6667,
+          "val_support": 8,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "stockpile",
+          "probability": 0.9864,
+          "threshold": 0.86,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.963,
+          "val_support": 13,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            },
+            {
+              "section": "recovery_methods",
+              "weight": 0.797
+            },
+            {
+              "section": "mining_method",
+              "weight": 0.729
+            }
+          ]
+        },
+        {
+          "stage": "input",
+          "probability": 0.9801,
+          "threshold": 0.45,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.8889,
+          "val_support": 12,
+          "sections": [
+            {
+              "section": "recovery_methods",
+              "weight": 1.0
+            },
+            {
+              "section": "climate",
+              "weight": 0.812
+            }
+          ]
+        },
+        {
+          "stage": "product_recovery",
+          "probability": 0.9762,
+          "threshold": 0.5,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.72,
+          "val_support": 9,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            },
+            {
+              "section": "recovery_methods",
+              "weight": 0.429
+            }
+          ]
+        },
+        {
+          "stage": "thickener",
+          "probability": 0.9538,
+          "threshold": 0.7,
+          "selected": true,
+          "in_ground_truth": false,
+          "val_f1": 0.7451,
+          "val_support": 19,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "tailing",
+          "probability": 0.9475,
+          "threshold": 0.9,
+          "selected": true,
+          "in_ground_truth": false,
+          "val_f1": 0.8571,
+          "val_support": 24,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "filter",
+          "probability": 0.9059,
+          "threshold": 0.8,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.913,
+          "val_support": 21,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            },
+            {
+              "section": "metallurgical_testing",
+              "weight": 0.814
+            },
+            {
+              "section": "geology",
+              "weight": 0.692
+            }
+          ]
+        },
+        {
+          "stage": "flotation",
+          "probability": 0.9049,
+          "threshold": 0.65,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.9167,
+          "val_support": 23,
+          "sections": [
+            {
+              "section": "metallurgical_testing",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "leach",
+          "probability": 0.8968,
+          "threshold": 0.89,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.9375,
+          "val_support": 15,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "regrind",
+          "probability": 0.8813,
+          "threshold": 0.3,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.7407,
+          "val_support": 10,
+          "sections": [
+            {
+              "section": "metallurgical_testing",
+              "weight": 1.0
+            },
+            {
+              "section": "recovery_methods",
+              "weight": 0.536
+            }
+          ]
+        },
+        {
+          "stage": "crusher",
+          "probability": 0.7978,
+          "threshold": 0.68,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.9841,
+          "val_support": 31,
+          "sections": [
+            {
+              "section": "metallurgical_testing",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "kiln",
+          "probability": null,
+          "threshold": 0.15,
+          "selected": false,
+          "in_ground_truth": true,
+          "val_f1": 0.8,
+          "val_support": 3,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "electrowinning",
+          "probability": null,
+          "threshold": 0.8,
+          "selected": false,
+          "in_ground_truth": true,
+          "val_f1": 0.5263,
+          "val_support": 11,
+          "sections": [
+            {
+              "section": "metallurgical_testing",
+              "weight": 1.0
+            },
+            {
+              "section": "climate",
+              "weight": 0.379
+            }
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "src": "input",
+          "dst": "crusher",
+          "support": 109,
+          "score": 1.0
+        },
+        {
+          "src": "flotation",
+          "dst": "thickener",
+          "support": 99,
+          "score": 0.908
+        },
+        {
+          "src": "input",
+          "dst": "input",
+          "support": 88,
+          "score": 0.807
+        },
+        {
+          "src": "flotation",
+          "dst": "flotation",
+          "support": 88,
+          "score": 0.807
+        },
+        {
+          "src": "thickener",
+          "dst": "filter",
+          "support": 61,
+          "score": 0.56
+        },
+        {
+          "src": "crusher",
+          "dst": "stockpile",
+          "support": 50,
+          "score": 0.459
+        },
+        {
+          "src": "flotation",
+          "dst": "regrind",
+          "support": 48,
+          "score": 0.44
+        },
+        {
+          "src": "regrind",
+          "dst": "flotation",
+          "support": 46,
+          "score": 0.422
+        },
+        {
+          "src": "thickener",
+          "dst": "tailing",
+          "support": 42,
+          "score": 0.385
+        },
+        {
+          "src": "crusher",
+          "dst": "crusher",
+          "support": 42,
+          "score": 0.385
+        },
+        {
+          "src": "flotation",
+          "dst": "tailing",
+          "support": 39,
+          "score": 0.358
+        },
+        {
+          "src": "screen",
+          "dst": "crusher",
+          "support": 34,
+          "score": 0.312
+        },
+        {
+          "src": "flotation",
+          "dst": "filter",
+          "support": 33,
+          "score": 0.303
+        }
+      ],
+      "accuracy": {
+        "correct": 11,
+        "extra": 2,
+        "missed": 2,
+        "f1": 0.846
+      },
+      "influences": [
+        {
+          "similarity": 0.535,
+          "year": 2022,
+          "year_source": "effective_date",
+          "study_type": "PFS",
+          "study_type_label": "Pre-Feasibility Study",
+          "matches_on": [
+            {
+              "section": "sample_analysis",
+              "similarity": 0.861
+            },
+            {
+              "section": "infrastructure",
+              "similarity": 0.844
+            },
+            {
+              "section": "environmental",
+              "similarity": 0.833
+            }
+          ],
+          "label": "Report A"
+        },
+        {
+          "similarity": 0.516,
+          "year": 2021,
+          "year_source": "effective_date",
+          "study_type": "FS",
+          "study_type_label": "Feasibility Study",
+          "matches_on": [
+            {
+              "section": "history",
+              "similarity": 0.794
+            },
+            {
+              "section": "environmental",
+              "similarity": 0.781
+            },
+            {
+              "section": "references",
+              "similarity": 0.759
+            }
+          ],
+          "label": "Report B"
+        },
+        {
+          "similarity": 0.502,
+          "year": 2022,
+          "year_source": "filing",
+          "study_type": "FS",
+          "study_type_label": "Feasibility Study",
+          "matches_on": [
+            {
+              "section": "sample_analysis",
+              "similarity": 0.847
+            },
+            {
+              "section": "economics",
+              "similarity": 0.846
+            },
+            {
+              "section": "environmental",
+              "similarity": 0.819
+            }
+          ],
+          "label": "Report C"
+        },
+        {
+          "similarity": 0.493,
+          "year": 2024,
+          "year_source": "effective_date",
+          "study_type": "PFS",
+          "study_type_label": "Pre-Feasibility Study",
+          "matches_on": [
+            {
+              "section": "mining_method",
+              "similarity": 0.817
+            },
+            {
+              "section": "data_verification",
+              "similarity": 0.816
+            },
+            {
+              "section": "sample_analysis",
+              "similarity": 0.77
+            }
+          ],
+          "label": "Report D"
+        },
+        {
+          "similarity": 0.491,
+          "year": 2020,
+          "year_source": "filing",
+          "study_type": "PFS",
+          "study_type_label": "Pre-Feasibility Study",
+          "matches_on": [
+            {
+              "section": "data_verification",
+              "similarity": 0.856
+            },
+            {
+              "section": "environmental",
+              "similarity": 0.838
+            },
+            {
+              "section": "sample_analysis",
+              "similarity": 0.829
+            }
+          ],
+          "label": "Report E"
+        }
+      ],
+      "influences_of": 10
+    },
+    {
+      "label": "Cu 1.24%",
+      "provenance": {
+        "year": 2024,
+        "year_source": "filing",
+        "study_type": null,
+        "study_type_label": null,
+        "grade_stated": false
+      },
+      "stages": [
+        {
+          "stage": "flotation",
+          "probability": 0.988,
+          "threshold": 0.65,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.9167,
+          "val_support": 23,
+          "sections": [
+            {
+              "section": "metallurgical_testing",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "thickener",
+          "probability": 0.986,
+          "threshold": 0.7,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.7451,
+          "val_support": 19,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "mill",
+          "probability": 0.9826,
+          "threshold": 0.87,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.9091,
+          "val_support": 16,
+          "sections": [
+            {
+              "section": "geology",
+              "weight": 1.0
+            },
+            {
+              "section": "economics",
+              "weight": 0.797
+            },
+            {
+              "section": "climate",
+              "weight": 0.792
+            }
+          ]
+        },
+        {
+          "stage": "stockpile",
+          "probability": 0.9723,
+          "threshold": 0.86,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.963,
+          "val_support": 13,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            },
+            {
+              "section": "recovery_methods",
+              "weight": 0.797
+            },
+            {
+              "section": "mining_method",
+              "weight": 0.729
+            }
+          ]
+        },
+        {
+          "stage": "filter",
+          "probability": 0.9676,
+          "threshold": 0.8,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.913,
+          "val_support": 21,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            },
+            {
+              "section": "metallurgical_testing",
+              "weight": 0.814
+            },
+            {
+              "section": "geology",
+              "weight": 0.692
+            }
+          ]
+        },
+        {
+          "stage": "regrind",
+          "probability": 0.9397,
+          "threshold": 0.3,
+          "selected": true,
+          "in_ground_truth": false,
+          "val_f1": 0.7407,
+          "val_support": 10,
+          "sections": [
+            {
+              "section": "metallurgical_testing",
+              "weight": 1.0
+            },
+            {
+              "section": "recovery_methods",
+              "weight": 0.536
+            }
+          ]
+        },
+        {
+          "stage": "crusher",
+          "probability": 0.7985,
+          "threshold": 0.68,
+          "selected": true,
+          "in_ground_truth": true,
+          "val_f1": 0.9841,
+          "val_support": 31,
+          "sections": [
+            {
+              "section": "metallurgical_testing",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "stage": "bin",
+          "probability": 0.674,
+          "threshold": 0.6,
+          "selected": true,
+          "in_ground_truth": false,
+          "val_f1": 0.6667,
+          "val_support": 8,
+          "sections": [
+            {
+              "section": "climate",
+              "weight": 1.0
+            }
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "src": "flotation",
+          "dst": "thickener",
+          "support": 99,
+          "score": 1.0
+        },
+        {
+          "src": "flotation",
+          "dst": "flotation",
+          "support": 88,
+          "score": 0.889
+        },
+        {
+          "src": "thickener",
+          "dst": "filter",
+          "support": 61,
+          "score": 0.616
+        },
+        {
+          "src": "crusher",
+          "dst": "mill",
+          "support": 51,
+          "score": 0.515
+        },
+        {
+          "src": "crusher",
+          "dst": "stockpile",
+          "support": 50,
+          "score": 0.505
+        },
+        {
+          "src": "flotation",
+          "dst": "regrind",
+          "support": 48,
+          "score": 0.485
+        },
+        {
+          "src": "mill",
+          "dst": "flotation",
+          "support": 47,
+          "score": 0.475
+        },
+        {
+          "src": "regrind",
+          "dst": "flotation",
+          "support": 46,
+          "score": 0.465
+        },
+        {
+          "src": "crusher",
+          "dst": "crusher",
+          "support": 42,
+          "score": 0.424
+        },
+        {
+          "src": "flotation",
+          "dst": "filter",
+          "support": 33,
+          "score": 0.333
+        }
+      ],
+      "accuracy": {
+        "correct": 6,
+        "extra": 2,
+        "missed": 0,
+        "f1": 0.857
+      },
+      "influences": [
+        {
+          "similarity": 0.648,
+          "year": 2011,
+          "year_source": "effective_date",
+          "study_type": "FS",
+          "study_type_label": "Feasibility Study",
+          "matches_on": [
+            {
+              "section": "climate",
+              "similarity": 1.0
+            },
+            {
+              "section": "data_verification",
+              "similarity": 1.0
+            },
+            {
+              "section": "environmental",
+              "similarity": 0.862
+            }
+          ],
+          "label": "Report A"
+        },
+        {
+          "similarity": 0.603,
+          "year": 2021,
+          "year_source": "effective_date",
+          "study_type": "FS",
+          "study_type_label": "Feasibility Study",
+          "matches_on": [
+            {
+              "section": "climate",
+              "similarity": 1.0
+            },
+            {
+              "section": "infrastructure",
+              "similarity": 0.817
+            },
+            {
+              "section": "drilling",
+              "similarity": 0.802
+            }
+          ],
+          "label": "Report B"
+        }
+      ],
+      "influences_of": 10
+    }
+  ],
+  "model": {
+    "name": "XGBoost V2",
+    "val_macro_f1": 0.8623,
+    "val_micro_f1": 0.8663,
+    "val_docs": 36,
+    "connection_f1": 0.364,
+    "corpus": {
+      "docs": 126,
+      "year_min": 2009,
+      "year_max": 2025,
+      "year_median": 2019,
+      "grades": {
+        "TR": 58,
+        "PEA": 31,
+        "FS": 22,
+        "PFS": 12,
+        "UNKNOWN": 3
+      }
+    }
+  }
+}

@@ -1,0 +1,2236 @@
+{
+  "Kutcho-FS-11082021_pfs_32": {
+    "type": "flowsheet",
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "raw": "I'll analyze the document carefully. This is a feasibility study text (not a visual flowsheet diagram), but it contains detailed mining and processing information. I'll extract the process stages described in the text and Table 1-4.\n\n```json\n{\n  \"stages\": [\n    {\n      \"id\": \"input\",\n      \"name\": \"ROM Feed (Open Pit & Underground)\",\n      \"order\": 1\n    },\n    {\n      \"id\": \"stockpile\",\n      \"name\": \"ROM Stockpile / Ore Stockpile\",\n      \"order\": 2\n    },\n    {\n      \"id\": \"ore_sorting\",\n      \"name\": \"Ore Sorting (Sorter Reject to CRF)\",\n      \"order\": 3\n    },\n    {\n      \"id\": \"open_pit_mining\",\n      \"name\": \"Open Pit Mining Operations\",\n      \"order\": 4\n    },\n    {\n      \"id\": \"underground_mining\",\n      \"name\": \"Underground Mining (Main & Esso LLHOS)\",\n      \"order\": 5\n    },\n    {\n      \"id\": \"stockpile_rehandle\",\n      \"name\": \"Stockpile Rehandle\",\n      \"order\": 6\n    },\n    {\n      \"id\": \"tailing\",\n      \"name\": \"Tailings / Waste Disposal\",\n      \"order\": 7\n    }\n  ],\n  \"units\": [\n    {\n      \"id\": \"open_pit_trucks\",\n      \"label\": \"90-tonne Class Rigid Body Dump Trucks (x8)\",\n      \"type\": \"conveyor\",\n      \"stage_id\": \"open_pit_mining\",\n      \"cells\": 8\n    },\n    {\n      \"id\": \"wheel_loader_10m3\",\n      \"label\": \"10 m\u00b3 Wheel Loaders (x2)\",\n      \"type\": \"feeder\",\n      \"stage_id\": \"open_pit_mining\",\n      \"cells\": 2\n    },\n    {\n      \"id\": \"tracked_excavator_4m3\",\n      \"label\": \"4 m\u00b3 Tracked Excavator\",\n      \"type\": \"feeder\",\n      \"stage_id\": \"open_pit_mining\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"wheel_loader_7m3\",\n      \"label\": \"7 m\u00b3 Wheel Loader (ROM Stockpile Rehandling)\",\n      \"type\": \"feeder\",\n      \"stage_id\": \"stockpile\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"blast_hole_drill_rigs\",\n      \"label\": \"Down-the-Hole Hammer Drill Rigs (x2)\",\n      \"type\": \"feeder\",\n      \"stage_id\": \"open_pit_mining\",\n      \"cells\": 2\n    },\n    {\n      \"id\": \"underground_portal\",\n      \"label\": \"Single Portal - Main & Esso Underground Access\",\n      \"type\": \"hopper\",\n      \"stage_id\": \"underground_mining\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"spiral_ramp\",\n      \"label\": \"Spiral Ramp (5,437 m total ramp length)\",\n      \"type\": \"conveyor\",\n      \"stage_id\": \"underground_mining\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"llhos_stopes_main\",\n      \"label\": \"LLHOS Stopes - Main Deposit\",\n      \"type\": \"cell\",\n      \"stage_id\": \"underground_mining\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"llhos_stopes_esso\",\n      \"label\": \"LLHOS Stopes - Esso Deposit\",\n      \"type\": \"cell\",\n      \"stage_id\": \"underground_mining\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"crf_backfill\",\n      \"label\": \"Cemented Rock Fill (CRF) Backfill\",\n      \"type\": \"tank\",\n      \"stage_id\": \"underground_mining\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"ore_sorter_reject\",\n      \"label\": \"Ore Sorter Reject (to CRF)\",\n      \"type\": \"ore_sorting\",\n      \"stage_id\": \"ore_sorting\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"rom_stockpile_main\",\n      \"label\": \"ROM Stockpile\",\n      \"type\": \"stockpile\",\n      \"stage_id\": \"stockpile\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"ore_stockpile_rehandle\",\n      \"label\": \"Ore Stockpile Rehandle (Years 9-11)\",\n      \"type\": \"stockpile\",\n      \"stage_id\": \"stockpile_rehandle\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"waste_dump\",\n      \"label\": \"Waste Mined Disposal (81.8 Mt Life of Mine)\",\n      \"type\": \"tailing\",\n      \"stage_id\": \"tailing\",\n      \"cells\": 1\n    }\n  ],\n  \"connections\": [\n    {\n      \"parent_id\": \"INPUT\",\n      \"child_id\": \"open_pit_mining\"\n    },\n    {\n      \"parent_id\": \"INPUT\",\n      \"child_id\": \"underground_mining\"\n    },\n    {\n      \"parent_id\": \"open_pit_mining\",\n      \"child_id\": \"stockpile\"\n    },\n    {\n      \"parent_id\": \"open_pit_mining\",\n      \"child_id\": \"tailing\"\n    },\n    {\n      \"parent_id\": \"underground_mining\",\n      \"child_id\": \"ore_sorting\"\n    },\n    {\n      \"parent_id\": \"underground_mining\",\n      \"child_id\": \"stockpile\"\n    },\n    {\n      \"parent_id\": \"ore_sorting\",\n      \"child_id\": \"underground_mining\"\n    },\n    {\n      \"parent_id\": \"stockpile\",\n      \"child_id\": \"stockpile_rehandle\"\n    },\n    {\n      \"parent_id\": \"stockpile_rehandle\",\n      \"child_id\": \"OUTPUT\"\n    },\n    {\n      \"parent_id\": \"stockpile\",\n      \"child_id\": \"OUTPUT\"\n    }\n  ]\n}\n```\n\n> **Note:** This document is a **feasibility study text** (NI 43-101), not a visual process flowsheet. The JSON above reflects the mining operations described in Table 1-4 and the accompanying text. A full processing plant flowsheet (crushing, grinding, flotation, concentrate handling) would require additional sections of the technical report not shown here.",
+    "text_before": "",
+    "text_after": "",
+    "caption": "kutcho copper corp. kutcho copper project \u2013 feasibility study (ni 43-101 technical report) figure 1-1 (above) shows total material movements and strip ratio by year for the open pit and underground mi",
+    "page": 32
+  },
+  "Kutcho-FS-11082021_pfs_113": {
+    "type": "flowsheet",
+    "stages": [
+      {
+        "id": "input",
+        "name": "Feed Input",
+        "order": 1
+      },
+      {
+        "id": "grinding",
+        "name": "Primary Grinding",
+        "order": 2
+      },
+      {
+        "id": "cu_rougher_flotation",
+        "name": "Copper Rougher Flotation",
+        "order": 3
+      },
+      {
+        "id": "cu_regrind",
+        "name": "Copper Regrind",
+        "order": 4
+      },
+      {
+        "id": "cu_1st_cleaner",
+        "name": "Copper 1st Cleaner Flotation",
+        "order": 5
+      },
+      {
+        "id": "cu_concentrate_output",
+        "name": "Copper Concentrate",
+        "order": 6
+      },
+      {
+        "id": "zn_rougher_flotation",
+        "name": "Zinc Rougher Flotation",
+        "order": 7
+      },
+      {
+        "id": "zn_regrind",
+        "name": "Zinc Regrind",
+        "order": 8
+      },
+      {
+        "id": "zn_1st_cleaner",
+        "name": "Zinc 1st Cleaner Flotation",
+        "order": 9
+      },
+      {
+        "id": "zn_2nd_cleaner",
+        "name": "Zinc 2nd Cleaner Flotation",
+        "order": 10
+      },
+      {
+        "id": "zn_3rd_cleaner",
+        "name": "Zinc 3rd Cleaner Flotation",
+        "order": 11
+      },
+      {
+        "id": "zn_concentrate_output",
+        "name": "Zinc Concentrate",
+        "order": 12
+      },
+      {
+        "id": "zn_rougher_tailing",
+        "name": "Zinc Rougher Tailing",
+        "order": 13
+      },
+      {
+        "id": "zn_1st_cleaner_tailing",
+        "name": "Zinc 1st Cleaner Tailing",
+        "order": 14
+      }
+    ],
+    "units": [
+      {
+        "id": "feed",
+        "label": "Feed (10 mesh)",
+        "type": "input",
+        "stage_id": "input",
+        "cells": 1
+      },
+      {
+        "id": "grind_mill",
+        "label": "Grind",
+        "type": "mill",
+        "stage_id": "grinding",
+        "cells": 1
+      },
+      {
+        "id": "cu_rougher_cell",
+        "label": "Cu Rougher",
+        "type": "flotation",
+        "stage_id": "cu_rougher_flotation",
+        "cells": 1
+      },
+      {
+        "id": "cu_regrind_mill",
+        "label": "Cu Regrind",
+        "type": "regrind",
+        "stage_id": "cu_regrind",
+        "cells": 1
+      },
+      {
+        "id": "cu_1st_cleaner_cell",
+        "label": "Cu 1st Cleaner",
+        "type": "flotation",
+        "stage_id": "cu_1st_cleaner",
+        "cells": 1
+      },
+      {
+        "id": "cu_conc",
+        "label": "Cu Conc",
+        "type": "tailing",
+        "stage_id": "cu_concentrate_output",
+        "cells": 1
+      },
+      {
+        "id": "zn_rougher_cell",
+        "label": "Zn Rougher",
+        "type": "flotation",
+        "stage_id": "zn_rougher_flotation",
+        "cells": 1
+      },
+      {
+        "id": "zn_regrind_mill",
+        "label": "Zn Regrind",
+        "type": "regrind",
+        "stage_id": "zn_regrind",
+        "cells": 1
+      },
+      {
+        "id": "zn_1st_cleaner_cell",
+        "label": "Zn 1st Cl",
+        "type": "flotation",
+        "stage_id": "zn_1st_cleaner",
+        "cells": 1
+      },
+      {
+        "id": "zn_2nd_cleaner_cell",
+        "label": "Zn 2nd Cleaner",
+        "type": "flotation",
+        "stage_id": "zn_2nd_cleaner",
+        "cells": 1
+      },
+      {
+        "id": "zn_3rd_cleaner_cell",
+        "label": "Zn 3rd Cleaner",
+        "type": "flotation",
+        "stage_id": "zn_3rd_cleaner",
+        "cells": 1
+      },
+      {
+        "id": "zn_conc",
+        "label": "Zn Conc",
+        "type": "tailing",
+        "stage_id": "zn_concentrate_output",
+        "cells": 1
+      },
+      {
+        "id": "zn_ro_tail",
+        "label": "Zn Ro Tail",
+        "type": "tailing",
+        "stage_id": "zn_rougher_tailing",
+        "cells": 1
+      },
+      {
+        "id": "zn_1st_cl_tail",
+        "label": "Zn 1st Cl Tail",
+        "type": "tailing",
+        "stage_id": "zn_1st_cleaner_tailing",
+        "cells": 1
+      }
+    ],
+    "connections": [
+      {
+        "parent_id": "INPUT",
+        "child_id": "grinding"
+      },
+      {
+        "parent_id": "grinding",
+        "child_id": "cu_rougher_flotation"
+      },
+      {
+        "parent_id": "cu_rougher_flotation",
+        "child_id": "cu_regrind"
+      },
+      {
+        "parent_id": "cu_rougher_flotation",
+        "child_id": "zn_rougher_flotation"
+      },
+      {
+        "parent_id": "cu_regrind",
+        "child_id": "cu_1st_cleaner"
+      },
+      {
+        "parent_id": "cu_1st_cleaner",
+        "child_id": "cu_concentrate_output"
+      },
+      {
+        "parent_id": "cu_1st_cleaner",
+        "child_id": "zn_rougher_flotation"
+      },
+      {
+        "parent_id": "zn_rougher_flotation",
+        "child_id": "zn_rougher_tailing"
+      },
+      {
+        "parent_id": "zn_rougher_flotation",
+        "child_id": "zn_regrind"
+      },
+      {
+        "parent_id": "zn_regrind",
+        "child_id": "zn_1st_cleaner"
+      },
+      {
+        "parent_id": "zn_1st_cleaner",
+        "child_id": "zn_1st_cleaner_tailing"
+      },
+      {
+        "parent_id": "zn_1st_cleaner",
+        "child_id": "zn_2nd_cleaner"
+      },
+      {
+        "parent_id": "zn_2nd_cleaner",
+        "child_id": "zn_1st_cleaner"
+      },
+      {
+        "parent_id": "zn_2nd_cleaner",
+        "child_id": "zn_3rd_cleaner"
+      },
+      {
+        "parent_id": "zn_3rd_cleaner",
+        "child_id": "zn_2nd_cleaner"
+      },
+      {
+        "parent_id": "zn_3rd_cleaner",
+        "child_id": "zn_concentrate_output"
+      }
+    ],
+    "text_before": "kutcho copper kutcho copper project feasibility study ni technical report reagent based depressant method significant finding finer primary grind p size \u00b5m improve recovery copper selectivity actually decreased finer grinding final optimization flotation flowsheet conducted using main composite sample prepared upon exhaustion sample final flowsheet iteration represented flotation test",
+    "text_after": "consisted aged drill core material sample therefore used developmental test purpose sample representative test represents result anticipated treatment esso material using final flowsheet iteration test result better result main lens lower zinc content obtained copper concentrate zinc rougher concentrate require regrinding achieve marketable grade reasonable recovery value csa global report",
+    "caption": "Figure 13-1: Flotation Flowsheet",
+    "page": 113
+  },
+  "Kutcho-FS-11082021_pfs_126": {
+    "type": "flowsheet",
+    "stages": [
+      {
+        "id": "input_feed",
+        "name": "Feed / ROM Input",
+        "order": 1
+      },
+      {
+        "id": "grinding",
+        "name": "Primary Grinding (P80 = 55 \u00b5m)",
+        "order": 2
+      },
+      {
+        "id": "copper_rougher_flotation",
+        "name": "Copper Rougher Flotation",
+        "order": 3
+      },
+      {
+        "id": "copper_regrind",
+        "name": "Copper Concentrate Regrind (P80 = 15 \u00b5m)",
+        "order": 4
+      },
+      {
+        "id": "copper_cleaner_flotation",
+        "name": "Copper Cleaner Flotation (1 Stage)",
+        "order": 5
+      },
+      {
+        "id": "copper_concentrate_output",
+        "name": "Marketable Copper Concentrate",
+        "order": 6
+      },
+      {
+        "id": "zinc_feed_conditioning",
+        "name": "Zinc Feed (Copper Rougher Tailings + Copper Cleaner Tailings)",
+        "order": 7
+      },
+      {
+        "id": "zinc_rougher_flotation",
+        "name": "Zinc Rougher Flotation",
+        "order": 8
+      },
+      {
+        "id": "zinc_regrind",
+        "name": "Zinc Rougher Concentrate Regrind (P80 = 20 \u00b5m)",
+        "order": 9
+      },
+      {
+        "id": "zinc_1st_cleaner_flotation",
+        "name": "Zinc 1st Cleaner Flotation",
+        "order": 10
+      },
+      {
+        "id": "zinc_2nd_cleaner_flotation",
+        "name": "Zinc 2nd Cleaner Flotation",
+        "order": 11
+      },
+      {
+        "id": "zinc_3rd_cleaner_flotation",
+        "name": "Zinc 3rd Cleaner Flotation",
+        "order": 12
+      },
+      {
+        "id": "zinc_concentrate_output",
+        "name": "Marketable Zinc Concentrate",
+        "order": 13
+      },
+      {
+        "id": "tailing",
+        "name": "Final Tailings Disposal (Zinc Rougher Tailings + Zinc 1st Cleaner Tailings)",
+        "order": 14
+      },
+      {
+        "id": "ore_sorting",
+        "name": "Mineral / Ore Sorting (XRT + NIR Sensor-Based)",
+        "order": 15
+      }
+    ],
+    "units": [
+      {
+        "id": "feed_input",
+        "label": "Feed (100% mass, 1.77% Cu, 2.58% Zn, 0.42 g/t Au, 31 g/t Ag)",
+        "type": "input",
+        "stage_id": "input_feed",
+        "cells": 1
+      },
+      {
+        "id": "primary_mill",
+        "label": "Primary Grinding Mill (P80 = 55 \u00b5m)",
+        "type": "mill",
+        "stage_id": "grinding",
+        "cells": 1
+      },
+      {
+        "id": "cu_rougher_cells",
+        "label": "Copper Rougher Flotation Cells",
+        "type": "flotation",
+        "stage_id": "copper_rougher_flotation",
+        "cells": 1
+      },
+      {
+        "id": "cu_regrind_mill",
+        "label": "Copper Regrind Mill (P80 = 15 \u00b5m)",
+        "type": "regrind",
+        "stage_id": "copper_regrind",
+        "cells": 1
+      },
+      {
+        "id": "cu_cleaner_cells",
+        "label": "Copper Cleaner Flotation (1 Stage)",
+        "type": "flotation",
+        "stage_id": "copper_cleaner_flotation",
+        "cells": 1
+      },
+      {
+        "id": "cu_concentrate_product",
+        "label": "Cu Concentrate (6.07% mass, 26.03% Cu, 10.29% Zn, 2.85 g/t Au, 310 g/t Ag)",
+        "type": "copper_concentrate_storage",
+        "stage_id": "copper_concentrate_output",
+        "cells": 1
+      },
+      {
+        "id": "zn_feed_mix",
+        "label": "Zinc Flotation Feed (Cu Rougher Tailings + Cu Cleaner Tailings combined)",
+        "type": "tank",
+        "stage_id": "zinc_feed_conditioning",
+        "cells": 1
+      },
+      {
+        "id": "zn_rougher_cells",
+        "label": "Zinc Rougher Flotation Cells",
+        "type": "flotation",
+        "stage_id": "zinc_rougher_flotation",
+        "cells": 1
+      },
+      {
+        "id": "zn_regrind_mill",
+        "label": "Zinc Regrind Mill (P80 = 20 \u00b5m)",
+        "type": "regrind",
+        "stage_id": "zinc_regrind",
+        "cells": 1
+      },
+      {
+        "id": "zn_1st_cleaner_cells",
+        "label": "Zinc 1st Cleaner Flotation",
+        "type": "flotation",
+        "stage_id": "zinc_1st_cleaner_flotation",
+        "cells": 1
+      },
+      {
+        "id": "zn_2nd_cleaner_cells",
+        "label": "Zinc 2nd Cleaner Flotation",
+        "type": "flotation",
+        "stage_id": "zinc_2nd_cleaner_flotation",
+        "cells": 1
+      },
+      {
+        "id": "zn_3rd_cleaner_cells",
+        "label": "Zinc 3rd Cleaner Flotation",
+        "type": "flotation",
+        "stage_id": "zinc_3rd_cleaner_flotation",
+        "cells": 1
+      },
+      {
+        "id": "zn_concentrate_product",
+        "label": "Zn Concentrate (3.46% mass, 1.43% Cu, 55.01% Zn, 3.15 g/t Au, 80 g/t Ag)",
+        "type": "zinc_concentrate_storage",
+        "stage_id": "zinc_concentrate_output",
+        "cells": 1
+      },
+      {
+        "id": "final_tailings",
+        "label": "Final Tailings (Zn Rougher Tailings + Zn 1st Cleaner Tailings discarded)",
+        "type": "tailing",
+        "stage_id": "tailing",
+        "cells": 1
+      },
+      {
+        "id": "xrt_sorter",
+        "label": "TOMRA COM Tertiary XRT Sorter (5-stage cascade, +15 mm fraction)",
+        "type": "ore_sorting",
+        "stage_id": "ore_sorting",
+        "cells": 1
+      },
+      {
+        "id": "nir_sorter",
+        "label": "TOMRA PRO Secondary COLOR-NIR Sorter (Cu-Zn sulphides vs iron sulphides separation)",
+        "type": "ore_sorting",
+        "stage_id": "ore_sorting",
+        "cells": 1
+      },
+      {
+        "id": "sorting_screen",
+        "label": "Crushing & Screening at 15 mm (fines bypass -15 mm)",
+        "type": "screen",
+        "stage_id": "ore_sorting",
+        "cells": 1
+      }
+    ],
+    "connections": [
+      {
+        "parent_id": "INPUT",
+        "child_id": "input_feed"
+      },
+      {
+        "parent_id": "input_feed",
+        "child_id": "grinding"
+      },
+      {
+        "parent_id": "grinding",
+        "child_id": "copper_rougher_flotation"
+      },
+      {
+        "parent_id": "copper_rougher_flotation",
+        "child_id": "copper_regrind"
+      },
+      {
+        "parent_id": "copper_regrind",
+        "child_id": "copper_cleaner_flotation"
+      },
+      {
+        "parent_id": "copper_cleaner_flotation",
+        "child_id": "copper_concentrate_output"
+      },
+      {
+        "parent_id": "copper_cleaner_flotation",
+        "child_id": "zinc_feed_conditioning"
+      },
+      {
+        "parent_id": "copper_rougher_flotation",
+        "child_id": "zinc_feed_conditioning"
+      },
+      {
+        "parent_id": "zinc_feed_conditioning",
+        "child_id": "zinc_rougher_flotation"
+      },
+      {
+        "parent_id": "zinc_rougher_flotation",
+        "child_id": "zinc_regrind"
+      },
+      {
+        "parent_id": "zinc_regrind",
+        "child_id": "zinc_1st_cleaner_flotation"
+      },
+      {
+        "parent_id": "zinc_1st_cleaner_flotation",
+        "child_id": "zinc_2nd_cleaner_flotation"
+      },
+      {
+        "parent_id": "zinc_2nd_cleaner_flotation",
+        "child_id": "zinc_3rd_cleaner_flotation"
+      },
+      {
+        "parent_id": "zinc_3rd_cleaner_flotation",
+        "child_id": "zinc_concentrate_output"
+      },
+      {
+        "parent_id": "zinc_2nd_cleaner_flotation",
+        "child_id": "zinc_1st_cleaner_flotation"
+      },
+      {
+        "parent_id": "zinc_3rd_cleaner_flotation",
+        "child_id": "zinc_2nd_cleaner_flotation"
+      },
+      {
+        "parent_id": "zinc_1st_cleaner_flotation",
+        "child_id": "tailing"
+      },
+      {
+        "parent_id": "zinc_rougher_flotation",
+        "child_id": "tailing"
+      },
+      {
+        "parent_id": "copper_concentrate_output",
+        "child_id": "OUTPUT"
+      },
+      {
+        "parent_id": "zinc_concentrate_output",
+        "child_id": "OUTPUT"
+      },
+      {
+        "parent_id": "tailing",
+        "child_id": "OUTPUT"
+      },
+      {
+        "parent_id": "INPUT",
+        "child_id": "ore_sorting"
+      },
+      {
+        "parent_id": "ore_sorting",
+        "child_id": "grinding"
+      }
+    ],
+    "text_before": "",
+    "text_after": "",
+    "caption": "kutcho copper corp. kutcho copper project \u2013 feasibility study (ni 43-101 technical report) are subsequently misplaced into the copper concentrate owing to a lack of depression and/or inadvertent activ",
+    "page": 126
+  },
+  "Kutcho-FS-11082021_pfs_129": {
+    "type": "flowsheet",
+    "stages": [
+      {
+        "id": "comminution_testing",
+        "name": "Comminution Test Work",
+        "order": 1
+      },
+      {
+        "id": "crushing",
+        "name": "Crushing / Ore Sorting",
+        "order": 2
+      },
+      {
+        "id": "grinding",
+        "name": "Grinding (SAG/Ball Mill)",
+        "order": 3
+      },
+      {
+        "id": "classification",
+        "name": "Classification (Cyclone)",
+        "order": 4
+      }
+    ],
+    "units": [
+      {
+        "id": "bond_crusher_work_index",
+        "label": "Bond Low-energy Impact Test (Cwi) - 15.5 kWh/t",
+        "type": "crusher",
+        "stage_id": "comminution_testing",
+        "cells": 1
+      },
+      {
+        "id": "jk_drop_weight_axb",
+        "label": "JK Drop Weight Axb = 78.1",
+        "type": "mill",
+        "stage_id": "comminution_testing",
+        "cells": 1
+      },
+      {
+        "id": "bond_rod_mill_rwi",
+        "label": "Bond Rod Mill Work Index (Rwi) = 9.1 kWh/t",
+        "type": "mill",
+        "stage_id": "comminution_testing",
+        "cells": 1
+      },
+      {
+        "id": "bond_ball_mill_bwi",
+        "label": "Bond Ball Mill Work Index (Bwi) = 14.1 kWh/t at P80 55 \u00b5m",
+        "type": "mill",
+        "stage_id": "comminution_testing",
+        "cells": 1
+      },
+      {
+        "id": "abrasion_index_ai",
+        "label": "Abrasion Index (Ai) = 0.2 g",
+        "type": "mill",
+        "stage_id": "comminution_testing",
+        "cells": 1
+      },
+      {
+        "id": "ore_sorting_unit",
+        "label": "Ore Sorting (removes 12% crusher feed)",
+        "type": "ore_sorting",
+        "stage_id": "crushing",
+        "cells": 1
+      },
+      {
+        "id": "crusher_unit",
+        "label": "Crusher",
+        "type": "crusher",
+        "stage_id": "crushing",
+        "cells": 1
+      },
+      {
+        "id": "sag_ball_mill",
+        "label": "SAG/Ball Mill Grinding",
+        "type": "mill",
+        "stage_id": "grinding",
+        "cells": 1
+      },
+      {
+        "id": "cyclone_classification",
+        "label": "Cyclone Classification",
+        "type": "cyclone",
+        "stage_id": "classification",
+        "cells": 1
+      }
+    ],
+    "connections": [
+      {
+        "parent_id": "INPUT",
+        "child_id": "crushing"
+      },
+      {
+        "parent_id": "crushing",
+        "child_id": "grinding"
+      },
+      {
+        "parent_id": "grinding",
+        "child_id": "classification"
+      },
+      {
+        "parent_id": "classification",
+        "child_id": "OUTPUT"
+      },
+      {
+        "parent_id": "comminution_testing",
+        "child_id": "crushing"
+      }
+    ],
+    "text_before": "",
+    "text_after": "",
+    "caption": "kutcho copper corp. kutcho copper project \u2013 feasibility study (ni 43-101 technical report) table 13-21 summarizes the comminution test work from 2018 to 2021. table 13-21: comminution test work comple",
+    "page": 129
+  },
+  "Kutcho-FS-11082021_pfs_206": {
+    "type": "flowsheet",
+    "error": "Extra data: line 106 column 1 (char 2196)",
+    "raw": "{\n  \"stages\": [\n    {\n      \"id\": \"input\",\n      \"name\": \"ROM Feed / Ore Input\",\n      \"order\": 1\n    },\n    {\n      \"id\": \"underground_mining\",\n      \"name\": \"Underground Mining (Main and Esso Deposits)\",\n      \"order\": 2\n    },\n    {\n      \"id\": \"open_pit_mining\",\n      \"name\": \"Open Pit Mining (Main Pit)\",\n      \"order\": 3\n    },\n    {\n      \"id\": \"stockpile\",\n      \"name\": \"Ore Stockpile / Stockpile Rehandle\",\n      \"order\": 4\n    },\n    {\n      \"id\": \"ore_sorting\",\n      \"name\": \"Ore Sorting (Sensor-based, reject to backfill)\",\n      \"order\": 5\n    },\n    {\n      \"id\": \"tailing\",\n      \"name\": \"Tailings / Waste Disposal\",\n      \"order\": 6\n    }\n  ],\n  \"units\": [\n    {\n      \"id\": \"main_esso_underground_mine\",\n      \"label\": \"Main and Esso Underground Mines\",\n      \"type\": \"input\",\n      \"stage_id\": \"underground_mining\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"main_open_pit_mine\",\n      \"label\": \"Main Open Pit Mine\",\n      \"type\": \"input\",\n      \"stage_id\": \"open_pit_mining\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"ore_stockpile_rehandle\",\n      \"label\": \"Ore Stockpile Rehandle\",\n      \"type\": \"stockpile\",\n      \"stage_id\": \"stockpile\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"waste_rehandle\",\n      \"label\": \"Waste Rehandle\",\n      \"type\": \"tailing\",\n      \"stage_id\": \"tailing\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"ore_sorter\",\n      \"label\": \"Ore Sorter (reject used as cemented rock fill backfill)\",\n      \"type\": \"ore_sorting\",\n      \"stage_id\": \"ore_sorting\",\n      \"cells\": 1\n    }\n  ],\n  \"connections\": [\n    {\n      \"parent_id\": \"INPUT\",\n      \"child_id\": \"underground_mining\"\n    },\n    {\n      \"parent_id\": \"INPUT\",\n      \"child_id\": \"open_pit_mining\"\n    },\n    {\n      \"parent_id\": \"underground_mining\",\n      \"child_id\": \"ore_sorting\"\n    },\n    {\n      \"parent_id\": \"open_pit_mining\",\n      \"child_id\": \"stockpile\"\n    },\n    {\n      \"parent_id\": \"stockpile\",\n      \"child_id\": \"ore_sorting\"\n    },\n    {\n      \"parent_id\": \"ore_sorting\",\n      \"child_id\": \"OUTPUT\"\n    },\n    {\n      \"parent_id\": \"ore_sorting\",\n      \"child_id\": \"underground_mining\"\n    },\n    {\n      \"parent_id\": \"open_pit_mining\",\n      \"child_id\": \"tailing\"\n    }\n  ]\n}\n```\n\n> **Note:** This document is a **feasibility study text and summary production statistics table** (Table 16-1) from the Kutcho Copper Project NI 43-101 Technical Report \u2014 it is **not a process flowsheet diagram**. Therefore, the JSON above has been constructed from the textual and tabular information available, capturing:\n> - **Mining stages**: Underground (Main + Esso) and Open Pit\n> - **Material handling**: Ore stockpile and waste rehandle volumes\n> - **Ore sorting**: Referenced as the source of cemented rock fill (ore sorter reject) for underground stope backfill\n> - **Production periods**: Pre-production, Early production, Steady state, Stockpile rehandle, and Life-of-mine as described in Table 16-1\n>\n> A full process flowsheet (crushing, grinding, flotation, concentrate handling) would require the processing plant section of the report (typically Section 17+).",
+    "text_before": "",
+    "text_after": "",
+    "caption": "kutcho copper corp. kutcho copper project \u2013 feasibility study (ni 43-101 technical report) summary production statistics of the underground and open pit mine plan are shown in table 16-1. table 16-1: ",
+    "page": 206
+  },
+  "Kutcho-FS-11082021_pfs_231": {
+    "type": "flowsheet",
+    "stages": [
+      {
+        "id": "open_pit_mining",
+        "name": "Open Pit Mining",
+        "order": 1
+      },
+      {
+        "id": "underground_mining",
+        "name": "Underground Mining",
+        "order": 2
+      },
+      {
+        "id": "plant_processing",
+        "name": "Plant Processing",
+        "order": 3
+      },
+      {
+        "id": "power_plant",
+        "name": "Power Plant",
+        "order": 4
+      },
+      {
+        "id": "other_infrastructure",
+        "name": "Other Infrastructure (TMF Contractors & Site Construction)",
+        "order": 5
+      },
+      {
+        "id": "pre_stripping",
+        "name": "Pre-Stripping / Pre-Production",
+        "order": 6
+      },
+      {
+        "id": "tailing",
+        "name": "Tailings Management Facility (TMF)",
+        "order": 7
+      },
+      {
+        "id": "water_treatment",
+        "name": "Water Treatment Plant",
+        "order": 8
+      },
+      {
+        "id": "stockpile",
+        "name": "Ore Stockpile (Low-Grade & Oxidized)",
+        "order": 9
+      }
+    ],
+    "units": [
+      {
+        "id": "open_pit_equipment",
+        "label": "Open Pit",
+        "type": "input",
+        "stage_id": "open_pit_mining",
+        "cells": 1
+      },
+      {
+        "id": "underground_equipment",
+        "label": "Underground",
+        "type": "input",
+        "stage_id": "underground_mining",
+        "cells": 1
+      },
+      {
+        "id": "plant_equipment",
+        "label": "Plant",
+        "type": "mill",
+        "stage_id": "plant_processing",
+        "cells": 1
+      },
+      {
+        "id": "power_plant_equipment",
+        "label": "Power Plant",
+        "type": "reactor",
+        "stage_id": "power_plant",
+        "cells": 1
+      },
+      {
+        "id": "other_equipment",
+        "label": "Other (TMF Contractors & Site Infrastructure Construction)",
+        "type": "tailing",
+        "stage_id": "other_infrastructure",
+        "cells": 1
+      },
+      {
+        "id": "tmf_phase1_embankment",
+        "label": "TMF Phase 1 Embankment",
+        "type": "tailing",
+        "stage_id": "tailing",
+        "cells": 1
+      },
+      {
+        "id": "pag_wrd",
+        "label": "PAG WRD Under-liner Pad",
+        "type": "stockpile",
+        "stage_id": "pre_stripping",
+        "cells": 1
+      },
+      {
+        "id": "wrd",
+        "label": "Waste Rock Dump (WRD)",
+        "type": "stockpile",
+        "stage_id": "pre_stripping",
+        "cells": 1
+      },
+      {
+        "id": "oxidized_ore_stockpile",
+        "label": "Oxidized Ore Stockpile (213 kt)",
+        "type": "stockpile",
+        "stage_id": "stockpile",
+        "cells": 1
+      },
+      {
+        "id": "low_grade_stockpile",
+        "label": "Long-Term Low-Grade Stockpile (100 kt sulphide + 150 kt high-grade)",
+        "type": "stockpile",
+        "stage_id": "stockpile",
+        "cells": 1
+      },
+      {
+        "id": "water_treatment_plant_unit",
+        "label": "Water Treatment Plant",
+        "type": "water_treatment",
+        "stage_id": "water_treatment",
+        "cells": 1
+      },
+      {
+        "id": "contact_water_pond",
+        "label": "Contact Water Pond",
+        "type": "pond",
+        "stage_id": "water_treatment",
+        "cells": 1
+      },
+      {
+        "id": "sedimentation_ponds",
+        "label": "Sedimentation Ponds",
+        "type": "pond",
+        "stage_id": "water_treatment",
+        "cells": 1
+      },
+      {
+        "id": "diesel_power_generator",
+        "label": "Diesel Power Generator",
+        "type": "reactor",
+        "stage_id": "power_plant",
+        "cells": 1
+      },
+      {
+        "id": "mobile_crushing_plant",
+        "label": "Mobile Crushing Plant (TMF, underground stope rockfill, plant construction)",
+        "type": "crusher",
+        "stage_id": "other_infrastructure",
+        "cells": 1
+      },
+      {
+        "id": "water_diversion_channels",
+        "label": "Water Diversion Channels",
+        "type": "pond",
+        "stage_id": "water_treatment",
+        "cells": 1
+      }
+    ],
+    "connections": [
+      {
+        "parent_id": "INPUT",
+        "child_id": "open_pit_mining"
+      },
+      {
+        "parent_id": "INPUT",
+        "child_id": "underground_mining"
+      },
+      {
+        "parent_id": "open_pit_mining",
+        "child_id": "pre_stripping"
+      },
+      {
+        "parent_id": "open_pit_mining",
+        "child_id": "plant_processing"
+      },
+      {
+        "parent_id": "open_pit_mining",
+        "child_id": "stockpile"
+      },
+      {
+        "parent_id": "underground_mining",
+        "child_id": "plant_processing"
+      },
+      {
+        "parent_id": "pre_stripping",
+        "child_id": "tailing"
+      },
+      {
+        "parent_id": "pre_stripping",
+        "child_id": "stockpile"
+      },
+      {
+        "parent_id": "stockpile",
+        "child_id": "plant_processing"
+      },
+      {
+        "parent_id": "plant_processing",
+        "child_id": "tailing"
+      },
+      {
+        "parent_id": "plant_processing",
+        "child_id": "OUTPUT"
+      },
+      {
+        "parent_id": "power_plant",
+        "child_id": "plant_processing"
+      },
+      {
+        "parent_id": "power_plant",
+        "child_id": "open_pit_mining"
+      },
+      {
+        "parent_id": "power_plant",
+        "child_id": "underground_mining"
+      },
+      {
+        "parent_id": "other_infrastructure",
+        "child_id": "tailing"
+      },
+      {
+        "parent_id": "water_treatment",
+        "child_id": "plant_processing"
+      },
+      {
+        "parent_id": "tailing",
+        "child_id": "water_treatment"
+      }
+    ],
+    "text_before": "",
+    "text_after": "",
+    "caption": "kutcho copper corp. kutcho copper project \u2013 feasibility study (ni 43-101 technical report) diesel consumption per operating hour for open pit equipment was based on oem specifications with due modific",
+    "page": 231
+  },
+  "Kutcho-FS-11082021_pfs_287": {
+    "type": "flowsheet",
+    "stages": [
+      {
+        "id": "zinc_first_cleaner",
+        "name": "Zinc First Cleaner Flotation",
+        "order": 1
+      },
+      {
+        "id": "zinc_second_cleaner",
+        "name": "Zinc Second Cleaner Flotation",
+        "order": 2
+      },
+      {
+        "id": "zinc_third_cleaner",
+        "name": "Zinc Third Cleaner Flotation",
+        "order": 3
+      },
+      {
+        "id": "concentrate_thickening",
+        "name": "Concentrate Thickening",
+        "order": 4
+      },
+      {
+        "id": "concentrate_filtration",
+        "name": "Concentrate Filtration",
+        "order": 5
+      },
+      {
+        "id": "tailings_thickening",
+        "name": "Tailings Thickening",
+        "order": 6
+      }
+    ],
+    "units": [
+      {
+        "id": "zinc_first_cleaner_flotation",
+        "label": "Zinc First Cleaner",
+        "type": "flotation",
+        "stage_id": "zinc_first_cleaner",
+        "cells": 1
+      },
+      {
+        "id": "zinc_second_cleaner_flotation",
+        "label": "Zinc Second Cleaner",
+        "type": "flotation",
+        "stage_id": "zinc_second_cleaner",
+        "cells": 1
+      },
+      {
+        "id": "zinc_third_cleaner_flotation",
+        "label": "Zinc Third Cleaner",
+        "type": "flotation",
+        "stage_id": "zinc_third_cleaner",
+        "cells": 1
+      },
+      {
+        "id": "copper_concentrate_thickener",
+        "label": "Thickener - Copper Concentrate",
+        "type": "thickener",
+        "stage_id": "concentrate_thickening",
+        "cells": 1
+      },
+      {
+        "id": "zinc_concentrate_thickener",
+        "label": "Thickener - Zinc Concentrate",
+        "type": "thickener",
+        "stage_id": "concentrate_thickening",
+        "cells": 1
+      },
+      {
+        "id": "copper_concentrate_filter",
+        "label": "Filter - Copper Concentrate (Metso VPA1530)",
+        "type": "filter",
+        "stage_id": "concentrate_filtration",
+        "cells": 60
+      },
+      {
+        "id": "zinc_concentrate_filter",
+        "label": "Filter - Zinc Concentrate (Metso VPA1530)",
+        "type": "filter",
+        "stage_id": "concentrate_filtration",
+        "cells": 40
+      },
+      {
+        "id": "tailings_thickener",
+        "label": "Tailings Thickener",
+        "type": "thickener",
+        "stage_id": "tailings_thickening",
+        "cells": 1
+      }
+    ],
+    "connections": [
+      {
+        "parent_id": "INPUT",
+        "child_id": "zinc_first_cleaner"
+      },
+      {
+        "parent_id": "zinc_first_cleaner",
+        "child_id": "zinc_second_cleaner"
+      },
+      {
+        "parent_id": "zinc_second_cleaner",
+        "child_id": "zinc_third_cleaner"
+      },
+      {
+        "parent_id": "zinc_third_cleaner",
+        "child_id": "concentrate_thickening"
+      },
+      {
+        "parent_id": "concentrate_thickening",
+        "child_id": "concentrate_filtration"
+      },
+      {
+        "parent_id": "concentrate_filtration",
+        "child_id": "OUTPUT"
+      },
+      {
+        "parent_id": "zinc_third_cleaner",
+        "child_id": "tailings_thickening"
+      },
+      {
+        "parent_id": "tailings_thickening",
+        "child_id": "OUTPUT"
+      }
+    ],
+    "text_before": "",
+    "text_after": "",
+    "caption": "kutcho copper corp. kutcho copper project \u2013 feasibility study (ni 43-101 technical report) description unit value source zinc first cleaner flotation time min 12.5 test work slurry ph - 11.0 test work",
+    "page": 287
+  },
+  "Kutcho-FS-11082021_pfs_288": {
+    "type": "flowsheet",
+    "stages": [
+      {
+        "id": "input",
+        "name": "ROM Feed / Ore Input",
+        "order": 1
+      },
+      {
+        "id": "crushing",
+        "name": "Crushing",
+        "order": 2
+      },
+      {
+        "id": "ore_sorting",
+        "name": "Ore Sorting",
+        "order": 3
+      },
+      {
+        "id": "grinding",
+        "name": "Grinding",
+        "order": 4
+      },
+      {
+        "id": "copper_rougher_flotation",
+        "name": "Copper Rougher Flotation",
+        "order": 5
+      },
+      {
+        "id": "copper_regrind",
+        "name": "Copper Regrind",
+        "order": 6
+      },
+      {
+        "id": "copper_cleaner_flotation",
+        "name": "Copper Cleaner Flotation",
+        "order": 7
+      },
+      {
+        "id": "copper_concentrate_dewatering",
+        "name": "Copper Concentrate Dewatering",
+        "order": 8
+      },
+      {
+        "id": "copper_concentrate_storage",
+        "name": "Copper Concentrate Storage",
+        "order": 9
+      },
+      {
+        "id": "zinc_rougher_flotation",
+        "name": "Zinc Rougher Flotation",
+        "order": 10
+      },
+      {
+        "id": "zinc_regrind",
+        "name": "Zinc Regrind",
+        "order": 11
+      },
+      {
+        "id": "zinc_1st_cleaner_flotation",
+        "name": "Zinc 1st Cleaner Flotation",
+        "order": 12
+      },
+      {
+        "id": "zinc_2nd_cleaner_flotation",
+        "name": "Zinc 2nd Cleaner Flotation",
+        "order": 13
+      },
+      {
+        "id": "zinc_3rd_cleaner_flotation",
+        "name": "Zinc 3rd Cleaner Flotation",
+        "order": 14
+      },
+      {
+        "id": "zinc_concentrate_dewatering",
+        "name": "Zinc Concentrate Dewatering",
+        "order": 15
+      },
+      {
+        "id": "zinc_concentrate_storage",
+        "name": "Zinc Concentrate Storage",
+        "order": 16
+      },
+      {
+        "id": "tailings_thickener",
+        "name": "Tailings Thickener",
+        "order": 17
+      },
+      {
+        "id": "tailings_management_facility",
+        "name": "Tailings Management Facility (TMF)",
+        "order": 18
+      },
+      {
+        "id": "underground_backfill",
+        "name": "Underground Backfill or PAG Waste Rock Dump",
+        "order": 19
+      }
+    ],
+    "units": [
+      {
+        "id": "crusher_unit",
+        "label": "CRUSHING",
+        "type": "crusher",
+        "stage_id": "crushing",
+        "cells": 1
+      },
+      {
+        "id": "ore_sorting_unit",
+        "label": "ORE SORTING",
+        "type": "ore_sorting",
+        "stage_id": "ore_sorting",
+        "cells": 1
+      },
+      {
+        "id": "grinding_mill",
+        "label": "GRINDING",
+        "type": "mill",
+        "stage_id": "grinding",
+        "cells": 1
+      },
+      {
+        "id": "copper_rougher_flotation_cells",
+        "label": "COPPER ROUGHER FLOTATION",
+        "type": "flotation",
+        "stage_id": "copper_rougher_flotation",
+        "cells": 6
+      },
+      {
+        "id": "copper_regrind_mill",
+        "label": "COPPER REGRIND",
+        "type": "regrind",
+        "stage_id": "copper_regrind",
+        "cells": 1
+      },
+      {
+        "id": "copper_cleaner_flotation_cells",
+        "label": "COPPER CLEANER FLOTATION",
+        "type": "flotation",
+        "stage_id": "copper_cleaner_flotation",
+        "cells": 5
+      },
+      {
+        "id": "copper_concentrate_thickener",
+        "label": "COPPER CONCENTRATE DEWATERING",
+        "type": "thickener",
+        "stage_id": "copper_concentrate_dewatering",
+        "cells": 1
+      },
+      {
+        "id": "copper_concentrate_filter",
+        "label": "COPPER CONCENTRATE DEWATERING",
+        "type": "filter",
+        "stage_id": "copper_concentrate_dewatering",
+        "cells": 1
+      },
+      {
+        "id": "copper_concentrate_storage_unit",
+        "label": "COPPER CONCENTRATE STORAGE",
+        "type": "stockpile",
+        "stage_id": "copper_concentrate_storage",
+        "cells": 1
+      },
+      {
+        "id": "zinc_rougher_flotation_cells",
+        "label": "ZINC ROUGHER FLOTATION",
+        "type": "flotation",
+        "stage_id": "zinc_rougher_flotation",
+        "cells": 6
+      },
+      {
+        "id": "zinc_regrind_mill",
+        "label": "ZINC REGRIND",
+        "type": "regrind",
+        "stage_id": "zinc_regrind",
+        "cells": 1
+      },
+      {
+        "id": "zinc_1st_cleaner_flotation_cells",
+        "label": "ZINC 1ST CLEANER FLOTATION",
+        "type": "flotation",
+        "stage_id": "zinc_1st_cleaner_flotation",
+        "cells": 5
+      },
+      {
+        "id": "zinc_2nd_cleaner_flotation_cells",
+        "label": "ZINC 2ND CLEANER FLOTATION",
+        "type": "flotation",
+        "stage_id": "zinc_2nd_cleaner_flotation",
+        "cells": 4
+      },
+      {
+        "id": "zinc_3rd_cleaner_flotation_cells",
+        "label": "ZINC 3RD CLEANER FLOTATION",
+        "type": "flotation",
+        "stage_id": "zinc_3rd_cleaner_flotation",
+        "cells": 4
+      },
+      {
+        "id": "zinc_concentrate_thickener",
+        "label": "ZINC CONCENTRATE DEWATERING",
+        "type": "thickener",
+        "stage_id": "zinc_concentrate_dewatering",
+        "cells": 1
+      },
+      {
+        "id": "zinc_concentrate_filter",
+        "label": "ZINC CONCENTRATE DEWATERING",
+        "type": "filter",
+        "stage_id": "zinc_concentrate_dewatering",
+        "cells": 1
+      },
+      {
+        "id": "zinc_concentrate_storage_unit",
+        "label": "ZINC CONCENTRATE STORAGE",
+        "type": "stockpile",
+        "stage_id": "zinc_concentrate_storage",
+        "cells": 1
+      },
+      {
+        "id": "tailings_thickener_unit",
+        "label": "TAILINGS THICKENER",
+        "type": "thickener",
+        "stage_id": "tailings_thickener",
+        "cells": 1
+      },
+      {
+        "id": "tmf_unit",
+        "label": "TAILINGS MANAGEMENT FACILITY (TMF)",
+        "type": "tailing",
+        "stage_id": "tailings_management_facility",
+        "cells": 1
+      },
+      {
+        "id": "underground_backfill_unit",
+        "label": "TO UNDERGROUND BACKFILL OR PAG WASTE ROCK DUMP",
+        "type": "tailing",
+        "stage_id": "underground_backfill",
+        "cells": 1
+      }
+    ],
+    "connections": [
+      {
+        "parent_id": "INPUT",
+        "child_id": "crushing"
+      },
+      {
+        "parent_id": "crushing",
+        "child_id": "ore_sorting"
+      },
+      {
+        "parent_id": "ore_sorting",
+        "child_id": "grinding"
+      },
+      {
+        "parent_id": "ore_sorting",
+        "child_id": "underground_backfill"
+      },
+      {
+        "parent_id": "grinding",
+        "child_id": "copper_rougher_flotation"
+      },
+      {
+        "parent_id": "grinding",
+        "child_id": "underground_backfill"
+      },
+      {
+        "parent_id": "copper_rougher_flotation",
+        "child_id": "copper_regrind"
+      },
+      {
+        "parent_id": "copper_rougher_flotation",
+        "child_id": "zinc_rougher_flotation"
+      },
+      {
+        "parent_id": "copper_regrind",
+        "child_id": "copper_cleaner_flotation"
+      },
+      {
+        "parent_id": "copper_cleaner_flotation",
+        "child_id": "copper_concentrate_dewatering"
+      },
+      {
+        "parent_id": "copper_cleaner_flotation",
+        "child_id": "zinc_1st_cleaner_flotation"
+      },
+      {
+        "parent_id": "copper_cleaner_flotation",
+        "child_id": "copper_rougher_flotation"
+      },
+      {
+        "parent_id": "copper_concentrate_dewatering",
+        "child_id": "copper_concentrate_storage"
+      },
+      {
+        "parent_id": "copper_concentrate_storage",
+        "child_id": "OUTPUT"
+      },
+      {
+        "parent_id": "zinc_rougher_flotation",
+        "child_id": "zinc_regrind"
+      },
+      {
+        "parent_id": "zinc_rougher_flotation",
+        "child_id": "tailings_thickener"
+      },
+      {
+        "parent_id": "zinc_regrind",
+        "child_id": "zinc_1st_cleaner_flotation"
+      },
+      {
+        "parent_id": "zinc_1st_cleaner_flotation",
+        "child_id": "zinc_2nd_cleaner_flotation"
+      },
+      {
+        "parent_id": "zinc_1st_cleaner_flotation",
+        "child_id": "zinc_rougher_flotation"
+      },
+      {
+        "parent_id": "zinc_2nd_cleaner_flotation",
+        "child_id": "zinc_3rd_cleaner_flotation"
+      },
+      {
+        "parent_id": "zinc_2nd_cleaner_flotation",
+        "child_id": "zinc_1st_cleaner_flotation"
+      },
+      {
+        "parent_id": "zinc_3rd_cleaner_flotation",
+        "child_id": "zinc_concentrate_dewatering"
+      },
+      {
+        "parent_id": "zinc_3rd_cleaner_flotation",
+        "child_id": "zinc_2nd_cleaner_flotation"
+      },
+      {
+        "parent_id": "zinc_concentrate_dewatering",
+        "child_id": "zinc_concentrate_storage"
+      },
+      {
+        "parent_id": "zinc_concentrate_storage",
+        "child_id": "OUTPUT"
+      },
+      {
+        "parent_id": "tailings_thickener",
+        "child_id": "tailings_management_facility"
+      },
+      {
+        "parent_id": "tailings_thickener",
+        "child_id": "grinding"
+      },
+      {
+        "parent_id": "tailings_management_facility",
+        "child_id": "OUTPUT"
+      }
+    ],
+    "text_before": "",
+    "text_after": "",
+    "caption": "kutcho copper corp. kutcho copper project \u2013 feasibility study (ni 43-101 technical report) figure 17-1: simplified process flowsheet csa global report \u2116 r533.2021 265",
+    "page": 288
+  },
+  "Kutcho-FS-11082021_pfs_315": {
+    "type": "flowsheet",
+    "stages": [
+      {
+        "id": "tailing_storage_phase1",
+        "name": "Phase 1 Tailing Storage",
+        "order": 1
+      },
+      {
+        "id": "tailing_storage_phase2",
+        "name": "Phase 2 Tailing Storage",
+        "order": 2
+      },
+      {
+        "id": "tailing_storage_phase3",
+        "name": "Phase 3 Tailing Storage",
+        "order": 3
+      },
+      {
+        "id": "tailing_storage_phase4",
+        "name": "Phase 4 Tailing Storage",
+        "order": 4
+      },
+      {
+        "id": "waste_rock_dump",
+        "name": "Waste Rock Dumps",
+        "order": 5
+      },
+      {
+        "id": "ore_sorting",
+        "name": "Ore Sorter / Reject Rock Processing",
+        "order": 6
+      },
+      {
+        "id": "tailing",
+        "name": "Tailings Management Facility (TMF)",
+        "order": 7
+      },
+      {
+        "id": "stockpile",
+        "name": "Topsoil Stockpiles",
+        "order": 8
+      }
+    ],
+    "units": [
+      {
+        "id": "tmf_phase1",
+        "label": "Phase 1 Tailing Storage - 3.3 Mt total",
+        "type": "tailing",
+        "stage_id": "tailing_storage_phase1",
+        "cells": 1
+      },
+      {
+        "id": "tmf_phase2",
+        "label": "Phase 2 Tailing Storage - 3.8 Mt total",
+        "type": "tailing",
+        "stage_id": "tailing_storage_phase2",
+        "cells": 1
+      },
+      {
+        "id": "tmf_phase3",
+        "label": "Phase 3 Tailing Storage - 2.5 Mt total",
+        "type": "tailing",
+        "stage_id": "tailing_storage_phase3",
+        "cells": 1
+      },
+      {
+        "id": "tmf_phase4",
+        "label": "Phase 4 Tailing Storage - 3.5 Mt total",
+        "type": "tailing",
+        "stage_id": "tailing_storage_phase4",
+        "cells": 1
+      },
+      {
+        "id": "wrd_main",
+        "label": "Main Waste Rock Dump (WRD) - PAG and nPAG",
+        "type": "stockpile",
+        "stage_id": "waste_rock_dump",
+        "cells": 1
+      },
+      {
+        "id": "wrd_underground_portal",
+        "label": "Underground Portal Waste Rock Dump",
+        "type": "stockpile",
+        "stage_id": "waste_rock_dump",
+        "cells": 1
+      },
+      {
+        "id": "wrd_inpit",
+        "label": "In-Pit Dump / nPAG Backfill",
+        "type": "stockpile",
+        "stage_id": "waste_rock_dump",
+        "cells": 1
+      },
+      {
+        "id": "wrd_tmf_wall",
+        "label": "TMF Wall Waste Rock",
+        "type": "tailing",
+        "stage_id": "waste_rock_dump",
+        "cells": 1
+      },
+      {
+        "id": "mobile_waste_crusher_platform",
+        "label": "Small nPAG Waste Rock Dump - 228 kt platform for mobile waste crusher",
+        "type": "crusher",
+        "stage_id": "waste_rock_dump",
+        "cells": 1
+      },
+      {
+        "id": "ore_sorter_reject",
+        "label": "Ore Sorter Reject Rock (PAG) - Underground Stope Backfill or WRD PAG / Pit Backfill",
+        "type": "ore_sorting",
+        "stage_id": "ore_sorting",
+        "cells": 1
+      },
+      {
+        "id": "topsoil_stockpile_main",
+        "label": "Three Main Topsoil Stockpiles",
+        "type": "stockpile",
+        "stage_id": "stockpile",
+        "cells": 3
+      },
+      {
+        "id": "topsoil_stockpile_external",
+        "label": "Three Small External Topsoil Stockpiles (Esso Ventilation, Laydown, Explosives Magazine)",
+        "type": "stockpile",
+        "stage_id": "stockpile",
+        "cells": 3
+      }
+    ],
+    "connections": [
+      {
+        "parent_id": "INPUT",
+        "child_id": "tailing_storage_phase1"
+      },
+      {
+        "parent_id": "INPUT",
+        "child_id": "tailing_storage_phase2"
+      },
+      {
+        "parent_id": "INPUT",
+        "child_id": "tailing_storage_phase3"
+      },
+      {
+        "parent_id": "INPUT",
+        "child_id": "tailing_storage_phase4"
+      },
+      {
+        "parent_id": "tailing_storage_phase1",
+        "child_id": "tailing"
+      },
+      {
+        "parent_id": "tailing_storage_phase2",
+        "child_id": "tailing"
+      },
+      {
+        "parent_id": "tailing_storage_phase3",
+        "child_id": "tailing"
+      },
+      {
+        "parent_id": "tailing_storage_phase4",
+        "child_id": "tailing"
+      },
+      {
+        "parent_id": "INPUT",
+        "child_id": "waste_rock_dump"
+      },
+      {
+        "parent_id": "waste_rock_dump",
+        "child_id": "ore_sorting"
+      },
+      {
+        "parent_id": "ore_sorting",
+        "child_id": "waste_rock_dump"
+      },
+      {
+        "parent_id": "waste_rock_dump",
+        "child_id": "stockpile"
+      },
+      {
+        "parent_id": "stockpile",
+        "child_id": "OUTPUT"
+      },
+      {
+        "parent_id": "tailing",
+        "child_id": "OUTPUT"
+      }
+    ],
+    "text_before": "",
+    "text_after": "",
+    "caption": "kutcho copper corp. kutcho copper project \u2013 feasibility study (ni 43-101 technical report) table 18-3: planned tailing storage tonnages (mt tailings) year-> total -1 1 2 3 4 5 6 7 8 9 10 phase 1 3.3 0",
+    "page": 315
+  },
+  "Kutcho-FS-11082021_pfs_317": {
+    "type": "flowsheet",
+    "error": "Extra data: line 128 column 1 (char 2677)",
+    "raw": "{\n  \"stages\": [\n    {\n      \"id\": \"input\",\n      \"name\": \"ROM Feed / Ore Input\",\n      \"order\": 1\n    },\n    {\n      \"id\": \"phase_2_pit\",\n      \"name\": \"Phase 2 Pit\",\n      \"order\": 2\n    },\n    {\n      \"id\": \"in_pit_dump\",\n      \"name\": \"In Pit Dump\",\n      \"order\": 3\n    },\n    {\n      \"id\": \"stockpile\",\n      \"name\": \"Ore Stockpile / Waste Dump\",\n      \"order\": 4\n    },\n    {\n      \"id\": \"tailing\",\n      \"name\": \"Tailings / Waste Disposal\",\n      \"order\": 5\n    }\n  ],\n  \"units\": [\n    {\n      \"id\": \"phase_2_pit_unit\",\n      \"label\": \"Phase 2 Pit\",\n      \"type\": \"input\",\n      \"stage_id\": \"phase_2_pit\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"in_pit_dump_unit\",\n      \"label\": \"In Pit Dump\",\n      \"type\": \"stockpile\",\n      \"stage_id\": \"in_pit_dump\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"waste_dump_north\",\n      \"label\": \"Waste Dump (North - Light Green Contoured)\",\n      \"type\": \"stockpile\",\n      \"stage_id\": \"stockpile\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"waste_dump_east_dark_brown\",\n      \"label\": \"Waste Dump (East - Dark Brown)\",\n      \"type\": \"tailing\",\n      \"stage_id\": \"tailing\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"waste_dump_southeast_tan\",\n      \"label\": \"Waste Dump (Southeast - Tan/Light Brown)\",\n      \"type\": \"stockpile\",\n      \"stage_id\": \"stockpile\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"ore_stockpile_orange\",\n      \"label\": \"Ore Stockpile (Orange)\",\n      \"type\": \"stockpile\",\n      \"stage_id\": \"stockpile\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"waste_dump_central_dark\",\n      \"label\": \"Waste Dump (Central - Dark Brown)\",\n      \"type\": \"tailing\",\n      \"stage_id\": \"tailing\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"waste_dump_west_small_dark\",\n      \"label\": \"Waste Dump (West - Small Dark Brown)\",\n      \"type\": \"tailing\",\n      \"stage_id\": \"tailing\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"red_feature\",\n      \"label\": \"Red Feature (possibly crusher or infrastructure)\",\n      \"type\": \"crusher\",\n      \"stage_id\": \"phase_2_pit\",\n      \"cells\": 1\n    },\n    {\n      \"id\": \"small_green_west\",\n      \"label\": \"Small Green Feature (West)\",\n      \"type\": \"stockpile\",\n      \"stage_id\": \"stockpile\",\n      \"cells\": 1\n    }\n  ],\n  \"connections\": [\n    {\n      \"parent_id\": \"INPUT\",\n      \"child_id\": \"phase_2_pit\"\n    },\n    {\n      \"parent_id\": \"phase_2_pit\",\n      \"child_id\": \"in_pit_dump\"\n    },\n    {\n      \"parent_id\": \"phase_2_pit\",\n      \"child_id\": \"stockpile\"\n    },\n    {\n      \"parent_id\": \"in_pit_dump\",\n      \"child_id\": \"stockpile\"\n    },\n    {\n      \"parent_id\": \"stockpile\",\n      \"child_id\": \"tailing\"\n    },\n    {\n      \"parent_id\": \"tailing\",\n      \"child_id\": \"OUTPUT\"\n    }\n  ]\n}\n```\n\n> **Note:** This image is a **mine plan map** (Figure 18-9) showing spatial locations of stockpiles and waste dump areas in Year 7 (2033), **not a process flowsheet**. It does not contain a metallurgical process flow. The JSON above reflects the material handling and spatial features visible: the **Phase 2 Pit** as ore source, an **In-Pit Dump**, and several **waste dumps / ore stockpiles** of varying colors (light green contoured = waste dump lifts, orange = ore stockpile, dark brown = waste dumps, tan = low-grade or waste). A proper process flowsheet extraction would require the actual plant flowsheet diagram.",
+    "text_before": "kutcho copper corp",
+    "text_after": "primary objective surface water management plan manage surface water life mine maintain environmental operational performance project mine layout designed separate surface water contact water water catchment system capture conveys treat surface contact water within active mine area open pit plant waste rock dump ore stockpile area come contact pag rock surface water designed collected conveyed series sedimentation pond released receiving environment surface water management system designed limit surface water entering site utilizing several diversion ditch canal divert surface water around mine site discharge downstream receiving environment contact water designed report contact water pond cwp tmf surplus water required use process water treated water treatment plant sampled analyzed compliance discharge permit prior pumped water discharge location csa global hired erm undertake water modelling develop water balance model determine required sizing contact water pond allnorth designed water management infrastructure including diversion canal ditching pipeline sedimentation pond cwp design criterion",
+    "caption": "Figure 18-9: Plan Showing the Location of Various Stockpiles and Waste Dump Locations in Year 7 (2033)",
+    "page": 317
+  },
+  "Kutcho-FS-11082021_pfs_393": {
+    "type": "flowsheet",
+    "stages": [
+      {
+        "id": "primary_crushing",
+        "name": "Primary Crushing",
+        "order": 1
+      },
+      {
+        "id": "screening",
+        "name": "Screening",
+        "order": 2
+      },
+      {
+        "id": "secondary_crushing",
+        "name": "Secondary Crushing",
+        "order": 3
+      },
+      {
+        "id": "ore_sorting",
+        "name": "Ore Sorting",
+        "order": 4
+      },
+      {
+        "id": "conveying",
+        "name": "Conveying",
+        "order": 5
+      },
+      {
+        "id": "grinding",
+        "name": "Grinding (SAG & Ball Mill)",
+        "order": 6
+      },
+      {
+        "id": "regrind",
+        "name": "Regrind (Copper & Zinc)",
+        "order": 7
+      },
+      {
+        "id": "copper_concentrate_thickening",
+        "name": "Copper Concentrate Thickening",
+        "order": 8
+      },
+      {
+        "id": "copper_concentrate_filtration",
+        "name": "Copper Concentrate Filtration",
+        "order": 9
+      },
+      {
+        "id": "zinc_concentrate_thickening",
+        "name": "Zinc Concentrate Thickening",
+        "order": 10
+      },
+      {
+        "id": "zinc_concentrate_filtration",
+        "name": "Zinc Concentrate Filtration",
+        "order": 11
+      },
+      {
+        "id": "tailings_thickening",
+        "name": "Tailings Thickening",
+        "order": 12
+      },
+      {
+        "id": "water_handling",
+        "name": "Water Handling (Fire/Process Water)",
+        "order": 13
+      },
+      {
+        "id": "plant_assay_laboratory",
+        "name": "Plant Assay Laboratory",
+        "order": 14
+      }
+    ],
+    "units": [
+      {
+        "id": "rock_breaker",
+        "label": "Rock breaker",
+        "type": "crusher",
+        "stage_id": "primary_crushing",
+        "cells": 1
+      },
+      {
+        "id": "jaw_crusher",
+        "label": "Jaw crusher",
+        "type": "crusher",
+        "stage_id": "primary_crushing",
+        "cells": 1
+      },
+      {
+        "id": "primary_double_deck_screen",
+        "label": "Primary double deck screen",
+        "type": "screen",
+        "stage_id": "screening",
+        "cells": 1
+      },
+      {
+        "id": "cone_crusher",
+        "label": "Cone crusher",
+        "type": "crusher",
+        "stage_id": "secondary_crushing",
+        "cells": 1
+      },
+      {
+        "id": "secondary_double_deck_screen",
+        "label": "Secondary double deck screen",
+        "type": "screen",
+        "stage_id": "screening",
+        "cells": 1
+      },
+      {
+        "id": "fine_sorter",
+        "label": "Fine sorter",
+        "type": "ore_sorting",
+        "stage_id": "ore_sorting",
+        "cells": 1
+      },
+      {
+        "id": "coarse_sorter",
+        "label": "Coarse sorter",
+        "type": "ore_sorting",
+        "stage_id": "ore_sorting",
+        "cells": 1
+      },
+      {
+        "id": "waste_bin_feed_conveyor",
+        "label": "Waste bin feed conveyor",
+        "type": "conveyor",
+        "stage_id": "conveying",
+        "cells": 1
+      },
+      {
+        "id": "crushed_ore_bin_feed_conveyor",
+        "label": "Crushed ore bin feed conveyor",
+        "type": "conveyor",
+        "stage_id": "conveying",
+        "cells": 1
+      },
+      {
+        "id": "sag_mill",
+        "label": "SAG mill",
+        "type": "mill",
+        "stage_id": "grinding",
+        "cells": 1
+      },
+      {
+        "id": "ball_mill",
+        "label": "Ball mill",
+        "type": "mill",
+        "stage_id": "grinding",
+        "cells": 1
+      },
+      {
+        "id": "sag_mill_liner_handler",
+        "label": "Sag mill liner handler",
+        "type": "mill",
+        "stage_id": "grinding",
+        "cells": 1
+      },
+      {
+        "id": "copper_regrind_mill",
+        "label": "Copper regrind mill",
+        "type": "regrind",
+        "stage_id": "regrind",
+        "cells": 1
+      },
+      {
+        "id": "zinc_regrind_mill",
+        "label": "Zinc regrind mill",
+        "type": "regrind",
+        "stage_id": "regrind",
+        "cells": 1
+      },
+      {
+        "id": "copper_concentrate_thickener",
+        "label": "Copper concentrate thickener",
+        "type": "thickener",
+        "stage_id": "copper_concentrate_thickening",
+        "cells": 1
+      },
+      {
+        "id": "copper_concentrate_filter_press",
+        "label": "Copper concentrate filter press",
+        "type": "filter",
+        "stage_id": "copper_concentrate_filtration",
+        "cells": 1
+      },
+      {
+        "id": "zinc_concentrate_thickener",
+        "label": "Zinc concentrate thickener",
+        "type": "thickener",
+        "stage_id": "zinc_concentrate_thickening",
+        "cells": 1
+      },
+      {
+        "id": "zinc_concentrate_filter_press",
+        "label": "Zinc concentrate filter press",
+        "type": "filter",
+        "stage_id": "zinc_concentrate_filtration",
+        "cells": 1
+      },
+      {
+        "id": "tailings_thickener",
+        "label": "Tailings thickener",
+        "type": "thickener",
+        "stage_id": "tailings_thickening",
+        "cells": 1
+      },
+      {
+        "id": "fire_fresh_water_tank",
+        "label": "Fire/fresh water tank",
+        "type": "tank",
+        "stage_id": "water_handling",
+        "cells": 1
+      },
+      {
+        "id": "fire_water_jockey_pump",
+        "label": "Fire water jockey pump",
+        "type": "tank",
+        "stage_id": "water_handling",
+        "cells": 1
+      },
+      {
+        "id": "process_water_tank",
+        "label": "Process water tank",
+        "type": "tank",
+        "stage_id": "water_handling",
+        "cells": 1
+      },
+      {
+        "id": "plant_assay_laboratory_load",
+        "label": "Plant assay laboratory load",
+        "type": "tank",
+        "stage_id": "plant_assay_laboratory",
+        "cells": 1
+      }
+    ],
+    "connections": [
+      {
+        "parent_id": "INPUT",
+        "child_id": "primary_crushing"
+      },
+      {
+        "parent_id": "primary_crushing",
+        "child_id": "screening"
+      },
+      {
+        "parent_id": "screening",
+        "child_id": "secondary_crushing"
+      },
+      {
+        "parent_id": "secondary_crushing",
+        "child_id": "screening"
+      },
+      {
+        "parent_id": "screening",
+        "child_id": "ore_sorting"
+      },
+      {
+        "parent_id": "ore_sorting",
+        "child_id": "conveying"
+      },
+      {
+        "parent_id": "conveying",
+        "child_id": "grinding"
+      },
+      {
+        "parent_id": "grinding",
+        "child_id": "regrind"
+      },
+      {
+        "parent_id": "regrind",
+        "child_id": "copper_concentrate_thickening"
+      },
+      {
+        "parent_id": "copper_concentrate_thickening",
+        "child_id": "copper_concentrate_filtration"
+      },
+      {
+        "parent_id": "copper_concentrate_filtration",
+        "child_id": "OUTPUT"
+      },
+      {
+        "parent_id": "regrind",
+        "child_id": "zinc_concentrate_thickening"
+      },
+      {
+        "parent_id": "zinc_concentrate_thickening",
+        "child_id": "zinc_concentrate_filtration"
+      },
+      {
+        "parent_id": "zinc_concentrate_filtration",
+        "child_id": "OUTPUT"
+      },
+      {
+        "parent_id": "grinding",
+        "child_id": "tailings_thickening"
+      },
+      {
+        "parent_id": "tailings_thickening",
+        "child_id": "OUTPUT"
+      },
+      {
+        "parent_id": "water_handling",
+        "child_id": "grinding"
+      }
+    ],
+    "text_before": "",
+    "text_after": "",
+    "caption": "kutcho copper corp. kutcho copper project \u2013 feasibility study (ni 43-101 technical report) 21.2.1.5 mechanical equipment the mechanical equipment list prepared for the feasibility study provided the q",
+    "page": 393
+  },
+  "Kutcho-FS-11082021_pfs_428": {
+    "type": "flowsheet",
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "raw": "I need to analyze this image carefully. However, this appears to be a **property/lease map** (Figure 22-1: Leases Attributable to the Royal Gold Royalty), not a process flowsheet. It shows:\n\n- Geographic/spatial layout of mining leases\n- Three resource areas labeled: **Esso**, **Sumac**, and **Main** (shown in red)\n- **Royal Gold Royalty** areas (shown in blue)\n- **Kutcho Claims** (shown in white/outlined)\n- A location inset map in the upper right\n\nThis is a **land tenure/property map**, not an ore-to-metal process flowsheet. There are no process stages, equipment units, or material flow connections to extract.\n\n```json\n{\n  \"error\": \"NOT_A_PROCESS_FLOWSHEET\",\n  \"description\": \"This image is a property/lease map (Figure 22-1: Leases Attributable to the Royal Gold Royalty) for the Kutcho project, not a process flowsheet. It depicts geographic boundaries of mining leases and resource areas (Esso, Sumac, Main), not process stages or equipment.\",\n  \"stages\": [],\n  \"units\": [],\n  \"connections\": [],\n  \"map_features\": {\n    \"resource_areas\": [\"Esso\", \"Sumac\", \"Main\"],\n    \"lease_types\": [\"Royal Gold Royalty\", \"Kutcho Claims\"],\n    \"coordinate_system\": \"UTM NAD83 Zone 9\",\n    \"figure_title\": \"Leases Attributable to the Royal Gold Royalty\"\n  }\n}\n```\n\nTo perform a process flowsheet extraction, please provide the **metallurgical process flowsheet** diagram for the Kutcho project, which would show crushing, grinding, flotation, and concentrate handling circuits.",
+    "text_before": "kutcho copper corp",
+    "text_after": "dcf schedule allows build wmt concentrate concentrate processing plant allow fill thickener plant storage build wmt stock concentrate prior first sale revenue delay concentrate sale versus production carried period final period additional wmt concentrate added revenue quantity allows fill concentrate thickener storage plant plus wmt lot sale port stewart quantity reclaimed end processing plant life metal price sale term assumed remain unchanged life project key financial assumption indicator key financial assumption presented table table table key project mining statistic early stockpile steady state lom production production rehandle component unit year year year year year underground ore mined mt underground ore mined tpd",
+    "caption": "Figure 22-1: Leases Attributable to the Royal Gold Royalty",
+    "page": 428
+  },
+  "Kutcho-FS-11082021_pfs_430": {
+    "type": "flowsheet",
+    "stages": [
+      {
+        "id": "open_pit_mining",
+        "name": "Open Pit Mining",
+        "order": 1
+      },
+      {
+        "id": "underground_mining",
+        "name": "Underground Mining",
+        "order": 2
+      },
+      {
+        "id": "stockpile",
+        "name": "Ore Stockpile / Stockpile Rehandle",
+        "order": 3
+      },
+      {
+        "id": "processing",
+        "name": "Processing (Crushing)",
+        "order": 4
+      },
+      {
+        "id": "general_and_administration",
+        "name": "General and Administration",
+        "order": 5
+      }
+    ],
+    "units": [
+      {
+        "id": "op_crushed_direct",
+        "label": "OP Crushed Direct",
+        "type": "crusher",
+        "stage_id": "open_pit_mining",
+        "cells": 1
+      },
+      {
+        "id": "op_crushed_from_stockpile",
+        "label": "OP Crushed from Stockpile",
+        "type": "crusher",
+        "stage_id": "stockpile",
+        "cells": 1
+      },
+      {
+        "id": "op_stockpiled",
+        "label": "OP Stockpiled",
+        "type": "stockpile",
+        "stage_id": "stockpile",
+        "cells": 1
+      },
+      {
+        "id": "ug_main_crushed",
+        "label": "UG Main Crushed",
+        "type": "crusher",
+        "stage_id": "underground_mining",
+        "cells": 1
+      },
+      {
+        "id": "ug_esso_crushed",
+        "label": "UG Esso Crushed",
+        "type": "crusher",
+        "stage_id": "underground_mining",
+        "cells": 1
+      },
+      {
+        "id": "mine_costs_initial",
+        "label": "Mine Costs - Initial Capital",
+        "type": "stockpile",
+        "stage_id": "open_pit_mining",
+        "cells": 1
+      },
+      {
+        "id": "processing_plant_initial",
+        "label": "Processing Plant - Initial Capital",
+        "type": "crusher",
+        "stage_id": "processing",
+        "cells": 1
+      },
+      {
+        "id": "on_site_infrastructure",
+        "label": "On-Site Infrastructure",
+        "type": "stockpile",
+        "stage_id": "general_and_administration",
+        "cells": 1
+      },
+      {
+        "id": "off_site_infrastructure",
+        "label": "Off-Site Infrastructure",
+        "type": "conveyor",
+        "stage_id": "general_and_administration",
+        "cells": 1
+      }
+    ],
+    "connections": [
+      {
+        "parent_id": "INPUT",
+        "child_id": "open_pit_mining"
+      },
+      {
+        "parent_id": "INPUT",
+        "child_id": "underground_mining"
+      },
+      {
+        "parent_id": "open_pit_mining",
+        "child_id": "stockpile"
+      },
+      {
+        "parent_id": "open_pit_mining",
+        "child_id": "processing"
+      },
+      {
+        "parent_id": "underground_mining",
+        "child_id": "processing"
+      },
+      {
+        "parent_id": "stockpile",
+        "child_id": "processing"
+      },
+      {
+        "parent_id": "processing",
+        "child_id": "OUTPUT"
+      }
+    ],
+    "lom_operating_costs": {
+      "currency": "CAD",
+      "periods": {
+        "early_production": {
+          "label": "Year 1",
+          "notes": "Includes pro-rated adjustments for working capital"
+        },
+        "steady_state": {
+          "label": "Year 2 to 8"
+        },
+        "stockpile_rehandle": {
+          "label": "Year 9 to 11"
+        },
+        "lom": {
+          "label": "Year 1 to 11"
+        }
+      },
+      "cost_components": [
+        {
+          "name": "Open Pit Mining",
+          "units": "C$/t OP ore mined",
+          "early_production": 27.68,
+          "steady_state": 20.55,
+          "stockpile_rehandle": null,
+          "lom": 24.75
+        },
+        {
+          "name": "Underground Mining",
+          "units": "C$/t UG ore mined",
+          "early_production": 62.17,
+          "steady_state": 57.88,
+          "stockpile_rehandle": 25.61,
+          "lom": 55.38
+        },
+        {
+          "name": "Processing",
+          "units": "C$/t ore crushed",
+          "early_production": 28.06,
+          "steady_state": 28.48,
+          "stockpile_rehandle": 27.53,
+          "lom": 28.21
+        },
+        {
+          "name": "General and Administration",
+          "units": "C$/t ore crushed",
+          "early_production": 10.01,
+          "steady_state": 9.36,
+          "stockpile_rehandle": 6.69,
+          "lom": 8.79
+        },
+        {
+          "name": "Total",
+          "units": "C$/t ore crushed",
+          "early_production": 79.24,
+          "steady_state": 70.51,
+          "stockpile_rehandle": 47.67,
+          "lom": 65.89
+        }
+      ]
+    },
+    "capital_costs": {
+      "currency": "CAD",
+      "unit": "C$M",
+      "components": [
+        {
+          "category": "Direct Costs",
+          "sub_component": "Mine Costs",
+          "initial": 132.9,
+          "sustaining": 44.8,
+          "closure": 0.0,
+          "total": 177.7
+        },
+        {
+          "category": "Direct Costs",
+          "sub_component": "Processing Plant",
+          "initial": 106.0,
+          "sustaining": 15.1,
+          "closure": 0.0,
+          "total": 121.2
+        },
+        {
+          "category": "Direct Costs",
+          "sub_component": "On-Site Infrastructure",
+          "initial": 54.2,
+          "sustaining": 15.8,
+          "closure": 0.0,
+          "total": 70.1
+        },
+        {
+          "category": "Direct Costs",
+          "sub_component": "Off-Site Infrastructure",
+          "initial": 31.7,
+          "sustaining": 0.0,
+          "closure": 0.0,
+          "total": 31.7
+        },
+        {
+          "category": "EPCM and Indirect Costs",
+          "sub_component": null,
+          "initial": 75.3,
+          "sustaining": 0.0,
+          "closure": 0.0,
+          "total": 75.3
+        },
+        {
+          "category": "Owner's Costs (including working capital)",
+          "sub_component": null,
+          "initial": 35.9,
+          "sustaining": 5.6,
+          "closure": 0.0,
+          "total": 41.5
+        },
+        {
+          "category": "Total Capex without Contingency",
+          "sub_component": null,
+          "initial": 436.1,
+          "sustaining": 81.3,
+          "closure": 0.0,
+          "total": 517.5
+        },
+        {
+          "category": "Contingency",
+          "sub_component": null,
+          "initial": 46.7,
+          "sustaining": 8.2,
+          "closure": 0.0,
+          "total": 54.9
+        },
+        {
+          "category": "Salvage",
+          "sub_component": null,
+          "initial": 0.0,
+          "sustaining": 0.0,
+          "closure": -18.0,
+          "total": -18.0
+        },
+        {
+          "category": "Mine Closure Bond",
+          "sub_component": null,
+          "initial": 10.0,
+          "sustaining": 9.3,
+          "closure": -19.3,
+          "total": 0.0
+        },
+        {
+          "category": "Rehabilitation, Monitoring and Closure Costs",
+          "sub_component": null,
+          "initial": 0.0,
+          "sustaining": 10.2,
+          "closure": 24.3,
+          "total": 34.5
+        }
+      ]
+    },
+    "metal_revenue": {
+      "currency": "CAD",
+      "metals": [
+        {
+          "metal": "Zinc",
+          "revenue_bn": 0.8
+        },
+        {
+          "metal": "Silver",
+          "revenue_bn": 0.22
+        },
+        {
+          "metal": "Gold",
+          "revenue_bn": 0.33
+        },
+        {
+          "metal": "Copper",
+          "revenue_bn": 0.33
+        }
+      ]
+    },
+    "text_before": "table summary lom operating cost per tonne ore processed stockpile early production steady state lom rehandle cost component unit year year year year open pit mining c op ore mined na underground mining c ug ore mined processing c ore crushed general administration c ore crushed total c ore crushed table note year includes adjustment working capital tonnage cost included lom operating cost summary year",
+    "text_after": "table summary total capital cost component unit initial sustaining closure total mine cost c processing plant c direct cost infrastructure c infrastructure c epcm indirect cost c owner cost including working capital c total capex without contingency c contingency c salvage c mine closure bond c rehabilitation monitoring closure cost c total capex rehabilitation c cash flow forecast dcf schedule analysis presented table table",
+    "caption": "Figure 22-2: Crushed Tonnage Sources and Crushed Grade Reflected as NSR C$/t",
+    "page": 430
+  }
+}

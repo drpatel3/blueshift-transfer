@@ -1,0 +1,11 @@
+{
+  "edge_threshold": 0.2,
+  "recycle_threshold": 0.5,
+  "oof_reach_f1": 0.5505,
+  "oof_edge_f1": 0.3155,
+  "val_reach_f1": 0.6566,
+  "val_edge_f1": 0.3974,
+  "n_oof": 125,
+  "n_val": 36,
+  "method": "ranked by OOF reach_f1 (training docs scored by fold that didn't see them); val reported as unbiased readout only"
+}

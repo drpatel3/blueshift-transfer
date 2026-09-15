@@ -1,0 +1,8 @@
+# Development and testing dependencies
+pytest
+pytest-cov
+
+# OpenAI SDK — used by dev/gold/extract_pfs_llm.py for the gold-side LLM
+# patcher. The deployed Lambda still calls Bedrock, so this stays out of
+# requirements-lambda.txt.
+openai>=1.0

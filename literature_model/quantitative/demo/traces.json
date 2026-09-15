@@ -1,0 +1,4755 @@
+{
+  "examples": [
+    {
+      "query_doc_id": "Cu 0.59%",
+      "k": 5,
+      "provenance": {
+        "year": 2024,
+        "year_source": "effective_date",
+        "study_type": null,
+        "study_type_label": null,
+        "grade_stated": true
+      },
+      "neighbors": [
+        {
+          "doc_id": "Analog A",
+          "rank": 0,
+          "distance": 3.9579380399371673,
+          "similarity_weight": 0.22349969731771582,
+          "feature_match": [
+            {
+              "feature": "ore_sulfide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_supergene",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_hypogene",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_refractory",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_free_milling",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_porphyry",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_iocg",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_sedimentary",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_flotation",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_open_pit",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_underground",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "npv_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "capex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grind_size_mean",
+              "query_value": 4.716264233493678,
+              "neighbor_value": 4.745722329905751,
+              "weight": 1.0,
+              "contribution": 0.0008677794442229868
+            },
+            {
+              "feature": "grade_cu_mean",
+              "query_value": 1.2163173485749117,
+              "neighbor_value": 1.3408965844398806,
+              "weight": 1.0,
+              "contribution": 0.01551998600869955
+            },
+            {
+              "feature": "grade_au_mean",
+              "query_value": 3.344588896075199,
+              "neighbor_value": 3.188488148593221,
+              "weight": 1.0,
+              "contribution": 0.02436744336443226
+            },
+            {
+              "feature": "cu_grade",
+              "query_value": 1.6048623853211026,
+              "neighbor_value": 0.5890275952693818,
+              "weight": 3.0,
+              "contribution": 0.0314700416386227
+            },
+            {
+              "feature": "tonnage_mean",
+              "query_value": 6.081918851093755,
+              "neighbor_value": 5.8771573186676465,
+              "weight": 1.0,
+              "contribution": 0.04192728516148847
+            },
+            {
+              "feature": "recovery_mean",
+              "query_value": 4.089129839735004,
+              "neighbor_value": 4.521685052021772,
+              "weight": 1.0,
+              "contribution": 0.18710401167645127
+            },
+            {
+              "feature": "dep_skarn",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "dep_vms",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "dep_epithermal",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "ore_oxide",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "ore_transition",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "process_leach",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 2.0000000000000004
+            },
+            {
+              "feature": "opex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 1.7234449390441817,
+              "weight": 1.0,
+              "contribution": 2.9702624579170034
+            },
+            {
+              "feature": "grade_ag_mean",
+              "query_value": 3.5624655292582776,
+              "neighbor_value": 1.4663370687934272,
+              "weight": 1.0,
+              "contribution": 4.393754522770744
+            }
+          ],
+          "provenance": {
+            "year": 2019,
+            "year_source": "effective_date",
+            "study_type": null,
+            "study_type_label": null,
+            "grade_stated": true
+          }
+        },
+        {
+          "doc_id": "Analog B",
+          "rank": 1,
+          "distance": 3.9579380399371673,
+          "similarity_weight": 0.22349969731771582,
+          "feature_match": [
+            {
+              "feature": "ore_sulfide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_supergene",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_hypogene",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_refractory",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_free_milling",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_porphyry",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_iocg",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_sedimentary",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_flotation",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_open_pit",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_underground",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "npv_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "capex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grind_size_mean",
+              "query_value": 4.716264233493678,
+              "neighbor_value": 4.745722329905751,
+              "weight": 1.0,
+              "contribution": 0.0008677794442229868
+            },
+            {
+              "feature": "grade_cu_mean",
+              "query_value": 1.2163173485749117,
+              "neighbor_value": 1.3408965844398806,
+              "weight": 1.0,
+              "contribution": 0.01551998600869955
+            },
+            {
+              "feature": "grade_au_mean",
+              "query_value": 3.344588896075199,
+              "neighbor_value": 3.188488148593221,
+              "weight": 1.0,
+              "contribution": 0.02436744336443226
+            },
+            {
+              "feature": "cu_grade",
+              "query_value": 1.6048623853211026,
+              "neighbor_value": 0.5890275952693818,
+              "weight": 3.0,
+              "contribution": 0.0314700416386227
+            },
+            {
+              "feature": "tonnage_mean",
+              "query_value": 6.081918851093755,
+              "neighbor_value": 5.8771573186676465,
+              "weight": 1.0,
+              "contribution": 0.04192728516148847
+            },
+            {
+              "feature": "recovery_mean",
+              "query_value": 4.089129839735004,
+              "neighbor_value": 4.521685052021772,
+              "weight": 1.0,
+              "contribution": 0.18710401167645127
+            },
+            {
+              "feature": "dep_skarn",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "dep_vms",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "dep_epithermal",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "ore_oxide",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "ore_transition",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "process_leach",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 2.0000000000000004
+            },
+            {
+              "feature": "opex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 1.7234449390441817,
+              "weight": 1.0,
+              "contribution": 2.9702624579170034
+            },
+            {
+              "feature": "grade_ag_mean",
+              "query_value": 3.5624655292582776,
+              "neighbor_value": 1.4663370687934272,
+              "weight": 1.0,
+              "contribution": 4.393754522770744
+            }
+          ],
+          "provenance": {
+            "year": 2019,
+            "year_source": "effective_date",
+            "study_type": null,
+            "study_type_label": null,
+            "grade_stated": true
+          }
+        },
+        {
+          "doc_id": "Analog C",
+          "rank": 2,
+          "distance": 4.631956589578503,
+          "similarity_weight": 0.19097717548584547,
+          "feature_match": [
+            {
+              "feature": "ore_oxide",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_sulfide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_supergene",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_hypogene",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_transition",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_refractory",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_free_milling",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_porphyry",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_skarn",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_iocg",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_flotation",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_open_pit",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_underground",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "npv_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "capex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "opex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grind_size_mean",
+              "query_value": 4.716264233493678,
+              "neighbor_value": 4.8615997149357675,
+              "weight": 1.0,
+              "contribution": 0.021122402166003817
+            },
+            {
+              "feature": "recovery_mean",
+              "query_value": 4.089129839735004,
+              "neighbor_value": 4.425691642821815,
+              "weight": 1.0,
+              "contribution": 0.1132738472970453
+            },
+            {
+              "feature": "grade_au_mean",
+              "query_value": 3.344588896075199,
+              "neighbor_value": 3.7111911858750943,
+              "weight": 1.0,
+              "contribution": 0.13439723888652658
+            },
+            {
+              "feature": "dep_vms",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "dep_sedimentary",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "dep_epithermal",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "grade_cu_mean",
+              "query_value": 1.2163173485749117,
+              "neighbor_value": 2.3978952727983707,
+              "weight": 1.0,
+              "contribution": 1.3961263910122181
+            },
+            {
+              "feature": "process_leach",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 2.0000000000000004
+            },
+            {
+              "feature": "cu_grade",
+              "query_value": 1.6048623853211026,
+              "neighbor_value": 10.0,
+              "weight": 3.0,
+              "contribution": 2.1493482689917505
+            },
+            {
+              "feature": "tonnage_mean",
+              "query_value": 6.081918851093755,
+              "neighbor_value": 4.446650665063041,
+              "weight": 1.0,
+              "contribution": 2.674102040244183
+            },
+            {
+              "feature": "grade_ag_mean",
+              "query_value": 3.5624655292582776,
+              "neighbor_value": 0.4054651081081644,
+              "weight": 1.0,
+              "contribution": 9.966651659141991
+            }
+          ],
+          "provenance": {
+            "year": 2015,
+            "year_source": "effective_date",
+            "study_type": null,
+            "study_type_label": null,
+            "grade_stated": false
+          }
+        },
+        {
+          "doc_id": "Analog D",
+          "rank": 3,
+          "distance": 4.72176089093723,
+          "similarity_weight": 0.18734493561096158,
+          "feature_match": [
+            {
+              "feature": "ore_sulfide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_supergene",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_hypogene",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_refractory",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_free_milling",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_porphyry",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_iocg",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_sedimentary",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_flotation",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "npv_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "capex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "opex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_au_mean",
+              "query_value": 3.344588896075199,
+              "neighbor_value": 3.2880101321357733,
+              "weight": 1.0,
+              "contribution": 0.0032011565289132367
+            },
+            {
+              "feature": "grind_size_mean",
+              "query_value": 4.716264233493678,
+              "neighbor_value": 4.775033507860004,
+              "weight": 1.0,
+              "contribution": 0.0034538276095444965
+            },
+            {
+              "feature": "recovery_mean",
+              "query_value": 4.089129839735004,
+              "neighbor_value": 4.19289899019868,
+              "weight": 1.0,
+              "contribution": 0.010768036587953021
+            },
+            {
+              "feature": "cu_grade",
+              "query_value": 1.6048623853211026,
+              "neighbor_value": 0.5,
+              "weight": 3.0,
+              "contribution": 0.03722781350773036
+            },
+            {
+              "feature": "grade_ag_mean",
+              "query_value": 3.5624655292582776,
+              "neighbor_value": 3.2533963786295366,
+              "weight": 1.0,
+              "contribution": 0.09552373987037144
+            },
+            {
+              "feature": "dep_skarn",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "dep_vms",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "dep_epithermal",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "mining_open_pit",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "mining_underground",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "grade_cu_mean",
+              "query_value": 1.2163173485749117,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.4794278924443032
+            },
+            {
+              "feature": "ore_oxide",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "ore_transition",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "process_leach",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 2.0000000000000004
+            },
+            {
+              "feature": "tonnage_mean",
+              "query_value": 6.081918851093755,
+              "neighbor_value": 2.8161228616548044,
+              "weight": 1.0,
+              "contribution": 10.665423444635538
+            }
+          ],
+          "provenance": {
+            "year": 2025,
+            "year_source": "effective_date",
+            "study_type": null,
+            "study_type_label": null,
+            "grade_stated": false
+          }
+        },
+        {
+          "doc_id": "Analog E",
+          "rank": 4,
+          "distance": 5.064149461887677,
+          "similarity_weight": 0.17467849426776136,
+          "feature_match": [
+            {
+              "feature": "ore_sulfide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_hypogene",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_refractory",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_free_milling",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_porphyry",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_skarn",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_iocg",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_sedimentary",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "npv_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "opex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_au_mean",
+              "query_value": 3.344588896075199,
+              "neighbor_value": 3.3785212708894807,
+              "weight": 1.0,
+              "contribution": 0.0011514060605369132
+            },
+            {
+              "feature": "cu_grade",
+              "query_value": 1.6048623853211026,
+              "neighbor_value": 1.2234782608695651,
+              "weight": 3.0,
+              "contribution": 0.004435845129067853
+            },
+            {
+              "feature": "recovery_mean",
+              "query_value": 4.089129839735004,
+              "neighbor_value": 4.37994112818286,
+              "weight": 1.0,
+              "contribution": 0.08457120548870235
+            },
+            {
+              "feature": "grade_cu_mean",
+              "query_value": 1.2163173485749117,
+              "neighbor_value": 1.5335892958025943,
+              "weight": 1.0,
+              "contribution": 0.1006614884976454
+            },
+            {
+              "feature": "grind_size_mean",
+              "query_value": 4.716264233493678,
+              "neighbor_value": 4.039856376938031,
+              "weight": 1.0,
+              "contribution": 0.4575275884102048
+            },
+            {
+              "feature": "grade_ag_mean",
+              "query_value": 3.5624655292582776,
+              "neighbor_value": 2.672565246403923,
+              "weight": 1.0,
+              "contribution": 0.7919225134242602
+            },
+            {
+              "feature": "dep_vms",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "dep_epithermal",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "mining_open_pit",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "mining_underground",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "ore_oxide",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "ore_supergene",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "ore_transition",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "process_flotation",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 2.0,
+              "contribution": 2.0000000000000004
+            },
+            {
+              "feature": "process_leach",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 2.0000000000000004
+            },
+            {
+              "feature": "tonnage_mean",
+              "query_value": 6.081918851093755,
+              "neighbor_value": 4.468377284683809,
+              "weight": 1.0,
+              "contribution": 2.6035163865326627
+            },
+            {
+              "feature": "capex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 3.0169228261250187,
+              "weight": 1.0,
+              "contribution": 9.10182333879417
+            }
+          ],
+          "provenance": {
+            "year": 2023,
+            "year_source": "effective_date",
+            "study_type": "FS",
+            "study_type_label": "Feasibility Study",
+            "grade_stated": true
+          }
+        }
+      ],
+      "stage_votes": [
+        {
+          "stage": "crusher",
+          "probability": 0.8253215057322387,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.19097717548584547
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.18734493561096158
+            }
+          ]
+        },
+        {
+          "stage": "bin",
+          "probability": 0.8126550643890386,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.19097717548584547
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17467849426776136
+            }
+          ]
+        },
+        {
+          "stage": "filter",
+          "probability": 0.8126550643890386,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.19097717548584547
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17467849426776136
+            }
+          ]
+        },
+        {
+          "stage": "tailing",
+          "probability": 0.8090228245141546,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.18734493561096158
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17467849426776136
+            }
+          ]
+        },
+        {
+          "stage": "flotation",
+          "probability": 0.6379765701212772,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.19097717548584547
+            }
+          ]
+        },
+        {
+          "stage": "tank",
+          "probability": 0.6379765701212772,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.19097717548584547
+            }
+          ]
+        },
+        {
+          "stage": "thickener",
+          "probability": 0.6379765701212772,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.19097717548584547
+            }
+          ]
+        },
+        {
+          "stage": "input",
+          "probability": 0.6343443302463933,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.18734493561096158
+            }
+          ]
+        },
+        {
+          "stage": "cyclone",
+          "probability": 0.44699939463543165,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "stage": "regrind",
+          "probability": 0.44699939463543165,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "stage": "stockpile",
+          "probability": 0.41447687280356127,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.19097717548584547
+            }
+          ]
+        },
+        {
+          "stage": "leach",
+          "probability": 0.36202342987872294,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.18734493561096158
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17467849426776136
+            }
+          ]
+        },
+        {
+          "stage": "product_recovery",
+          "probability": 0.36202342987872294,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.18734493561096158
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17467849426776136
+            }
+          ]
+        },
+        {
+          "stage": "feeder",
+          "probability": 0.22349969731771582,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "stage": "screen",
+          "probability": 0.22349969731771582,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "stage": "mill",
+          "probability": 0.19097717548584547,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.19097717548584547
+            }
+          ]
+        },
+        {
+          "stage": "solution_recovery",
+          "probability": 0.18734493561096158,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.18734493561096158
+            }
+          ]
+        },
+        {
+          "stage": "adsorption",
+          "probability": 0.17467849426776136,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17467849426776136
+            }
+          ]
+        },
+        {
+          "stage": "electrowinning",
+          "probability": 0.17467849426776136,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17467849426776136
+            }
+          ]
+        },
+        {
+          "stage": "kiln",
+          "probability": 0.17467849426776136,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17467849426776136
+            }
+          ]
+        }
+      ],
+      "edge_votes": [
+        {
+          "src": "input",
+          "dst": "crusher",
+          "score": 0.8253215057322387,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.19097717548584547
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.18734493561096158
+            }
+          ]
+        },
+        {
+          "src": "thickener",
+          "dst": "bin",
+          "score": 0.6379765701212772,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.19097717548584547
+            }
+          ]
+        },
+        {
+          "src": "flotation",
+          "dst": "thickener",
+          "score": 0.6379765701212772,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.19097717548584547
+            }
+          ]
+        },
+        {
+          "src": "crusher",
+          "dst": "crusher",
+          "score": 0.6018218084145228,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.19097717548584547
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.18734493561096158
+            }
+          ]
+        },
+        {
+          "src": "flotation",
+          "dst": "flotation",
+          "score": 0.44699939463543165,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "src": "bin",
+          "dst": "filter",
+          "score": 0.44699939463543165,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "src": "crusher",
+          "dst": "input",
+          "score": 0.44699939463543165,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "src": "tailing",
+          "dst": "flotation",
+          "score": 0.44699939463543165,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "src": "thickener",
+          "dst": "tailing",
+          "score": 0.44699939463543165,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "src": "input",
+          "dst": "flotation",
+          "score": 0.44699939463543165,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "src": "input",
+          "dst": "input",
+          "score": 0.4108446329286774,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.18734493561096158
+            }
+          ]
+        },
+        {
+          "src": "thickener",
+          "dst": "tank",
+          "score": 0.22349969731771582,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "src": "bin",
+          "dst": "tailing",
+          "score": 0.22349969731771582,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "src": "flotation",
+          "dst": "tailing",
+          "score": 0.22349969731771582,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "src": "filter",
+          "dst": "flotation",
+          "score": 0.22349969731771582,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "src": "flotation",
+          "dst": "bin",
+          "score": 0.22349969731771582,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "src": "filter",
+          "dst": "tank",
+          "score": 0.22349969731771582,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "src": "input",
+          "dst": "bin",
+          "score": 0.22349969731771582,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "src": "tank",
+          "dst": "thickener",
+          "score": 0.22349969731771582,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "src": "tailing",
+          "dst": "thickener",
+          "score": 0.22349969731771582,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.22349969731771582
+            }
+          ]
+        },
+        {
+          "src": "mill",
+          "dst": "flotation",
+          "score": 0.19097717548584547,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.19097717548584547
+            }
+          ]
+        },
+        {
+          "src": "thickener",
+          "dst": "filter",
+          "score": 0.19097717548584547,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.19097717548584547
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_doc_id": "Cu 0.77%",
+      "k": 5,
+      "provenance": {
+        "year": 2019,
+        "year_source": "effective_date",
+        "study_type": null,
+        "study_type_label": null,
+        "grade_stated": false
+      },
+      "neighbors": [
+        {
+          "doc_id": "Analog A",
+          "rank": 0,
+          "distance": 2.00347930724204,
+          "similarity_weight": 0.25349710142530746,
+          "feature_match": [
+            {
+              "feature": "ore_oxide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_sulfide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_hypogene",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_refractory",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_free_milling",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_porphyry",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_skarn",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_vms",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_iocg",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_sedimentary",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_epithermal",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_flotation",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_leach",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_open_pit",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_cu_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_au_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_ag_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "recovery_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "tonnage_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "npv_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "capex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "opex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grind_size_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "cu_grade",
+              "query_value": 0.5908333333333333,
+              "neighbor_value": 1.2666666666666666,
+              "weight": 3.0,
+              "contribution": 0.01392933454704388
+            },
+            {
+              "feature": "mining_underground",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "ore_supergene",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "ore_transition",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            }
+          ],
+          "provenance": {
+            "year": 2016,
+            "year_source": "effective_date",
+            "study_type": null,
+            "study_type_label": null,
+            "grade_stated": false
+          }
+        },
+        {
+          "doc_id": "Analog B",
+          "rank": 1,
+          "distance": 2.523133291745496,
+          "similarity_weight": 0.20128791888330064,
+          "feature_match": [
+            {
+              "feature": "ore_oxide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_sulfide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_refractory",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_free_milling",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_porphyry",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_skarn",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_vms",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_iocg",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_sedimentary",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_epithermal",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_flotation",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_leach",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_open_pit",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_underground",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "recovery_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "tonnage_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "npv_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "capex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "opex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grind_size_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "cu_grade",
+              "query_value": 0.5908333333333333,
+              "neighbor_value": 0.4342592592592594,
+              "weight": 3.0,
+              "contribution": 0.0007476371220540514
+            },
+            {
+              "feature": "grade_au_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.178146185383474,
+              "weight": 1.0,
+              "contribution": 0.03173606336668308
+            },
+            {
+              "feature": "grade_cu_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.22691421121040278,
+              "weight": 1.0,
+              "contribution": 0.05149005924923929
+            },
+            {
+              "feature": "ore_supergene",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "ore_hypogene",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "ore_transition",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "grade_ag_mean",
+              "query_value": 0.0,
+              "neighbor_value": 1.33500106673234,
+              "weight": 1.0,
+              "contribution": 1.7822278481764857
+            }
+          ],
+          "provenance": {
+            "year": 2012,
+            "year_source": "effective_date",
+            "study_type": null,
+            "study_type_label": null,
+            "grade_stated": true
+          }
+        },
+        {
+          "doc_id": "Analog C",
+          "rank": 2,
+          "distance": 2.6505108916492315,
+          "similarity_weight": 0.1916144772821694,
+          "feature_match": [
+            {
+              "feature": "ore_oxide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_sulfide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_transition",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_refractory",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_free_milling",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_porphyry",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_skarn",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_vms",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_sedimentary",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_epithermal",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_leach",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_open_pit",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_cu_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_au_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_ag_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "recovery_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "tonnage_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "npv_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "capex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "opex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grind_size_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "cu_grade",
+              "query_value": 0.5908333333333333,
+              "neighbor_value": 1.5,
+              "weight": 3.0,
+              "contribution": 0.025207986751205978
+            },
+            {
+              "feature": "dep_iocg",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "mining_underground",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "ore_supergene",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "ore_hypogene",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "process_flotation",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 2.0,
+              "contribution": 2.0000000000000004
+            }
+          ],
+          "provenance": {
+            "year": 2018,
+            "year_source": "filing",
+            "study_type": "PFS",
+            "study_type_label": "Pre-Feasibility Study",
+            "grade_stated": true
+          }
+        },
+        {
+          "doc_id": "Analog D",
+          "rank": 3,
+          "distance": 2.829507135657384,
+          "similarity_weight": 0.179492839850254,
+          "feature_match": [
+            {
+              "feature": "ore_oxide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_sulfide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_supergene",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_hypogene",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_transition",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_refractory",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_free_milling",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_iocg",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_sedimentary",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_flotation",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_cu_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_au_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_ag_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "recovery_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "tonnage_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "npv_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "capex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "opex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grind_size_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "cu_grade",
+              "query_value": 0.5908333333333333,
+              "neighbor_value": 1.0384615384615385,
+              "weight": 3.0,
+              "contribution": 0.006110630736052175
+            },
+            {
+              "feature": "dep_porphyry",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "dep_skarn",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "dep_vms",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "dep_epithermal",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "mining_open_pit",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "mining_underground",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "process_leach",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 2.0,
+              "contribution": 2.0000000000000004
+            }
+          ],
+          "provenance": {
+            "year": 2016,
+            "year_source": "filing",
+            "study_type": null,
+            "study_type_label": null,
+            "grade_stated": false
+          }
+        },
+        {
+          "doc_id": "Analog E",
+          "rank": 4,
+          "distance": 2.9170242657692715,
+          "similarity_weight": 0.17410766255896842,
+          "feature_match": [
+            {
+              "feature": "ore_sulfide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_hypogene",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_refractory",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_free_milling",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_iocg",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_sedimentary",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_epithermal",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_flotation",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_leach",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_open_pit",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_cu_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_au_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_ag_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "recovery_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "tonnage_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "npv_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "capex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "opex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grind_size_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "cu_grade",
+              "query_value": 0.5908333333333333,
+              "neighbor_value": 1.135,
+              "weight": 3.0,
+              "contribution": 0.009030567086759336
+            },
+            {
+              "feature": "dep_porphyry",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "dep_skarn",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "dep_vms",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "mining_underground",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "ore_oxide",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "ore_supergene",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "ore_transition",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            }
+          ],
+          "provenance": {
+            "year": 2023,
+            "year_source": "filing",
+            "study_type": "FS",
+            "study_type_label": "Feasibility Study",
+            "grade_stated": true
+          }
+        }
+      ],
+      "stage_votes": [
+        {
+          "stage": "thickener",
+          "probability": 0.8258923374410315,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.1916144772821694
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.179492839850254
+            }
+          ]
+        },
+        {
+          "stage": "crusher",
+          "probability": 0.820507160149746,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.1916144772821694
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "stage": "filter",
+          "probability": 0.820507160149746,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.1916144772821694
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "stage": "input",
+          "probability": 0.820507160149746,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.1916144772821694
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "stage": "tailing",
+          "probability": 0.8083855227178305,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.179492839850254
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "stage": "mill",
+          "probability": 0.6288926828675765,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "stage": "leach",
+          "probability": 0.6192192412664452,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.1916144772821694
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "stage": "flotation",
+          "probability": 0.5548884212925231,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.179492839850254
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "stage": "bin",
+          "probability": 0.4547850203086081,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            }
+          ]
+        },
+        {
+          "stage": "agglomeration",
+          "probability": 0.44511157870747686,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.1916144772821694
+            }
+          ]
+        },
+        {
+          "stage": "electrowinning",
+          "probability": 0.44511157870747686,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.1916144772821694
+            }
+          ]
+        },
+        {
+          "stage": "product_recovery",
+          "probability": 0.4276047639842759,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "stage": "regrind",
+          "probability": 0.38078075873355466,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.179492839850254
+            }
+          ]
+        },
+        {
+          "stage": "tank",
+          "probability": 0.3711073171324234,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.1916144772821694
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.179492839850254
+            }
+          ]
+        },
+        {
+          "stage": "adsorption",
+          "probability": 0.25349710142530746,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            }
+          ]
+        },
+        {
+          "stage": "kiln",
+          "probability": 0.25349710142530746,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            }
+          ]
+        },
+        {
+          "stage": "feeder",
+          "probability": 0.1916144772821694,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.1916144772821694
+            }
+          ]
+        },
+        {
+          "stage": "screen",
+          "probability": 0.1916144772821694,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.1916144772821694
+            }
+          ]
+        },
+        {
+          "stage": "solution_recovery",
+          "probability": 0.1916144772821694,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.1916144772821694
+            }
+          ]
+        }
+      ],
+      "edge_votes": [
+        {
+          "src": "input",
+          "dst": "input",
+          "score": 0.820507160149746,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.1916144772821694
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "src": "crusher",
+          "dst": "mill",
+          "score": 0.6288926828675765,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "src": "input",
+          "dst": "crusher",
+          "score": 0.6288926828675765,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "src": "thickener",
+          "dst": "filter",
+          "score": 0.4547850203086081,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            }
+          ]
+        },
+        {
+          "src": "leach",
+          "dst": "tailing",
+          "score": 0.4276047639842759,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "src": "flotation",
+          "dst": "thickener",
+          "score": 0.38078075873355466,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.179492839850254
+            }
+          ]
+        },
+        {
+          "src": "thickener",
+          "dst": "tailing",
+          "score": 0.38078075873355466,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.179492839850254
+            }
+          ]
+        },
+        {
+          "src": "mill",
+          "dst": "flotation",
+          "score": 0.37539558144226903,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.20128791888330064
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "src": "flotation",
+          "dst": "flotation",
+          "score": 0.3536005024092224,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.179492839850254
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "src": "input",
+          "dst": "mill",
+          "score": 0.25349710142530746,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            }
+          ]
+        },
+        {
+          "src": "crusher",
+          "dst": "crusher",
+          "score": 0.25349710142530746,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            }
+          ]
+        },
+        {
+          "src": "mill",
+          "dst": "mill",
+          "score": 0.25349710142530746,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.25349710142530746
+            }
+          ]
+        },
+        {
+          "src": "input",
+          "dst": "leach",
+          "score": 0.1916144772821694,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.1916144772821694
+            }
+          ]
+        },
+        {
+          "src": "leach",
+          "dst": "thickener",
+          "score": 0.1916144772821694,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.1916144772821694
+            }
+          ]
+        },
+        {
+          "src": "flotation",
+          "dst": "filter",
+          "score": 0.17410766255896842,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "src": "flotation",
+          "dst": "tailing",
+          "score": 0.17410766255896842,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        },
+        {
+          "src": "mill",
+          "dst": "leach",
+          "score": 0.17410766255896842,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.17410766255896842
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_doc_id": "Cu 1.60%",
+      "k": 5,
+      "provenance": {
+        "year": 2025,
+        "year_source": "effective_date",
+        "study_type": "FS",
+        "study_type_label": "Feasibility Study",
+        "grade_stated": true
+      },
+      "neighbors": [
+        {
+          "doc_id": "Analog A",
+          "rank": 0,
+          "distance": 0.9303634307442081,
+          "similarity_weight": 0.6267281445317651,
+          "feature_match": [
+            {
+              "feature": "cu_grade",
+              "query_value": 0.7692745098039202,
+              "neighbor_value": 0.7692745098039202,
+              "weight": 3.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_oxide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_sulfide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_supergene",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_hypogene",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_transition",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_refractory",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_free_milling",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_porphyry",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_skarn",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_vms",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_iocg",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_sedimentary",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_epithermal",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_flotation",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_leach",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_open_pit",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_underground",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_cu_mean",
+              "query_value": 0.727379087019201,
+              "neighbor_value": 0.727379087019201,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_au_mean",
+              "query_value": 2.0457692373860072,
+              "neighbor_value": 2.0457692373860072,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grade_ag_mean",
+              "query_value": 4.458369429179386,
+              "neighbor_value": 4.458369429179386,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "recovery_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "tonnage_mean",
+              "query_value": 0.08666828085818098,
+              "neighbor_value": 0.08666828085818098,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "npv_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "opex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grind_size_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "capex_mean",
+              "query_value": 6.834357114027269,
+              "neighbor_value": 7.764720544771477,
+              "weight": 1.0,
+              "contribution": 0.8655761132661329
+            }
+          ],
+          "provenance": {
+            "year": 2022,
+            "year_source": "effective_date",
+            "study_type": "FS",
+            "study_type_label": "Feasibility Study",
+            "grade_stated": true
+          }
+        },
+        {
+          "doc_id": "Analog B",
+          "rank": 1,
+          "distance": 5.642658279480327,
+          "similarity_weight": 0.10333524399374508,
+          "feature_match": [
+            {
+              "feature": "ore_oxide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_sulfide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_supergene",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_hypogene",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_refractory",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_free_milling",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_porphyry",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_skarn",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_vms",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_iocg",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_sedimentary",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_epithermal",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_flotation",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_leach",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "npv_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "opex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grind_size_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "cu_grade",
+              "query_value": 0.7692745098039202,
+              "neighbor_value": 0.13596707818930032,
+              "weight": 3.0,
+              "contribution": 0.012231516950365173
+            },
+            {
+              "feature": "grade_cu_mean",
+              "query_value": 0.727379087019201,
+              "neighbor_value": 1.00571586008772,
+              "weight": 1.0,
+              "contribution": 0.07747135924219631
+            },
+            {
+              "feature": "grade_ag_mean",
+              "query_value": 4.458369429179386,
+              "neighbor_value": 3.5237314589044937,
+              "weight": 1.0,
+              "contribution": 0.8735481354795698
+            },
+            {
+              "feature": "mining_open_pit",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "mining_underground",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "grade_au_mean",
+              "query_value": 2.0457692373860072,
+              "neighbor_value": 3.126786381491058,
+              "weight": 1.0,
+              "contribution": 1.1685980658490398
+            },
+            {
+              "feature": "ore_transition",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "tonnage_mean",
+              "query_value": 0.08666828085818098,
+              "neighbor_value": 1.4733421285764117,
+              "weight": 1.0,
+              "contribution": 1.922864359945683
+            },
+            {
+              "feature": "capex_mean",
+              "query_value": 6.834357114027269,
+              "neighbor_value": 4.875197323201151,
+              "weight": 1.0,
+              "contribution": 3.8383070859898387
+            },
+            {
+              "feature": "recovery_mean",
+              "query_value": 0.0,
+              "neighbor_value": 4.5217885770490405,
+              "weight": 1.0,
+              "contribution": 20.446571935531185
+            }
+          ],
+          "provenance": {
+            "year": 2017,
+            "year_source": "filing",
+            "study_type": null,
+            "study_type_label": null,
+            "grade_stated": false
+          }
+        },
+        {
+          "doc_id": "Analog C",
+          "rank": 2,
+          "distance": 6.182303136043045,
+          "similarity_weight": 0.09431525214349461,
+          "feature_match": [
+            {
+              "feature": "ore_sulfide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_transition",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_refractory",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_free_milling",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_porphyry",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_skarn",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_vms",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_iocg",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_sedimentary",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_leach",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_open_pit",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_underground",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "npv_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "opex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grind_size_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "cu_grade",
+              "query_value": 0.7692745098039202,
+              "neighbor_value": 0.48398596491228046,
+              "weight": 3.0,
+              "contribution": 0.0024821031209157616
+            },
+            {
+              "feature": "grade_ag_mean",
+              "query_value": 4.458369429179386,
+              "neighbor_value": 4.524173010609463,
+              "weight": 1.0,
+              "contribution": 0.004330111329024808
+            },
+            {
+              "feature": "grade_cu_mean",
+              "query_value": 0.727379087019201,
+              "neighbor_value": 0.7992581957725144,
+              "weight": 1.0,
+              "contribution": 0.005166606275170668
+            },
+            {
+              "feature": "dep_epithermal",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "ore_oxide",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "ore_supergene",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "ore_hypogene",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "process_flotation",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 2.0000000000000004
+            },
+            {
+              "feature": "recovery_mean",
+              "query_value": 0.0,
+              "neighbor_value": 1.501852701754163,
+              "weight": 1.0,
+              "contribution": 2.2555615377662788
+            },
+            {
+              "feature": "grade_au_mean",
+              "query_value": 2.0457692373860072,
+              "neighbor_value": 3.717926683083131,
+              "weight": 1.0,
+              "contribution": 2.7961105232003285
+            },
+            {
+              "feature": "capex_mean",
+              "query_value": 6.834357114027269,
+              "neighbor_value": 4.397789722603231,
+              "weight": 1.0,
+              "contribution": 5.9368606529509425
+            },
+            {
+              "feature": "tonnage_mean",
+              "query_value": 0.08666828085818098,
+              "neighbor_value": 4.527429536688651,
+              "weight": 1.0,
+              "contribution": 19.720360531285014
+            }
+          ],
+          "provenance": {
+            "year": 2025,
+            "year_source": "filing",
+            "study_type": "FS",
+            "study_type_label": "Feasibility Study",
+            "grade_stated": true
+          }
+        },
+        {
+          "doc_id": "Analog D",
+          "rank": 3,
+          "distance": 6.523878477773005,
+          "similarity_weight": 0.08937712221773168,
+          "feature_match": [
+            {
+              "feature": "ore_oxide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_sulfide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_transition",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_refractory",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_free_milling",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_porphyry",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_vms",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_iocg",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_sedimentary",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_open_pit",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_underground",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "npv_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "grind_size_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "cu_grade",
+              "query_value": 0.7692745098039202,
+              "neighbor_value": 0.7061129032258067,
+              "weight": 3.0,
+              "contribution": 0.0001216627108939599
+            },
+            {
+              "feature": "tonnage_mean",
+              "query_value": 0.08666828085818098,
+              "neighbor_value": 0.2198617882156101,
+              "weight": 1.0,
+              "contribution": 0.01774051040217352
+            },
+            {
+              "feature": "capex_mean",
+              "query_value": 6.834357114027269,
+              "neighbor_value": 7.018035684608957,
+              "weight": 1.0,
+              "contribution": 0.033737817290932184
+            },
+            {
+              "feature": "grade_cu_mean",
+              "query_value": 0.727379087019201,
+              "neighbor_value": 1.1930382392731562,
+              "weight": 1.0,
+              "contribution": 0.21683844607787228
+            },
+            {
+              "feature": "dep_skarn",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "dep_epithermal",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "grade_ag_mean",
+              "query_value": 4.458369429179386,
+              "neighbor_value": 3.3829619467308736,
+              "weight": 1.0,
+              "contribution": 1.1565012533062466
+            },
+            {
+              "feature": "grade_au_mean",
+              "query_value": 2.0457692373860072,
+              "neighbor_value": 0.8981267612464839,
+              "weight": 1.0,
+              "contribution": 1.3170832530396561
+            },
+            {
+              "feature": "ore_supergene",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "ore_hypogene",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "process_flotation",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 2.0000000000000004
+            },
+            {
+              "feature": "process_leach",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 2.0,
+              "contribution": 2.0000000000000004
+            },
+            {
+              "feature": "recovery_mean",
+              "query_value": 0.0,
+              "neighbor_value": 3.8571319154594716,
+              "weight": 1.0,
+              "contribution": 14.877466613256052
+            },
+            {
+              "feature": "opex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 3.9926809084456005,
+              "weight": 1.0,
+              "contribution": 15.941500836665986
+            }
+          ],
+          "provenance": {
+            "year": 2023,
+            "year_source": "filing",
+            "study_type": null,
+            "study_type_label": null,
+            "grade_stated": true
+          }
+        },
+        {
+          "doc_id": "Analog E",
+          "rank": 4,
+          "distance": 6.760863179862941,
+          "similarity_weight": 0.08624423711326352,
+          "feature_match": [
+            {
+              "feature": "ore_oxide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_sulfide",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_supergene",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_transition",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_refractory",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "ore_free_milling",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_porphyry",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_skarn",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_vms",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_iocg",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "dep_sedimentary",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "process_leach",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_open_pit",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "mining_underground",
+              "query_value": 1.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "npv_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "opex_mean",
+              "query_value": 0.0,
+              "neighbor_value": 0.0,
+              "weight": 1.0,
+              "contribution": 0.0
+            },
+            {
+              "feature": "cu_grade",
+              "query_value": 0.7692745098039202,
+              "neighbor_value": 0.6116987179487181,
+              "weight": 3.0,
+              "contribution": 0.000757234076081171
+            },
+            {
+              "feature": "grade_cu_mean",
+              "query_value": 0.727379087019201,
+              "neighbor_value": 0.4344549537810602,
+              "weight": 1.0,
+              "contribution": 0.08580454783331604
+            },
+            {
+              "feature": "grade_ag_mean",
+              "query_value": 4.458369429179386,
+              "neighbor_value": 4.874025163990679,
+              "weight": 1.0,
+              "contribution": 0.1727696898815165
+            },
+            {
+              "feature": "tonnage_mean",
+              "query_value": 0.08666828085818098,
+              "neighbor_value": 0.8549964937147295,
+              "weight": 1.0,
+              "contribution": 0.5903282426713378
+            },
+            {
+              "feature": "grade_au_mean",
+              "query_value": 2.0457692373860072,
+              "neighbor_value": 2.8970075971501816,
+              "weight": 1.0,
+              "contribution": 0.724606745134002
+            },
+            {
+              "feature": "dep_epithermal",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 1.0,
+              "contribution": 1.0
+            },
+            {
+              "feature": "ore_hypogene",
+              "query_value": 1.0,
+              "neighbor_value": 0.0,
+              "weight": 1.5,
+              "contribution": 1.4999999999999998
+            },
+            {
+              "feature": "process_flotation",
+              "query_value": 0.0,
+              "neighbor_value": 1.0,
+              "weight": 2.0,
+              "contribution": 2.0000000000000004
+            },
+            {
+              "feature": "capex_mean",
+              "query_value": 6.834357114027269,
+              "neighbor_value": 8.273000099368666,
+              "weight": 1.0,
+              "contribution": 2.069693639272006
+            },
+            {
+              "feature": "recovery_mean",
+              "query_value": 0.0,
+              "neighbor_value": 3.568856411514206,
+              "weight": 1.0,
+              "contribution": 12.736736086006056
+            },
+            {
+              "feature": "grind_size_mean",
+              "query_value": 0.0,
+              "neighbor_value": 4.982827987393517,
+              "weight": 1.0,
+              "contribution": 24.828574751952125
+            }
+          ],
+          "provenance": {
+            "year": 2017,
+            "year_source": "filing",
+            "study_type": null,
+            "study_type_label": null,
+            "grade_stated": false
+          }
+        }
+      ],
+      "stage_votes": [
+        {
+          "stage": "crusher",
+          "probability": 0.9999999999999999,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.6267281445317651
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.10333524399374508
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.09431525214349461
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.08937712221773168
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.08624423711326352
+            }
+          ]
+        },
+        {
+          "stage": "tailing",
+          "probability": 0.9106228777822682,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.6267281445317651
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.10333524399374508
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.09431525214349461
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.08624423711326352
+            }
+          ]
+        },
+        {
+          "stage": "mill",
+          "probability": 0.8966647560062548,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.6267281445317651
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.09431525214349461
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.08937712221773168
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.08624423711326352
+            }
+          ]
+        },
+        {
+          "stage": "leach",
+          "probability": 0.8163076256387737,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.6267281445317651
+            },
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.10333524399374508
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.08624423711326352
+            }
+          ]
+        },
+        {
+          "stage": "electrowinning",
+          "probability": 0.6267281445317651,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.6267281445317651
+            }
+          ]
+        },
+        {
+          "stage": "solution_recovery",
+          "probability": 0.6267281445317651,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.6267281445317651
+            }
+          ]
+        },
+        {
+          "stage": "input",
+          "probability": 0.28702761835497137,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.10333524399374508
+            },
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.09431525214349461
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.08937712221773168
+            }
+          ]
+        },
+        {
+          "stage": "bin",
+          "probability": 0.27895660332474026,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.10333524399374508
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.08937712221773168
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.08624423711326352
+            }
+          ]
+        },
+        {
+          "stage": "stockpile",
+          "probability": 0.19271236621147675,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.10333524399374508
+            },
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.08937712221773168
+            }
+          ]
+        },
+        {
+          "stage": "agglomeration",
+          "probability": 0.18957948110700862,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.10333524399374508
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.08624423711326352
+            }
+          ]
+        },
+        {
+          "stage": "product_recovery",
+          "probability": 0.18957948110700862,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.10333524399374508
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.08624423711326352
+            }
+          ]
+        },
+        {
+          "stage": "filter",
+          "probability": 0.1756213593309952,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.08937712221773168
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.08624423711326352
+            }
+          ]
+        },
+        {
+          "stage": "flotation",
+          "probability": 0.1756213593309952,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.08937712221773168
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.08624423711326352
+            }
+          ]
+        },
+        {
+          "stage": "thickener",
+          "probability": 0.1756213593309952,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.08937712221773168
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.08624423711326352
+            }
+          ]
+        },
+        {
+          "stage": "adsorption",
+          "probability": 0.10333524399374508,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog B",
+              "similarity_weight": 0.10333524399374508
+            }
+          ]
+        },
+        {
+          "stage": "regrind",
+          "probability": 0.09431525214349461,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.09431525214349461
+            }
+          ]
+        },
+        {
+          "stage": "cyclone",
+          "probability": 0.08937712221773168,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.08937712221773168
+            }
+          ]
+        },
+        {
+          "stage": "gravity",
+          "probability": 0.08937712221773168,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.08937712221773168
+            }
+          ]
+        },
+        {
+          "stage": "screen",
+          "probability": 0.08937712221773168,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.08937712221773168
+            }
+          ]
+        },
+        {
+          "stage": "feeder",
+          "probability": 0.08624423711326352,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.08624423711326352
+            }
+          ]
+        },
+        {
+          "stage": "tank",
+          "probability": 0.08624423711326352,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.08624423711326352
+            }
+          ]
+        }
+      ],
+      "edge_votes": [
+        {
+          "src": "leach",
+          "dst": "tailing",
+          "score": 0.6267281445317651,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.6267281445317651
+            }
+          ]
+        },
+        {
+          "src": "leach",
+          "dst": "mill",
+          "score": 0.6267281445317651,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.6267281445317651
+            }
+          ]
+        },
+        {
+          "src": "solution_recovery",
+          "dst": "leach",
+          "score": 0.6267281445317651,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.6267281445317651
+            }
+          ]
+        },
+        {
+          "src": "leach",
+          "dst": "solution_recovery",
+          "score": 0.6267281445317651,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.6267281445317651
+            }
+          ]
+        },
+        {
+          "src": "crusher",
+          "dst": "leach",
+          "score": 0.6267281445317651,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.6267281445317651
+            }
+          ]
+        },
+        {
+          "src": "solution_recovery",
+          "dst": "electrowinning",
+          "score": 0.6267281445317651,
+          "selected": true,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog A",
+              "similarity_weight": 0.6267281445317651
+            }
+          ]
+        },
+        {
+          "src": "crusher",
+          "dst": "mill",
+          "score": 0.18055948925675813,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog C",
+              "similarity_weight": 0.09431525214349461
+            },
+            {
+              "doc_id": "Analog E",
+              "similarity_weight": 0.08624423711326352
+            }
+          ]
+        },
+        {
+          "src": "flotation",
+          "dst": "flotation",
+          "score": 0.08937712221773168,
+          "selected": false,
+          "supporting_neighbors": [
+            {
+              "doc_id": "Analog D",
+              "similarity_weight": 0.08937712221773168
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

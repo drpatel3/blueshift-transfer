@@ -1,0 +1,198 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Mineral processing PDF extraction pipeline (Bedrock-only)
+
+Globals:
+  Function:
+    Timeout: 600  # 10 minutes
+    MemorySize: 3008  # ~3 GB (Lambda max)
+
+Resources:
+
+  PipelineBucket:
+    Type: AWS::S3::Bucket
+    DependsOn: S3InvokePermission
+    Properties:
+      BucketName: !Sub "${AWS::StackName}-pipeline"
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      VersioningConfiguration:
+        Status: Enabled
+      NotificationConfiguration:
+        LambdaConfigurations:
+          - Event: s3:ObjectCreated:*
+            Function: !GetAtt ExtractFunction.Arn
+            Filter:
+              S3Key:
+                Rules:
+                  - Name: prefix
+                    Value: pdfs/
+                  - Name: suffix
+                    Value: .pdf
+
+  S3InvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !GetAtt ExtractFunction.Arn
+      Action: lambda:InvokeFunction
+      Principal: s3.amazonaws.com
+      SourceArn: !Sub "arn:aws:s3:::${AWS::StackName}-pipeline"
+
+  ExtractFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      Architectures:
+        - x86_64
+      EphemeralStorage:
+        Size: 2048  # 2 GB /tmp for large PDFs + extracted images
+      Environment:
+        Variables:
+          S3_BUCKET: !Sub "${AWS::StackName}-pipeline"
+          ENABLE_CLIP: "false"
+          SKIP_LLM: "true"
+          SKIP_IMAGES: "false"
+          SKIP_TABLES: "false"
+          SKIP_TEXT: "false"
+          TARGET_MINERAL: "copper"
+          BEDROCK_MODEL: "us.anthropic.claude-sonnet-4-6"
+          BEDROCK_REFINEMENT_MODEL: "us.anthropic.claude-sonnet-4-6"
+          AWS_REGION_BEDROCK: "us-east-1"
+      Policies:
+        - S3CrudPolicy:
+            BucketName: !Sub "${AWS::StackName}-pipeline"
+        - Statement:
+            - Effect: Allow
+              Action:
+                - bedrock:InvokeModel
+                - bedrock:Converse
+              Resource:
+                - !Sub "arn:aws:bedrock:${AWS::Region}::foundation-model/anthropic.*"
+                - !Sub "arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:inference-profile/*"
+    Metadata:
+      DockerTag: latest
+      DockerContext: .
+      Dockerfile: Dockerfile
+
+  SageMakerExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: sagemaker.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: SageMakerLeastPrivilege
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - sagemaker:CreateTrainingJob
+                  - sagemaker:DescribeTrainingJob
+                  - sagemaker:CreateModel
+                  - sagemaker:DescribeModel
+                Resource: '*'
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: !Sub "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:*"
+              - Effect: Allow
+                Action:
+                  - ecr:GetAuthorizationToken
+                  - ecr:BatchGetImage
+                  - ecr:GetDownloadUrlForLayer
+                Resource: '*'
+        - PolicyName: S3Access
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:PutObject
+                  - s3:ListBucket
+                Resource:
+                  - !Sub "arn:aws:s3:::${AWS::StackName}-pipeline"
+                  - !Sub "arn:aws:s3:::${AWS::StackName}-pipeline/*"
+
+  PreprocessFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      Architectures:
+        - x86_64
+      ImageConfig:
+        Command:
+          - preprocess_handler.handler
+      FunctionUrlConfig:
+        AuthType: AWS_IAM
+      Timeout: 900  # 15 min — processing large text column
+      MemorySize: 3008
+      Environment:
+        Variables:
+          S3_BUCKET: !Sub "${AWS::StackName}-pipeline"
+      Policies:
+        - S3CrudPolicy:
+            BucketName: !Sub "${AWS::StackName}-pipeline"
+    Metadata:
+      DockerTag: latest
+      DockerContext: .
+      Dockerfile: Dockerfile
+
+  WebAppFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      Architectures:
+        - x86_64
+      ImageConfig:
+        Command:
+          - webapp_handler.handler
+      FunctionUrlConfig:
+        AuthType: NONE
+      Timeout: 30
+      MemorySize: 2048  # matplotlib renders comfortably here
+      Environment:
+        Variables:
+          MPLBACKEND: Agg
+          PFS_IMG_DIR: /tmp/pfs_cache
+    Metadata:
+      DockerTag: latest
+      DockerContext: .
+      Dockerfile: Dockerfile.webapp
+
+Outputs:
+  BucketName:
+    Description: S3 bucket for PDF uploads and results
+    Value: !Ref PipelineBucket
+  ExtractFunctionArn:
+    Description: Extract Lambda function ARN
+    Value: !GetAtt ExtractFunction.Arn
+  PreprocessFunctionArn:
+    Description: Preprocess Lambda function ARN
+    Value: !GetAtt PreprocessFunction.Arn
+  PreprocessFunctionUrl:
+    Description: Preprocess Lambda function URL (use with AWS IAM auth)
+    Value: !GetAtt PreprocessFunctionUrl.FunctionUrl
+  WebAppFunctionArn:
+    Description: Flowsheet Predictor web app Lambda ARN
+    Value: !GetAtt WebAppFunction.Arn
+  WebAppFunctionUrl:
+    Description: Flowsheet Predictor web app URL (public; AuthType NONE)
+    Value: !GetAtt WebAppFunctionUrl.FunctionUrl
+  SageMakerRoleArn:
+    Description: SageMaker execution role ARN
+    Value: !GetAtt SageMakerExecutionRole.Arn

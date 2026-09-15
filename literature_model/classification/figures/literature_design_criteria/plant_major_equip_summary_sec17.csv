@@ -1,0 +1,23 @@
+# caption: Table 17-3: Plant Major Process Equipment Summary
+# doc: 303585697f6e4ad42f686e350412d1292e0d9f2089482d7738c030d0fd8d8478  page: 241  section: 17
+col_0,col_1,col_2,col_3
+Primary Crusher,,1,
+,Primary Crusher,,1
+,Primary Crusher Discharge Feeder,,2
+,Coarse Ore Stockpile Reclaim Feeders,,4
+,SAG Mill Feed Conveyor,,1
+SAG Mill,,1,
+Ball Mill,,1,
+,Ball Mill,,1
+,Hydrocyclones Cluster (grinding circuit),,4
+,Rougher Flotation Cells,,7
+,1st Cleaner Flotation Cells,,4
+,Cleaner Scavenger Cells,,4
+,2nd Cleaner Flotation Cells,,4
+,3rd Cleaner Flotation Cells,,2
+,Regrinding Mill,,2
+,Regrinding Hydrocyclones Cluster,,2
+,Concentrate Thickener,,1
+,Concentrate Filter,,1
+,Tailings Thickener,,4
+Tailings Pumps System,,1,

@@ -1,0 +1,44 @@
+# Version control
+.git
+.gitignore
+
+# Python environments
+venv
+.venv
+__pycache__
+*.pyc
+
+# SAM / build artifacts
+.aws-sam
+dist
+build
+
+# Large data directories (not needed in Lambda image)
+test_pdfs
+extracted_images
+sedar
+mini
+data
+
+# Tests
+test_*.py
+.pytest_cache
+
+# Misc
+node_modules
+*.log
+.env
+*.pptx
+*.json
+ROADMAP.md
+CLAUDE.md
+README.md
+pyproject.toml
+deploy.sh
+batch_upload.py
+build_dataset.py
+classify_pdfs.py
+stage_network.py
+database.py
+main.py
+.claude

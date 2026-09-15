@@ -1,0 +1,23 @@
+# caption: Table 17.1: Otjikoto Major Process Design Criteria
+# doc: 8eac6e628356b2dea392d64c2d24ee63b140e4a6f5db93a15ab95665022cf20a  page: 252  section: 17
+Table 17.1: Otjikoto Major Process Design Criteria Criteria,Unit,col_2
+Operating Year,d,365
+Annual Mill Throughput,Mtpa,2.5
+Feed Grade (Life-of-Mine),g/t,1.42
+Crusher Availability,%,65.0
+Crushing Throughput,mtph,440
+Crushing Work Index (XR3),kWh/t,16.9
+Mill Availability,%,94.0
+"SAG Mill Feed Size, 80% Passing",µm,"150,000"
+Grinding Throughput,mtph,304
+Ball Mill Circulating Load,%,300
+Bond Ball Mill Work Index (XR3),kWh/t,9.3
+Bond Abrasion Index (XR3),g,0.466
+"Grind Size, 80% Passing",µm,75
+Gravity Gold Recovery (XR3),%,70.8
+Leach Residence Time (XR3),hr,48
+CIP Residence Time,hr,6
+Cyanide Consumption (XR3),kg/t,0.59
+Overall Gravity+Leach/CIP Recovery (Life-of-Mine),%,95.6
+Average Annual Gold Production (years 1-5),oz,"141,000"
+Average Annual Gold Production (LOM),oz,"112,000"

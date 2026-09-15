@@ -1,0 +1,23 @@
+# caption: Key process design criteria listed in Table 1-3 were derived from the preliminary comminution
+# doc: c2ae867fd0cc50399f756717b0f646749dd8996446ae95b5580bf1798f4c1ae0  page: 22  section: None
+Design Parameter,Units,Value
+Throughput,Mt/a,4.0
+,t/d,"10,960"
+Material Specific Gravity,t/m³,2.78
+Primary Grind size (P80),µm,100
+Moisture Content,%,3.0
+Crushing Area Availability,%,67
+Crushing Operating Throughput,t/h,685
+Process Plant Availability,%,92
+Process Plant Operating Throughput,t/h,496
+Bond Crusher Work Index (CWi),kWh/t,16.5
+Bond Ball Mill Work Index (BWi),kWh/t,11.0
+Gravity Circuit Feed Source,,Ball mill discharge
+Gravity Circuit Feed Rate,%cyclone recirc,25
+L-CIL Residence Time,h,28
+L-CIL Extraction,Au (%),92.5
+L-CIL Operating Density,% w/w,42.5
+L-CIL DO Target,mg/L,20
+L-CIL pH Target,,10.5 – 11.0
+L-CIL Carbon Concentration,g/L,10
+L-CIL Sodium Cyanide Addition,kg/t,0.3

@@ -1,0 +1,22 @@
+# caption: The results of the simulation were used to size the flotation equipment as given in Table 13-10.
+# doc: 54007563abb19f9cb3327f73f18a3e81e67975b1e1dda1c66711d65fdb7f7756  page: 85  section: None
+EMC Tank Cell Sizing and Selection Flotation Bank,Number of Cells,Cell Volume yd3 (m3),Total Bank Volume yd3 (m3),Nominal Residence Time (min)
+Cu-Ni Bulk Rougher Bank,4,653 (500),2612 (2000),38
+Cu-Ni Bulk 1st Cleaner Bank,4,210 (160),840 (640),60
+Cu-Ni Bulk 2nd Cleaner Bank,3,131 (100),393 (300),88
+Cu-Ni Bulk 3rd Cleaner Bank,2,131 (100),262 (200),83
+Cu-Ni Bulk 4th Cleaner Bank,-,-,-,-
+Total,13,,4107 (3140),269
+Cu-Ni Sep Rougher Bank,3,65 (50),210 (150),91
+Cu-Ni Sep 1st Cleaner Bank,3,65 (50),210 (150),107
+Cu-Ni Sep 2nd Cleaner Bank,3,39 (30),117 (90),59
+Cu-Ni Sep 3rd Cleaner Bank,3,39 (30),117 (90),63
+Cu-Ni Sep 4th Cleaner Bank,3,39 (30),117 (90),69
+Cu-Ni Sep 5th Cleaner Bank,3,26 (20),78 (60),50
+Total,18,,849 (630),439
+Po Rougher Bank,5,653 (500),3265 (2500),50
+Po 1st Cleaner Bank,2,210 (160),420 (320),57
+Po 2nd Cleaner Bank,2,131 (100),262 (200),83
+Po 3rd Cleaner Bank,2,65 (50),131 (100),57
+Po 4th Cleaner Bank,,,-,-
+Total,11,,4078 (3120),247

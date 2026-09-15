@@ -1,0 +1,6 @@
+sentencepiece
+protobuf
+scipy
+scikit-learn
+psutil
+boto3

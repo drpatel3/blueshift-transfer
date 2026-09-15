@@ -1,0 +1,7 @@
+--find-links https://data.pyg.org/whl/torch-2.1.0+cu121.html
+torch-scatter
+torch-sparse
+torch-geometric
+scikit-learn
+numpy
+boto3
