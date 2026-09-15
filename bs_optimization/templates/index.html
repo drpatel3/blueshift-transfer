@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copper Production Optimizer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2C4F5C 0%, #1a2f38 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+            opacity: 0.8;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .input-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 30px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        input[type="range"] {
+            flex: 1;
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #2C4F5C;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #2C4F5C;
+            cursor: pointer;
+        }
+
+        .value-display {
+            min-width: 150px;
+            padding: 10px 15px;
+            background: white;
+            border: 2px solid #2C4F5C;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            color: #2C4F5C;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #2C4F5C 0%, #1a2f38 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            display: none;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #2C4F5C;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .results {
+            display: none;
+        }
+
+        .comparison-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #2C4F5C;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .metric-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .metric-value {
+            color: #333;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .positive {
+            color: #28a745;
+        }
+
+        .negative {
+            color: #dc3545;
+        }
+
+        .parameters-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .parameters-table th,
+        .parameters-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .parameters-table th {
+            background: #2C4F5C;
+            color: white;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2C4F5C;
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Copper Production Optimizer</h1>
+        <div class="input-section">
+            <div class="input-group">
+                <label for="feedGrade">Feed Ore Grade (%)</label>
+                <div class="slider-container">
+                    <input type="range" id="feedGrade" min="0.25" max="0.8" step="0.01" value="0.55">
+                    <div class="value-display" id="feedGradeValue">0.55%</div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="concentrateGrade">Concentrate Grade (%)</label>
+                <div class="slider-container">
+                    <input type="range" id="concentrateGrade" min="15" max="40" step="1" value="20">
+                    <div class="value-display" id="concentrateGradeValue">20%</div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="testingParticleSize">Feed Particle Size (microns)</label>
+                <div class="slider-container">
+                    <input type="range" id="testingParticleSize" min="50" max="150" step="5" value="100">
+                    <div class="value-display" id="testingParticleSizeValue">100 μm</div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="targetTonnage">Target Copper Production (tons/year)</label>
+                <div class="slider-container">
+                    <input type="range" id="targetTonnage" min="10000" max="100000" step="1000" value="35000">
+                    <div class="value-display" id="targetTonnageValue">35,000 tons/year</div>
+                </div>
+            </div>
+
+            <button id="optimizeBtn" onclick="runOptimization()">Optimize Process</button>
+        </div>
+
+        <div class="error" id="errorMsg"></div>
+
+        <!-- Optimization Impact Section -->
+        <div class="comparison-card" style="background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%); margin-bottom: 30px;">
+            <h3 class="section-title" style="text-align: center; font-size: 1.1em; border-bottom: 2px solid #2C4F5C; color: #1a2f38;">
+                📈 Optimization Impact
+            </h3>
+            <div style="padding: 20px; background: white; border-radius: 10px; margin-top: 15px;">
+                <p style="font-size: 1.1em; line-height: 1.8; color: #333; margin: 0;">
+                    Using optimized parameters against an industry benchmark we can see a <strong>19.17% improvement in annual OPEX</strong> driven by a reduction in acid, water, and energy use.<br>
+                    <strong>Comparison baseline:</strong> U.S. site, 1% feed grade, 35% concentrate, throughput of 5,037,000 tons dry feed, with an expected recovery of 43,800 tons of copper per year.
+                </p>
+                <!-- <p style="font-size: 0.95em; line-height: 1.6; color: #666; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+                    <strong>Comparison baseline:</strong> 1% feed grade, 35% concentrate, with an expected output of 43,800 tons of iron per year. -->
+                </p>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Running optimization... This may take a minute</p>
+        </div>
+
+        <div class="results" id="results">
+            <!-- Section 1: Optimized Operating Parameters -->
+            <div class="comparison-card">
+                <h3 class="section-title">⚙️ Optimized Operating Parameters</h3>
+
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src="{{ url_for('static', filename='fsd_optimization_model.jpg') }}"
+                         alt="FSD Optimization Model"
+                         style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                </div>
+
+                <h4 style="color: #2C4F5C; margin-top: 20px; margin-bottom: 10px;">A) Grinding</h4>
+                <table class="parameters-table">
+                    <tbody id="grinding_params"></tbody>
+                </table>
+
+                <h4 style="color: #2C4F5C; margin-top: 20px; margin-bottom: 10px;">B) Flotation</h4>
+                <table class="parameters-table">
+                    <tbody id="flotation_params"></tbody>
+                </table>
+
+                <h4 style="color: #2C4F5C; margin-top: 20px; margin-bottom: 10px;">C) Leaching</h4>
+                <table class="parameters-table">
+                    <tbody id="leaching_params"></tbody>
+                </table>
+
+                <h4 style="color: #2C4F5C; margin-top: 20px; margin-bottom: 10px;">D) Solvent Extraction</h4>
+                <table class="parameters-table">
+                    <tbody id="sx_params"></tbody>
+                </table>
+
+                <h4 style="color: #2C4F5C; margin-top: 20px; margin-bottom: 10px;">E) Electrowinning</h4>
+                <table class="parameters-table">
+                    <tbody id="ew_params"></tbody>
+                </table>
+            </div>
+
+            <!-- Section 2: Recovery Rates -->
+            <div class="comparison-card">
+                <h3 class="section-title">🔬 Recovery Rates</h3>
+                <div class="card-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">Flotation</div>
+                        <div class="metric-value" id="rec_flotation_no">0%</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Leaching</div>
+                        <div class="metric-value" id="rec_leaching_no">0%</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Solvent Extraction</div>
+                        <div class="metric-value" id="rec_sx_no">0%</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Electrowinning</div>
+                        <div class="metric-value" id="rec_ew_no">0%</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Overall Recovery</div>
+                        <div class="metric-value" id="rec_overall_no">0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: NPV Comparison -->
+            <div class="comparison-card">
+                <h2 class="section-title">📊 Net Present Value</h2>
+                <div class="card-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">Without Electrolyzer</div>
+                        <div class="metric-value" id="npv_no">$0</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">With Electrolyzer</div>
+                        <div class="metric-value" id="npv_yes">$0</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">NPV Improvement</div>
+                        <div class="metric-value" id="npv_improvement">$0</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Cost/Ton Δ</div>
+                        <div class="metric-value" id="cost_per_ton_delta">$0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: With/Without Electrolyzer Comparison -->
+            <div class="card-grid">
+                <div class="comparison-card">
+                    <h3 class="section-title">Without Electrolyzer</h3>
+                    <div style="margin-bottom: 15px;">
+                        <div class="metric-label">IRR</div>
+                        <div class="metric-value" id="irr_no">0%</div>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <div class="metric-label">Payback Period</div>
+                        <div class="metric-value" id="payback_no">0 years</div>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <div class="metric-label">Total CAPEX</div>
+                        <div class="metric-value" id="capex_no">$0</div>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <div class="metric-label">Annual OPEX</div>
+                        <div class="metric-value" id="opex_no">$0</div>
+                    </div>
+                    <div>
+                        <div class="metric-label">Cost per Ton Cu</div>
+                        <div class="metric-value" id="cost_per_ton_no">$0</div>
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <h3 class="section-title">With Electrolyzer</h3>
+                    <div style="margin-bottom: 15px;">
+                        <div class="metric-label">IRR</div>
+                        <div class="metric-value" id="irr_yes">0%</div>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <div class="metric-label">Payback Period</div>
+                        <div class="metric-value" id="payback_yes">0 years</div>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <div class="metric-label">Total CAPEX</div>
+                        <div class="metric-value" id="capex_yes">$0</div>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <div class="metric-label">Annual OPEX</div>
+                        <div class="metric-value" id="opex_yes">$0</div>
+                    </div>
+                    <div>
+                        <div class="metric-label">Cost per Ton Cu</div>
+                        <div class="metric-value" id="cost_per_ton_yes">$0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <img src="{{ url_for('static', filename='blueshift_logo.png') }}" alt="BlueShift" class="logo">
+            <p style="margin-bottom: 15px; color: #666;">
+                <br>
+                <a href="mailto:ryan@buildblueshift.com" target="_blank" style="color: #2C4F5C; text-decoration: none; font-weight: 600;">Email ryan@buildblueshift.com for repository access</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Update slider values in real-time
+        document.getElementById('feedGrade').addEventListener('input', function() {
+            document.getElementById('feedGradeValue').textContent = this.value + '%';
+        });
+
+        document.getElementById('concentrateGrade').addEventListener('input', function() {
+            document.getElementById('concentrateGradeValue').textContent = this.value + '%';
+        });
+
+        document.getElementById('testingParticleSize').addEventListener('input', function() {
+            document.getElementById('testingParticleSizeValue').textContent = this.value + ' μm';
+        });
+
+        document.getElementById('targetTonnage').addEventListener('input', function() {
+            document.getElementById('targetTonnageValue').textContent = parseInt(this.value).toLocaleString() + ' tons/year';
+        });
+
+        function formatCurrency(value) {
+            return '$' + value.toLocaleString('en-US', {maximumFractionDigits: 0});
+        }
+
+        function formatPercent(value) {
+            return value.toFixed(2) + '%';
+        }
+
+        function formatParameterName(key) {
+            // Convert snake_case to Title Case with units where appropriate
+            const unitMap = {
+                'product_size': 'Product Size (μm)',
+                'sp_power': 'Specific Power (kW/m³)',
+                'sp_gas_rate': 'Specific Gas Rate (cm/s)',
+                'frother_conc': 'Frother Concentration (g/L)',
+                'ret_time': 'Retention Time (min)',
+                'num_cells': 'Number of Cells',
+                'air_fraction': 'Air Fraction',
+                'slurry_fraction': 'Slurry Fraction',
+                'particle_size': 'Particle Size (μm)',
+                'contact_angle': 'Contact Angle (°)',
+                'cell_volume': 'Cell Volume (m³)',
+                'T': 'Temperature (°C)',
+                'P_O2': 'Oxygen Pressure (bar)',
+                'Ea': 'Activation Energy (kJ/mol)',
+                'n': 'Reaction Order',
+                'H_plus': 'H⁺ Concentration (mol/L)',
+                'leach_time': 'Leaching Time (hours)',
+                'K_ex': 'Equilibrium Constant',
+                'RH': 'Extractant Concentration (M)',
+                'O_A': 'Organic/Aqueous Ratio',
+                'pH': 'pH',
+                'current_density': 'Current Density (A/m²)',
+                'current_efficiency': 'Current Efficiency',
+                'cell_potential': 'Cell Potential (V)',
+                'ew_recovery': 'EW Recovery'
+            };
+            return unitMap[key] || key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        }
+
+        function formatParameterValue(key, value) {
+            // Format values appropriately
+            if (key === 'num_cells') {
+                return value.toFixed(0);
+            } else if (['current_efficiency', 'ew_recovery', 'air_fraction', 'slurry_fraction'].includes(key)) {
+                return (value * 100).toFixed(2) + '%';
+            } else {
+                return value.toFixed(3);
+            }
+        }
+
+        function populateParameters(tableId, params) {
+            const tbody = document.getElementById(tableId);
+            tbody.innerHTML = '';
+
+            for (const [key, value] of Object.entries(params)) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td style="font-weight: 600;">${formatParameterName(key)}</td>
+                    <td style="text-align: right;">${formatParameterValue(key, value)}</td>
+                `;
+                tbody.appendChild(row);
+            }
+        }
+
+        // Store the original results HTML on page load for clean resets
+        let originalResultsHTML = null;
+        document.addEventListener('DOMContentLoaded', function() {
+            originalResultsHTML = document.getElementById('results').innerHTML;
+        });
+
+        async function runOptimization() {
+            const feedGrade = parseFloat(document.getElementById('feedGrade').value) / 100;
+            const concentrateGrade = parseFloat(document.getElementById('concentrateGrade').value) / 100;
+            const testingParticleSize = parseFloat(document.getElementById('testingParticleSize').value);
+            const targetTonnage = parseInt(document.getElementById('targetTonnage').value);
+
+            // Complete reset: restore original HTML to wipe all previous data
+            const resultsContainer = document.getElementById('results');
+            if (originalResultsHTML) {
+                resultsContainer.innerHTML = originalResultsHTML;
+            }
+
+            // Hide results and error, show loading
+            resultsContainer.style.display = 'none';
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('errorMsg').style.display = 'none';
+            document.getElementById('optimizeBtn').disabled = true;
+
+            try {
+                // Set up 3-minute timeout
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 180000);
+
+                const response = await fetch('/optimize', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        feed_grade: feedGrade,
+                        concentrate_grade: concentrateGrade,
+                        testing_particle_size: testingParticleSize,
+                        target_tonnage: targetTonnage,
+                        max_iterations: 30
+                    }),
+                    signal: controller.signal
+                });
+
+                clearTimeout(timeoutId);
+
+                const data = await response.json();
+
+                if (data.success) {
+                    // Update NPV comparison
+                    document.getElementById('npv_no').textContent = formatCurrency(data.without_electrolyzer.npv);
+                    document.getElementById('npv_yes').textContent = formatCurrency(data.with_electrolyzer.npv);
+
+                    const improvement = data.comparison.npv_improvement;
+                    const improvementElem = document.getElementById('npv_improvement');
+                    improvementElem.textContent = formatCurrency(Math.abs(improvement)) + ' (' + data.comparison.npv_improvement_pct.toFixed(1) + '%)';
+                    improvementElem.className = 'metric-value ' + (improvement > 0 ? 'positive' : 'negative');
+
+                    const costDelta = data.comparison.cost_per_ton_delta;
+                    const costDeltaElem = document.getElementById('cost_per_ton_delta');
+                    costDeltaElem.textContent = formatCurrency(Math.abs(costDelta));
+                    costDeltaElem.className = 'metric-value ' + (costDelta < 0 ? 'positive' : 'negative');
+
+                    // Update financial metrics - Without
+                    document.getElementById('irr_no').textContent = formatPercent(data.without_electrolyzer.irr);
+                    document.getElementById('payback_no').textContent = data.without_electrolyzer.payback_years.toFixed(2) + ' years';
+                    document.getElementById('capex_no').textContent = formatCurrency(data.without_electrolyzer.total_capex);
+                    document.getElementById('opex_no').textContent = formatCurrency(data.without_electrolyzer.total_opex) + '/year';
+                    document.getElementById('cost_per_ton_no').textContent = formatCurrency(data.without_electrolyzer.cost_per_ton) + '/ton';
+
+                    // Update financial metrics - With
+                    document.getElementById('irr_yes').textContent = formatPercent(data.with_electrolyzer.irr);
+                    document.getElementById('payback_yes').textContent = data.with_electrolyzer.payback_years.toFixed(2) + ' years';
+                    document.getElementById('capex_yes').textContent = formatCurrency(data.with_electrolyzer.total_capex);
+                    document.getElementById('opex_yes').textContent = formatCurrency(data.with_electrolyzer.total_opex) + '/year';
+                    document.getElementById('cost_per_ton_yes').textContent = formatCurrency(data.with_electrolyzer.cost_per_ton) + '/ton';
+
+                    // Update recovery rates
+                    document.getElementById('rec_flotation_no').textContent = formatPercent(data.without_electrolyzer.recoveries.flotation);
+                    document.getElementById('rec_leaching_no').textContent = formatPercent(data.without_electrolyzer.recoveries.leaching);
+                    document.getElementById('rec_sx_no').textContent = formatPercent(data.without_electrolyzer.recoveries.sx);
+                    document.getElementById('rec_ew_no').textContent = formatPercent(data.without_electrolyzer.recoveries.ew);
+                    document.getElementById('rec_overall_no').textContent = formatPercent(data.without_electrolyzer.recoveries.overall);
+
+                    // Update optimized parameters (using without_electrolyzer scenario)
+                    populateParameters('grinding_params', data.without_electrolyzer.optimal_parameters.grinding);
+                    populateParameters('flotation_params', data.without_electrolyzer.optimal_parameters.flotation);
+                    populateParameters('leaching_params', data.without_electrolyzer.optimal_parameters.leaching);
+                    populateParameters('sx_params', data.without_electrolyzer.optimal_parameters.sx);
+                    populateParameters('ew_params', data.without_electrolyzer.optimal_parameters.ew);
+
+                    // Show results
+                    document.getElementById('results').style.display = 'block';
+                } else {
+                    document.getElementById('errorMsg').textContent = 'Error: ' + data.error;
+                    document.getElementById('errorMsg').style.display = 'block';
+                }
+            } catch (error) {
+                if (error.name === 'AbortError') {
+                    document.getElementById('errorMsg').textContent = "Optimization timed out after 3 minutes. Please try different input parameters.";
+                } else {
+                    document.getElementById('errorMsg').textContent = "This is not an economically feasible feed. Please try another.";
+                }
+                document.getElementById('errorMsg').style.display = 'block';
+            } finally {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('optimizeBtn').disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
